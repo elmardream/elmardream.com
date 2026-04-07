@@ -227,3 +227,9 @@ body {
 .active-link:hover {
 	border-bottom-color: var(--color-leaf);
 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #000000;
+	}
+}
