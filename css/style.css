@@ -1,0 +1,236 @@
+:root {
+	color-scheme: dark;
+	--color-sun: #FE9800;
+	--color-leaf: #82C654;
+	--color-space: #4A2521;
+}
+
+html {
+	background-color: var(--color-space);
+}
+
+body {
+	width: 100vw;
+	height: 100dvh;
+	min-height: 100%;
+	margin: 0;
+	overflow: hidden;
+	background-color: var(--color-space);
+	background: radial-gradient(circle at center, #1A0B2E 0%, var(--color-space) 100%);
+/*	background-attachment: fixed;*/
+	position: relative;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	/*  фон игнорирует границы и затекает под челку */
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.scene-container {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -130%);
+	width: 60vmin;
+	max-width: 700px;
+	max-height: 30vh;
+	pointer-events: all;
+	cursor: pointer;
+}
+
+.main-logo {
+	/* обрезаем любые "утечки" пикселей */
+	overflow: hidden;
+	/* Устраняем микро-дрожание при отрисовке */
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	/* Создаем невидимую границу, которая заставляет Chrome пересчитать сглаживание */
+	outline: 1px solid transparent;
+/*	так же в html добавлен атрибут в маске <mask id="sun-mask" maskUnits="userSpaceOnUse"> что бы избежать утечки заливки svg*/
+}
+
+
+.letter-path, .sun-path {
+	fill: none;
+	stroke-width: 4px;
+	pointer-events: none;
+}
+
+.letter-path {
+	stroke: var(--color-leaf);
+}
+
+.sun-path {
+	stroke: var(--color-sun);
+}
+
+.solutions-letters path {
+	opacity: 0;
+	fill: #FE9800;
+}
+
+.ripple-green, .ripple-orange, .click-pulse {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.honeycomb-wrapper {
+	position: relative;
+	top: 100%;
+	left: 100%;
+	transform: translate(-50%, -60%);
+	aspect-ratio: 1300 / 700;
+	pointer-events: none;
+	will-change: transform;
+}
+
+.honeycomb-item {
+	position: absolute;
+	will-change: transform, opacity;
+	backface-visibility: hidden;
+	-webkit-font-smoothing: subpixel-antialiased;
+	width: 20%;
+	height: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) translateZ(0) scale(0);
+	opacity: 0;
+	pointer-events: auto;
+	padding-top: 0;
+}
+
+.hex-border {
+	transition: stroke 0.2s ease-in-out;
+}
+
+.honeycomb-item:hover .hex-border,
+.honeycomb-item.is-active .hex-border {
+	stroke: var(--color-leaf);
+	transition: stroke 0.4s ease;
+}
+
+.honeycomb-item.is-active {
+	pointer-events: auto;
+}
+
+.honey-svg, .honeycomb-item img {
+	width: 100%;
+	height: 100%;
+	will-change: transform;
+}
+
+.item-bottom-1 { left: -61%; top: 90%; }
+.item-bottom-2 { left: -37%; top: 90%; }
+.item-bottom-3 { left: -13%; top: 90%; }
+.item-bottom-4 { left: 11%; top: 90%; }
+.item-bottom-5 { left: 35%; top: 90%; }
+.item-bottom-6 { left: 59%; top: 90%; }
+
+.footer-contact {
+	position: fixed;
+	bottom: calc(10px + env(safe-area-inset-bottom));
+	left: 50%;
+	transform: translateX(-50%);
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+
+.legal-item {
+	color: var(--color-sun);
+	text-decoration: none;
+	font-size: 11px;
+	letter-spacing: 1px;
+	transition: color 0.3s ease;
+}
+
+.legal-item.is-active {
+	color: var(--color-leaf);
+	opacity: 1;
+	pointer-events: none;
+	cursor: default;
+}
+
+.legal-item:hover {
+	color: var(--color-leaf);
+}
+
+.separator {
+	color: var(--color-sun);
+	font-size: 11px;
+	margin: 0 8px;
+}
+
+.legal-overlay {
+	position: relative;
+	width: 150%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -25%);
+	text-align: center;
+	pointer-events: none;
+	transition: opacity 0.6s ease;
+	cursor: pointer;
+	padding-top: 10px;
+	padding-bottom: 130px;
+	will-change: transform, opacity;
+}
+
+.legal-overlay.is-visible {
+	opacity: 1;
+}
+
+.legal-content h3 {
+	color: var(--color-sun);
+	letter-spacing: 2px;
+	font-weight: 300;
+	font-size: 3vmin;
+	margin: 0px 0px;
+	will-change: transform, opacity;
+}
+
+.legal-content p {
+	color: var(--color-leaf);
+	line-height: 1.3;
+	letter-spacing: 1px;
+	font-weight: 200;
+	font-size: 2.5vmin;
+	will-change: transform, opacity;
+	margin: 5px 0px;
+
+}
+
+.active-email {
+	color: var(--color-leaf);
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-sun);
+	padding-bottom: 2px;
+	transition: all 0.3s ease;
+	pointer-events: auto;
+	font-weight: 300;
+	font-size: 3vmin;
+	will-change: transform;
+
+}
+
+.active-email:hover {
+	border-bottom-color: var(--color-leaf);
+}
+
+.active-link {
+	color: var(--color-leaf);
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-sun);
+	padding-bottom: 2px;
+	transition: all 0.3s ease;
+	pointer-events: auto;
+	font-weight: 300;
+	font-size: 3vmin;
+	will-change: transform;
+	
+}
+
+.active-link:hover {
+	border-bottom-color: var(--color-leaf);
+}

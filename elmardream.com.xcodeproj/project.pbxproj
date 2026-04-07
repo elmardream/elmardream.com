@@ -1,0 +1,139 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXFileReference section */
+		A7A684822F85461E00DCA5CA /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
+		A7A684832F85461E00DCA5CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
+		A7A684842F85461E00DCA5CA /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = favicon.svg; sourceTree = "<group>"; };
+		A7A684852F85461E00DCA5CA /* honey.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = honey.svg; sourceTree = "<group>"; };
+		A7A684862F85461E00DCA5CA /* honey1.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = honey1.svg; sourceTree = "<group>"; };
+		A7A684872F85461E00DCA5CA /* honey1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = honey1.webp; sourceTree = "<group>"; };
+		A7A684882F85461E00DCA5CA /* honey2.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = honey2.svg; sourceTree = "<group>"; };
+		A7A684892F85461E00DCA5CA /* honey2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = honey2.webp; sourceTree = "<group>"; };
+		A7A6848A2F85461E00DCA5CA /* honey3.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = honey3.svg; sourceTree = "<group>"; };
+		A7A6848B2F85461E00DCA5CA /* honey3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = honey3.webp; sourceTree = "<group>"; };
+		A7A6848C2F85461E00DCA5CA /* honey4.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = honey4.svg; sourceTree = "<group>"; };
+		A7A6848D2F85461E00DCA5CA /* honey4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = honey4.webp; sourceTree = "<group>"; };
+		A7A6848E2F85461E00DCA5CA /* honey5.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = honey5.svg; sourceTree = "<group>"; };
+		A7A6848F2F85461E00DCA5CA /* honey5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = honey5.webp; sourceTree = "<group>"; };
+		A7A684902F85461E00DCA5CA /* honey6.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = honey6.svg; sourceTree = "<group>"; };
+		A7A684912F85461E00DCA5CA /* honey6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = honey6.webp; sourceTree = "<group>"; };
+		A7A684922F85461E00DCA5CA /* preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preview.png; sourceTree = "<group>"; };
+		A7A684942F85461E00DCA5CA /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		A7A684962F85461E00DCA5CA /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		A7A684972F85461E00DCA5CA /* gsap.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = gsap.min.js; sourceTree = "<group>"; };
+		A7A684982F85461E00DCA5CA /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A7A6847B2F8545F300DCA5CA = {
+			isa = PBXGroup;
+			children = (
+				A7A684932F85461E00DCA5CA /* assets */,
+				A7A684952F85461E00DCA5CA /* css */,
+				A7A684962F85461E00DCA5CA /* index.html */,
+				A7A684992F85461E00DCA5CA /* js */,
+			);
+			sourceTree = "<group>";
+		};
+		A7A684932F85461E00DCA5CA /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				A7A684822F85461E00DCA5CA /* apple-touch-icon.png */,
+				A7A684832F85461E00DCA5CA /* favicon.ico */,
+				A7A684842F85461E00DCA5CA /* favicon.svg */,
+				A7A684852F85461E00DCA5CA /* honey.svg */,
+				A7A684862F85461E00DCA5CA /* honey1.svg */,
+				A7A684872F85461E00DCA5CA /* honey1.webp */,
+				A7A684882F85461E00DCA5CA /* honey2.svg */,
+				A7A684892F85461E00DCA5CA /* honey2.webp */,
+				A7A6848A2F85461E00DCA5CA /* honey3.svg */,
+				A7A6848B2F85461E00DCA5CA /* honey3.webp */,
+				A7A6848C2F85461E00DCA5CA /* honey4.svg */,
+				A7A6848D2F85461E00DCA5CA /* honey4.webp */,
+				A7A6848E2F85461E00DCA5CA /* honey5.svg */,
+				A7A6848F2F85461E00DCA5CA /* honey5.webp */,
+				A7A684902F85461E00DCA5CA /* honey6.svg */,
+				A7A684912F85461E00DCA5CA /* honey6.webp */,
+				A7A684922F85461E00DCA5CA /* preview.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		A7A684952F85461E00DCA5CA /* css */ = {
+			isa = PBXGroup;
+			children = (
+				A7A684942F85461E00DCA5CA /* style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		A7A684992F85461E00DCA5CA /* js */ = {
+			isa = PBXGroup;
+			children = (
+				A7A684972F85461E00DCA5CA /* gsap.min.js */,
+				A7A684982F85461E00DCA5CA /* script.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		A7A6847C2F8545F300DCA5CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2640;
+			};
+			buildConfigurationList = A7A6847F2F8545F300DCA5CA /* Build configuration list for PBXProject "elmardream.com" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7A6847B2F8545F300DCA5CA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		A7A684802F8545F300DCA5CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A7A684812F8545F300DCA5CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7A6847F2F8545F300DCA5CA /* Build configuration list for PBXProject "elmardream.com" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7A684802F8545F300DCA5CA /* Debug */,
+				A7A684812F8545F300DCA5CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7A6847C2F8545F300DCA5CA /* Project object */;
+}
