@@ -17,7 +17,6 @@ body {
 	overflow: hidden;
 	background-color: var(--color-space);
 	background: radial-gradient(circle at center, #1A0B2E 0%, var(--color-space) 100%);
-/*	background-attachment: fixed;*/
 	position: relative;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 	/*  фон игнорирует границы и затекает под челку */
@@ -37,16 +36,15 @@ body {
 }
 
 .main-logo {
-	/* обрезаем любые "утечки" пикселей */
+	/* обрезаем утечки пикселей */
 	overflow: hidden;
-	/* Устраняем микро-дрожание при отрисовке */
+	/* устраняем микро-дрожание при отрисовке */
 	backface-visibility: hidden;
 	transform: translateZ(0);
-	/* Создаем невидимую границу, которая заставляет Chrome пересчитать сглаживание */
+	/* создаем невидимую границу, которая заставляет Chrome пересчитать сглаживание */
 	outline: 1px solid transparent;
 /*	так же в html добавлен атрибут в маске <mask id="sun-mask" maskUnits="userSpaceOnUse"> что бы избежать утечки заливки svg*/
 }
-
 
 .letter-path, .sun-path {
 	fill: none;
@@ -135,8 +133,6 @@ body {
 	overflow: hidden;
 }
 
-
-
 .legal-item {
 	color: var(--color-sun);
 	text-decoration: none;
@@ -198,7 +194,6 @@ body {
 	font-size: 2.5vmin;
 	will-change: transform, opacity;
 	margin: 5px 0px;
-
 }
 
 .active-email {
@@ -211,7 +206,6 @@ body {
 	font-weight: 300;
 	font-size: 3vmin;
 	will-change: transform;
-
 }
 
 .active-email:hover {
@@ -228,7 +222,6 @@ body {
 	font-weight: 300;
 	font-size: 3vmin;
 	will-change: transform;
-	
 }
 
 .active-link:hover {

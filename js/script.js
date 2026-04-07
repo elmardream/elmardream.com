@@ -6,7 +6,6 @@ const rippleOrange = document.querySelector('.ripple-orange');
 const allLights = [rippleGreen, rippleOrange, ...solPaths];
 const ripples = [rippleGreen, rippleOrange];
 const honeycombs = document.querySelectorAll('.honeycomb-item');
-
 const legalContent = document.querySelectorAll('.legal-content');
 const closeBtn = document.querySelector('.legal-close');
 const legalItems = document.querySelectorAll('.legal-item');
@@ -69,11 +68,6 @@ const legalData = {
 
 let isWelcomeShowing = false;
 
-
-
-
-
-
 function showLegalInfo(type, hideClose = false) {
 	const data = legalData[type];
 	if (!data) return;
@@ -91,7 +85,6 @@ function showLegalInfo(type, hideClose = false) {
 	// Сброс активных классов
 	honeycombs.forEach(el => el.classList.remove('is-active'));
 
-	
 	// АКТИВАЦИЯ
 	// Ищем элемент, у которого либо data-info равно нашему типу,
 	// либо href ведет на этот тип (для футера)
@@ -114,11 +107,6 @@ function showLegalInfo(type, hideClose = false) {
 				{ y: 0, opacity: 1, duration: 1.1, ease: "power2.out", overwrite: true }
 				);
 }
-
-
-
-
-
 
 function burstHoneycombs(e) {
 	const rect = mainLogo.getBoundingClientRect();
@@ -163,11 +151,6 @@ function burstHoneycombs(e) {
 	});
 }
 
-
-
-
-
-
 function getSVGPoint(e, svg) {
 	const p = svg.createSVGPoint();
 	p.x = e.clientX;
@@ -176,8 +159,7 @@ function getSVGPoint(e, svg) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-	
-	
+		
 	window.addEventListener('load', () => {
 		setTimeout(() => {
 			// Используем функцию
@@ -189,8 +171,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 		}, 200);
 	});
-
-	
 });
 
 // Слушаем курсор на ссылках в футере
@@ -201,11 +181,6 @@ legalItems.forEach(item => {
 		showLegalInfo(type);
 	});
 });
-
-
-
-
-
 
 mainLogo.addEventListener('mousemove', (e) => {
 	const point = getSVGPoint(e, mainLogo);
@@ -229,11 +204,6 @@ mainLogo.addEventListener('mousemove', (e) => {
 	}
 });
 
-
-
-
-
-
 mainLogo.addEventListener('mousedown', (e) => {
 	// Вызываем функцию
 	burstHoneycombs(e);
@@ -256,12 +226,6 @@ mainLogo.addEventListener('mousedown', (e) => {
 		overwrite: true
 	});
 });
-
-
-
-
-
-
 
 mainLogo.addEventListener('mouseleave', () => {
 	
