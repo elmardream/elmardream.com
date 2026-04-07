@@ -38,7 +38,7 @@ const legalData = {
 	link1: {
 		title: "Infolift-Gomel, LLC  |  Belarus",
 		text: "",
-		action: '<a href="https://infolift.by" target="_blank" class="active-link">www.infolift.by</a>'
+		action: '<a href="infolift/index.html" target="_blank" class="active-link">www.infolift.by</a>'
 	},
 	link2: {
 		title: "www.your-website-name.com",
