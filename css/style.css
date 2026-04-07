@@ -7,20 +7,35 @@
 
 html {
 	background-color: var(--color-space);
+	/* Фиксируем высоту по самому большому размеру экрана */
+	height: 100lvh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	/* Защита от "подтягивания" экрана при движении пальцем вниз */
+	overscroll-behavior: none;
+	/* Запрещаем системную прокрутку страницы */
+	overflow: hidden;
 }
 
 body {
+	/* Прибиваем body к углам экрана */
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100vw;
-	height: 100dvh;
+	height: 100lvh;
 	min-height: 100%;
 	margin: 0;
+	padding: 0;
+	/* Запрещаем системную прокрутку страницы */
 	overflow: hidden;
 	background-color: var(--color-space);
 	background: radial-gradient(circle at center, #1A0B2E 0%, var(--color-space) 100%);
 	position: relative;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-	/*  фон игнорирует границы и затекает под челку */
-	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	/* Защита от "подтягивания" экрана при движении пальцем вниз */
+	overscroll-behavior: none;
 }
 
 .scene-container {
@@ -124,7 +139,7 @@ body {
 
 .footer-contact {
 	position: fixed;
-	bottom: calc(10px + env(safe-area-inset-bottom));
+	bottom: 10px;
 	left: 50%;
 	transform: translateX(-50%);
 	transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -137,7 +152,6 @@ body {
 	color: var(--color-sun);
 	text-decoration: none;
 	font-size: 11px;
-	letter-spacing: 1px;
 	transition: color 0.3s ease;
 }
 
@@ -154,8 +168,8 @@ body {
 
 .separator {
 	color: var(--color-sun);
-	font-size: 11px;
-	margin: 0 8px;
+	font-size: 10px;
+	margin: 0 4px;
 }
 
 .legal-overlay {
@@ -226,4 +240,21 @@ body {
 
 .active-link:hover {
 	border-bottom-color: var(--color-leaf);
+}
+
+/* Убираем системную подсветку при нажатии на мобильных устройствах */
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Дополнительная защита для логотипа и иконок */
+.scene-container,
+.main-logo,
+.honeycomb-item,
+.legal-overlay {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	/* Запрещаем выделение элементов при долгом нажатии */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 }

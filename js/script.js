@@ -238,3 +238,17 @@ mainLogo.addEventListener('mouseleave', () => {
 		ease: "power2.inOut",
 	});
 });
+
+// Запрещаем "оттягивание" и скролл всей страницы при касании
+//document.addEventListener('touchmove', function(e) {
+//	if (e.target.closest('.scene-container')) {
+//		e.preventDefault();
+//	}
+//}, { passive: false });
+
+document.addEventListener('touchmove', function(e) {
+	// Блокируем движение для всего, кроме случаев, когда внутри оверлея нужно что-то прокрутить
+	if (!e.target.closest('.legal-overlay')) {
+		e.preventDefault();
+	}
+}, { passive: false });

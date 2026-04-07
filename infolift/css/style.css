@@ -1,3 +1,12 @@
+html {
+	margin: 0;
+	padding: 0;
+	/* Защита от "подтягивания" экрана при движении пальцем вниз */
+	overscroll-behavior: none;
+	/* Запрещаем системную прокрутку страницы */
+/*	overflow: hidden;*/
+}
+
 /* БАЗОВЫЕ НАСТРОЙКИ */
 body {
     margin: 0;
@@ -17,7 +26,8 @@ body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
-
+	/* Защита от "подтягивания" экрана при движении пальцем вниз */
+	overscroll-behavior: none;
 }
 
 /* Принудительно задаем шрифт для всех текстовых элементов в SVG */
@@ -295,7 +305,6 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     fill: #5d5d5d;
     opacity: 0;
     pointer-events: none;
-/*	transition: opacity 0.4s ease;*/
 	will-change: transform;
 }
 
@@ -818,4 +827,25 @@ p,
 .nav-mobile, .info-window-glass {
     background: rgba(15, 15, 15, 0.45); 
     }
+}
+
+/* Убираем системную подсветку при нажатии на мобильных устройствах */
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Дополнительная защита для логотипа и иконок */
+.wide-container,
+.content-section,
+.zoom-container,
+.district-path,
+.room-path,
+.dynamic-header,
+.menu-toggle
+{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	/* Запрещаем выделение элементов при долгом нажатии */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
