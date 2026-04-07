@@ -713,8 +713,8 @@ willChange: "transform",
     });
 
 // Запрещаем "оттягивание" и скролл всей страницы при касании
-document.addEventListener('touchmove', function(e) {
-	if (e.target.closest('.dynamic-header, .zoom-container, .zoom-sticky-wrapper, .map-layer')) {
-		e.preventDefault();
-	}
-}, { passive: false });
+//document.addEventListener('touchmove', function(e) {
+//	if (e.target.closest('.dynamic-header, .zoom-container, .zoom-sticky-wrapper, .map-layer')) {
+//		e.preventDefault();
+//	}
+//}, { passive: false });
