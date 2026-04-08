@@ -258,3 +258,37 @@ body {
 	-webkit-user-select: none;
 	user-select: none;
 }
+
+/* Настройки для узких экранов (телефоны) */
+@media (max-width: 600px) {
+	/* Первый ряд (3 иконки) */
+	.item-bottom-1 { left: -61%; top: 90%; }
+	.item-bottom-2 { left: -37%; top: 90%; }
+	.item-bottom-3 { left: -13%; top: 90%; }
+	/* Второй ряд (3 иконки) */
+/*	.item-bottom-4 { left: 11%; top: 120%; }*/
+/*	.item-bottom-5 { left: 35%; top: 120%; }*/
+/*	.item-bottom-6 { left: 59%; top: 120%; }*/
+	
+	/* Увеличиваем масштаб иконок, чтобы они были крупнее на телефоне */
+/*	.honeycomb-item {*/
+/*		width: 25vmin;*/
+	}
+}
+
+/*Ориентация (Portrait vs Landscape)*/
+@media (orientation: portrait) {
+	/* Крупнее, когда места по ширине мало */
+/*	.honeycomb-item { width: 30vmin; }*/
+}
+
+
+
+
+/*комбинация запросов*/
+/* Если это телефон (узкий экран) И он сенсорный */
+@media (max-width: 600px) and (pointer: coarse) {
+	/* Поднимаем логотип чуть выше */
+/*	.scene-container { top: 40%; }*/
+/*	.honeycomb-item { width: 25vmin; }*/
+}

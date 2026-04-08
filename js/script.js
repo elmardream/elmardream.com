@@ -158,6 +158,30 @@ function getSVGPoint(e, svg) {
 	return p.matrixTransform(svg.getScreenCTM().inverse());
 }
 
+// Функция, которая двигает фонарик
+function moveSpotlight(e) {
+	// Определяем координаты: либо от мыши (clientX), либо от первого касания (touches[0])
+	const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+	const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+	
+	// Передаем координаты в наш расчет точки SVG
+	const point = getSVGPoint({ clientX, clientY }, mainLogo);
+	
+	// Проявляем светлячков
+	gsap.to(allLights, {
+		opacity: 1,
+		duration: 0.6,
+		overwrite: "auto"
+	});
+	
+	// Двигаем круги вслед за пальцем/курсором
+	gsap.to(ripples, {
+		attr: { cx: point.x, cy: point.y, r: 500 },
+		opacity: 1,
+		duration: 1.2,
+	});
+}
+
 window.addEventListener('DOMContentLoaded', () => {
 		
 	window.addEventListener('load', () => {
@@ -182,49 +206,68 @@ legalItems.forEach(item => {
 	});
 });
 
-mainLogo.addEventListener('mousemove', (e) => {
-	const point = getSVGPoint(e, mainLogo);
-	
-	gsap.to(allLights, {
-		opacity: 1,
-		duration: 0.6,
-		overwrite: "auto"
-	});
-	
-	gsap.to(ripples, {
-		attr: { cx: point.x, cy: point.y, r: 500 },
-		opacity: 1,
-		duration: 1.2,
-	});
-	
+
+
+mainLogo.addEventListener('mousemove', moveSpotlight);
+mainLogo.addEventListener('touchmove', (e) => {
+	moveSpotlight(e);
+	// Это ВАЖНО: блокируем системный сдвиг экрана, пока палец на логотипе
+	if (e.cancelable) e.preventDefault();
 	// Показываем приветствие только ОДИН РАЗ при входе
 	if (!isWelcomeShowing) {
 		showLegalInfo('welcome');
 		isWelcomeShowing = true;
 	}
-});
+	
+}, { passive: false });
+
+// mainLogo.addEventListener('mousemove', (e) => {
+//	const point = getSVGPoint(e, mainLogo);
+	
+//	gsap.to(allLights, {
+//		opacity: 1,
+//		duration: 0.6,
+//		overwrite: "auto"
+//	});
+//	
+//	gsap.to(ripples, {
+//		attr: { cx: point.x, cy: point.y, r: 500 },
+//		opacity: 1,
+//		duration: 1.2,
+//	});
+	
+	
+//});
 
 mainLogo.addEventListener('mousedown', (e) => {
+	
+	// Проверяем: это устройство с мышкой (hover) или сенсорное?
+	const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+	
 	// Вызываем функцию
 	burstHoneycombs(e);
 	
-	// Рассчитываем точку для импульса
-	const point = getSVGPoint(e, mainLogo);
-	
-	// Анимируем импульс
-	gsap.killTweensOf(clickPulse);
-	gsap.set(clickPulse, {force3D: true,
-		attr: { cx: point.x, cy: point.y, r: 0 },
-		opacity: 1
-	});
-	
-	gsap.to(clickPulse, {
-		attr: { r: 800 },
-		opacity: 0,
-		duration: 1.5,
-		ease: "expo.out",
-		overwrite: true
-	});
+	// 3. УСЛОВИЕ ДЛЯ ВОЛНЫ: запускаем пульс только если это НЕ сенсорный экран
+	if (!isTouchDevice) {
+		
+		// Рассчитываем точку для импульса
+		const point = getSVGPoint(e, mainLogo);
+		
+		// Анимируем импульс
+		gsap.killTweensOf(clickPulse);
+		gsap.set(clickPulse, {force3D: true,
+			attr: { cx: point.x, cy: point.y, r: 0 },
+			opacity: 1
+		});
+		
+		gsap.to(clickPulse, {
+			attr: { r: 800 },
+			opacity: 0,
+			duration: 1.5,
+			ease: "expo.out",
+			overwrite: true
+		});
+	}
 });
 
 mainLogo.addEventListener('mouseleave', () => {
@@ -248,7 +291,7 @@ mainLogo.addEventListener('mouseleave', () => {
 
 document.addEventListener('touchmove', function(e) {
 	// Блокируем движение для всего, кроме случаев, когда внутри оверлея нужно что-то прокрутить
-	if (!e.target.closest('.legal-overlay')) {
-		e.preventDefault();
-	}
+//	if (!e.target.closest('.legal-overlay')) {
+//		e.preventDefault();
+//	}
 }, { passive: false });
