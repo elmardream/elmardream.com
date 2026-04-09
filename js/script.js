@@ -12,13 +12,12 @@ const rippleOrange = document.querySelector('.ripple-orange');
 const allLights = [rippleGreen, rippleOrange, ...solPaths];
 const ripples = [rippleGreen, rippleOrange];
 // --- Управление контентом ---
-//const legalContent = document.querySelectorAll('.legal-content');
-//const closeBtn = document.querySelector('.legal-close');
+const legalContent = document.querySelector('.legal-content');
 const legalItems = document.querySelectorAll('.legal-item');
-//const legalOverlay = document.getElementById('legal-overlay');
 const legalTitle = document.getElementById('legal-title');
 const legalText = document.getElementById('legal-text');
 const legalAction = document.getElementById('legal-action');
+const allInteractiveElements = [...honeycombs, ...legalItems];
 const legalData = {
 	welcome: {
 		title: "PERSONAL PORTFOLIO",
@@ -74,7 +73,6 @@ const legalData = {
 
 let isWelcomeShowing = false;
 
-
 // 2. Функция появления контента (Текст + Иконки)
 function revealApp() {
 	const tl = gsap.timeline();
@@ -95,13 +93,12 @@ function revealApp() {
 	}, "-=0.4"); // Начинаем чуть раньше завершения текста
 }
 
-
 function showLegalInfo(type, hideClose = false) {
 	const data = legalData[type];
 	if (!data) return;
 	
 	// 1. Убираем активность со всех элементов
-	document.querySelectorAll('.honeycomb-item, .legal-item').forEach(el => {
+	allInteractiveElements.forEach(el => {
 		el.classList.remove('is-active');
 	});
 	
@@ -124,13 +121,12 @@ function showLegalInfo(type, hideClose = false) {
 		overwrite: true
 	});
 	
-	// 5. Анимация появления текста (уже была у тебя, она отличная)
-	gsap.fromTo(".legal-content",
+	// 5. Анимация появления текста
+	gsap.fromTo(legalContent,
 				{ y: 20, opacity: 0 },
 				{ y: 0, opacity: 1, duration: 1.1, ease: "power2.out", overwrite: true }
 				);
 }
-
 
 function burstHoneycombs(e) {
 	// 1. АНИМАЦИЯ (Мышцы): Иконки будут "выстреливать" при каждом вызове функции
@@ -152,17 +148,18 @@ function burstHoneycombs(e) {
 				);
 	// 2. ИНИЦИАЛИЗАЦИЯ (Мозги): Вешаем слушатель только если его еще нет
 	honeycombs.forEach(item => {
-		if (!item.dataset.initialized) {
-			item.addEventListener('mouseenter', () => {
-				const infoKey = item.getAttribute('data-info');
-				if (infoKey) showLegalInfo(infoKey);
-			});
+		if (item.dataset.initialized) return; // Лаконичная проверка
+		
+		item.addEventListener('mouseenter', () => {
+			// Используем dataset вместо getAttribute — это быстрее в JS
+			const infoKey = item.dataset.info;
+			if (infoKey) showLegalInfo(infoKey);
+		});
 			// Ставим метку, что на эту иконку слушатель уже повешен
 			item.dataset.initialized = "true";
-		}
+		
 	});
 }
-
 
 function getSVGPoint(e, svg) {
 	const p = svg.createSVGPoint();
@@ -184,6 +181,10 @@ function moveSpotlight(e) {
 	if (!isWelcomeShowing) {
 		showLegalInfo('welcome', true);
 		isWelcomeShowing = true;
+		
+		// Используем готовую константу для очистки футера
+		legalItems.forEach(el => el.classList.remove('is-active'));
+	
 	}
 	
 	// Проявляем светлячков
@@ -200,8 +201,6 @@ function moveSpotlight(e) {
 		duration: 1.2,
 	});
 }
-
-
 
 // 1. Запуск при старте
 window.addEventListener('load', () => {
@@ -267,126 +266,9 @@ legalItems.forEach(item => {
 
 // 6. Блокировка системного скролла (Мобилки)
 document.addEventListener('touchmove', (e) => {
+	const isInsideText = sectionText.contains(e.target);
 	// Разрешаем скролл ТОЛЬКО внутри текстового этажа
-	if (!e.target.closest('.section-text')) {
+	if (!isInsideText) {
 		if (e.cancelable) e.preventDefault();
 	}
 }, { passive: false });
-//
-//
-//
-//
-//
-//window.addEventListener('DOMContentLoaded', () => {
-//		
-//	window.addEventListener('load', () => {
-//		setTimeout(() => {
-			// Используем функцию
-//			showLegalInfo('welcome');
-			// иконки еще не появились - передаем "фейковое" событие с координатами центра экрана
-//			burstHoneycombs({
-//				clientX: window.innerWidth / 2,
-//				clientY: window.innerHeight / 2
-//			});
-//		}, 200);
-//	});
-//});
-
-// Слушаем курсор на ссылках в футере
-//legalItems.forEach(item => {
-//	item.addEventListener('mouseenter', (e) => {
-//		const type = item.getAttribute('href').replace('#', '');
-		// вызываем функцию
-//		showLegalInfo(type);
-//	});
-//});
-//
-//
-//
-//mainLogo.addEventListener('mousemove', moveSpotlight);
-//mainLogo.addEventListener('touchmove', (e) => {
-//	moveSpotlight(e);
-	// Это ВАЖНО: блокируем системный сдвиг экрана, пока палец на логотипе
-//	if (e.cancelable) e.preventDefault();
-	// Показываем приветствие только ОДИН РАЗ при входе
-//	if (!isWelcomeShowing) {
-//		showLegalInfo('welcome');
-//		isWelcomeShowing = true;
-//	}
-//	
-//}, { passive: false });
-
-// mainLogo.addEventListener('mousemove', (e) => {
-//	const point = getSVGPoint(e, mainLogo);
-	
-//	gsap.to(allLights, {
-//		opacity: 1,
-//		duration: 0.6,
-//		overwrite: "auto"
-//	});
-//	
-//	gsap.to(ripples, {
-//		attr: { cx: point.x, cy: point.y, r: 500 },
-//		opacity: 1,
-//		duration: 1.2,
-//	});
-	
-	
-//});
-
-//mainLogo.addEventListener('mousedown', (e) => {
-	
-	// Проверяем: это устройство с мышкой (hover) или сенсорное?
-//	const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-//	
-	// Вызываем функцию
-//	burstHoneycombs(e);
-	
-	// 3. УСЛОВИЕ ДЛЯ ВОЛНЫ: запускаем пульс только если это НЕ сенсорный экран
-//	if (!isTouchDevice) {
-		
-		// Рассчитываем точку для импульса
-//		const point = getSVGPoint(e, mainLogo);
-		
-		// Анимируем импульс
-//		gsap.killTweensOf(clickPulse);
-//		gsap.set(clickPulse, {force3D: true,
-//			attr: { cx: point.x, cy: point.y, r: 0 },
-//			opacity: 1
-//		});
-//		
-//		gsap.to(clickPulse, {
-//			attr: { r: 800 },
-//			opacity: 0,
-//			duration: 1.5,
-//			ease: "expo.out",
-//			overwrite: true
-//		});
-//	}
-//});
-//
-//mainLogo.addEventListener('mouseleave', () => {
-//	
-//	isWelcomeShowing = false;
-//	
-//	gsap.to(allLights, {
-//		opacity: 0,
-//		duration: 1.7,
-//		delay: 0.9,
-//		ease: "power2.inOut",
-//	});
-//});
-
-// Запрещаем "оттягивание" и скролл всей страницы при касании
-//document.addEventListener('touchmove', function(e) {
-//	if (e.target.closest('.scene-container')) {
-//		e.preventDefault();
-//	}
-//}, { passive: false });
-
-//document.addEventListener('touchmove', function(e) {
-	// Блокируем движение для всего, кроме случаев, когда внутри оверлея нужно что-то прокрутить
-//	if (!e.target.closest('.legal-overlay')) {
-//		e.preventDefault();
-//	}
-//}, { passive: false });

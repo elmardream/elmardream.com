@@ -31,8 +31,6 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 	/* защита от "подтягивания" экрана при движении пальцем вниз */
 	overscroll-behavior: none;
-	/* защита от вспышек на iOS */
-	-webkit-tap-highlight-color: transparent;
 }
 
 
@@ -58,9 +56,8 @@ body {
 	/* Логотип стоит "ногами" на полу */
 	align-items: flex-end;
 	justify-content: center;
-	/* Небольшой зазор между лого и текстом */
+	/* зазор между лого и текстом */
 	padding-bottom: 2vh;
-/*	position: relative;*/
 }
 
 /* оверлей с текстом*/
@@ -87,19 +84,17 @@ body {
 }
 
 .main-logo {
-	/* 1. Позиционирование в первом этаже (section-logo) */
+	/*  Позиционирование в первом этаже (section-logo) */
 	width: 85vmin;
 	max-width: 600px;
 	/* Занимает 3/4 высоты своего этажа */
 	height: 75%;
 	object-fit: contain;
-	
-	/* 2. Технические фиксы для Chrome и Safari */
+	/* Технические фиксы для Chrome и Safari */
 	overflow: hidden;
 	backface-visibility: hidden;
 	transform: translateZ(0);
 	outline: 1px solid transparent;
-	
 	/* Убеждаемся, что логотип стоит на "полу" этажа */
 	display: block;
 	margin-top: auto;
@@ -121,13 +116,11 @@ body {
 	stroke: var(--color-sun);
 }
 
-/* Скрытые элементы для будущей анимации появления */
 .solutions-letters path {
 	opacity: 0;
 	fill: #FE9800;
 }
 
-/* Эффекты свечения и круги */
 .ripple-green, .ripple-orange, .click-pulse {
 	opacity: 0;
 	pointer-events: none;
@@ -135,7 +128,6 @@ body {
 
 .legal-content {
 	transform: translateY(-10%);
-/*	max-width: 85%;*/
 	/* Защита: не дает тексту выйти за пределы этажа */
 	max-height: 90%;
 	/* Позволяет скроллить текст внутри, если его много */
@@ -163,14 +155,12 @@ body {
 	will-change: transform, opacity;
 }
 
-/* Интерактивные ссылки и почта */
 .active-email, .active-link {
 	color: var(--color-leaf);
 	text-decoration: none;
 	border-bottom: 1px solid var(--color-sun);
 	padding-bottom: 2px;
 	transition: all 0.3s ease;
-	/* разрешает клики по самой ссылке */
 	pointer-events: auto;
 	font-weight: 300;
 	font-size: 3vmin;
@@ -286,6 +276,7 @@ body {
 /* Убираем системную подсветку при нажатии на мобильных устройствах */
 * {
 	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
 }
 
 /* Дополнительная защита для логотипа и иконок */
@@ -300,27 +291,19 @@ body {
 }
 
 /* Настройки для узких экранов (телефоны) */
-/*@media (max-width: 600px) {*/
-	/* Первый ряд (3 иконки) */
-/*	.item-bottom-1 { left: -61%; top: 90%; }*/
-/*	.item-bottom-2 { left: -37%; top: 90%; }*/
-/*	.item-bottom-3 { left: -13%; top: 90%; }*/
-	/* Второй ряд (3 иконки) */
-/*	.item-bottom-4 { left: 11%; top: 120%; }*/
-/*	.item-bottom-5 { left: 35%; top: 120%; }*/
-/*	.item-bottom-6 { left: 59%; top: 120%; }*/
-	
+@media (max-width: 600px) {
 	/* Увеличиваем масштаб иконок, чтобы они были крупнее на телефоне */
-/*	.honeycomb-item {*/
-/*		width: 25vmin;*/
-/*	}*/
-/*}*/
-
-/*Ориентация (Portrait vs Landscape)*/
-/*@media (orientation: portrait) {*/
-	/* Крупнее, когда места по ширине мало */
-/*	.honeycomb-item { width: 30vmin; }*/
-/*}*/
+	.honeycomb-item {
+		width: 20vmin;
+	}
+	.honeycomb-wrapper {
+		/* Ограничиваем ширину */
+		max-width: 70%;
+	}
+	.legal-content h3 {
+		margin-top: 20px;
+	}
+}
 
 /*комбинация запросов*/
 /* Если это телефон (узкий экран) И он сенсорный */
