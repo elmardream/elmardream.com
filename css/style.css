@@ -12,14 +12,10 @@ html {
 	width: 100vw;
 	margin: 0;
 	padding: 0;
-	/* Защита от "подтягивания" экрана при движении пальцем вниз */
-	overscroll-behavior: none;
-	/* Запрещаем системную прокрутку страницы */
-	overflow: hidden;
 }
 
 body {
-	/* Прибиваем body к углам экрана */
+	/* прибиваем body к углам экрана */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -28,42 +24,92 @@ body {
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	/* Запрещаем системную прокрутку страницы */
+	/* запрещаем системную прокрутку страницы */
 	overflow: hidden;
 	background-color: var(--color-space);
 	background: radial-gradient(circle at center, #1A0B2E 0%, var(--color-space) 100%);
-	position: relative;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-	/* Защита от "подтягивания" экрана при движении пальцем вниз */
+	/* защита от "подтягивания" экрана при движении пальцем вниз */
 	overscroll-behavior: none;
+	/* защита от вспышек на iOS */
+	-webkit-tap-highlight-color: transparent;
 }
 
-.scene-container {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -130%);
-	width: 60vmin;
-	max-width: 700px;
-	max-height: 30vh;
-	pointer-events: all;
-	cursor: pointer;
+
+/*  Фундамент */
+.main-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: calc(100lvh - 46px); /* Вычитаем футер */
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/*  Логотип  */
+.section-logo {
+	/* Это эквивалент 50% в данной пропорции (2/4) */
+	flex: 2;
+	display: flex;
+	/* Логотип стоит "ногами" на полу */
+	align-items: flex-end;
+	justify-content: center;
+	/* Небольшой зазор между лого и текстом */
+	padding-bottom: 2vh;
+/*	position: relative;*/
+}
+
+/* оверлей с текстом*/
+.section-text {
+	/* Занимает 25% высоты рабочего пространства */
+	flex: 1;
+	display: flex;
+	/* Центровка по горизонтали */
+	justify-content: center;
+	text-align: center;
+	/* Клики проходят насквозь, пока не активированы ссылки */
+	pointer-events: none;
+	transition: opacity 0.6s ease;
+	will-change: opacity;
+}
+
+/*  Иконки  */
+.section-icons {
+	/* Это еще 25% (1/4) */
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .main-logo {
-	/* обрезаем утечки пикселей */
+	/* 1. Позиционирование в первом этаже (section-logo) */
+	width: 85vmin;
+	max-width: 600px;
+	/* Занимает 3/4 высоты своего этажа */
+	height: 75%;
+	object-fit: contain;
+	
+	/* 2. Технические фиксы для Chrome и Safari */
 	overflow: hidden;
-	/* устраняем микро-дрожание при отрисовке */
 	backface-visibility: hidden;
 	transform: translateZ(0);
-	/* создаем невидимую границу, которая заставляет Chrome пересчитать сглаживание */
 	outline: 1px solid transparent;
-/*	так же в html добавлен атрибут в маске <mask id="sun-mask" maskUnits="userSpaceOnUse"> что бы избежать утечки заливки svg*/
+	
+	/* Убеждаемся, что логотип стоит на "полу" этажа */
+	display: block;
+	margin-top: auto;
 }
 
+/* Элементы внутри SVG */
 .letter-path, .sun-path {
 	fill: none;
 	stroke-width: 4px;
+	/* Чтобы клик "пролетал" сквозь контуры к кнопкам, если надо */
 	pointer-events: none;
 }
 
@@ -75,67 +121,132 @@ body {
 	stroke: var(--color-sun);
 }
 
+/* Скрытые элементы для будущей анимации появления */
 .solutions-letters path {
 	opacity: 0;
 	fill: #FE9800;
 }
 
+/* Эффекты свечения и круги */
 .ripple-green, .ripple-orange, .click-pulse {
 	opacity: 0;
 	pointer-events: none;
 }
 
-.honeycomb-wrapper {
-	position: relative;
-	top: 100%;
-	left: 100%;
-	transform: translate(-50%, -60%);
-	aspect-ratio: 1300 / 700;
-	pointer-events: none;
+.legal-content {
+	transform: translateY(-10%);
+/*	max-width: 85%;*/
+	/* Защита: не дает тексту выйти за пределы этажа */
+	max-height: 90%;
+	/* Позволяет скроллить текст внутри, если его много */
+	overflow-y: auto;
+	margin: 0;
+	will-change: transform, opacity;
+}
+
+.legal-content h3 {
+	color: var(--color-sun);
+	letter-spacing: 2px;
+	font-weight: 300;
+	font-size: 3vmin;
+	margin: 0;
+	will-change: transform, opacity;
+}
+
+.legal-content p {
+	color: var(--color-leaf);
+	line-height: 1.3;
+	letter-spacing: 1px;
+	font-weight: 200;
+	font-size: 2.5vmin;
+	margin: 0;
+	will-change: transform, opacity;
+}
+
+/* Интерактивные ссылки и почта */
+.active-email, .active-link {
+	color: var(--color-leaf);
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-sun);
+	padding-bottom: 2px;
+	transition: all 0.3s ease;
+	/* разрешает клики по самой ссылке */
+	pointer-events: auto;
+	font-weight: 300;
+	font-size: 3vmin;
 	will-change: transform;
 }
 
+.active-email:hover, .active-link:hover {
+	border-bottom-color: var(--color-leaf);
+}
+
+/*  Контейнер иконок (Honeycombs) */
+.honeycomb-wrapper {
+	display: flex;
+	/* Авто-перенос на второй ряд на мобилках! */
+	flex-wrap: wrap;
+	justify-content: center;
+	/* Расстояние между сотами */
+	gap: 10px;
+	width: 100%;
+	/* Чтобы иконки не расползались слишком широко */
+	max-width: 900px;
+	margin: 0;
+}
+
+/*  Сами иконки */
 .honeycomb-item {
-	position: absolute;
-	will-change: transform, opacity;
-	backface-visibility: hidden;
-	-webkit-font-smoothing: subpixel-antialiased;
-	width: 20%;
-	height: auto;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%) translateZ(0) scale(0);
+	position: relative;
+	/* Адаптивный размер */
+	width: 15vmin;
+	max-width: 100px;
+/*	aspect-ratio: 116 / 128;*/
+	/* Скрыты до клика по солнцу */
 	opacity: 0;
-	pointer-events: auto;
-	padding-top: 0;
+	/* Уменьшены для эффекта появления */
+	transform: scale(0.5);
+}
+
+/*  Интерактив и оформление сот */
+.honey-svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+	will-change: transform, opacity;
 }
 
 .hex-border {
-	transition: stroke 0.2s ease-in-out;
+	transition: stroke 0.3s ease-in-out;
+	/* Гарантируем, что обводка видна */
+	stroke-dasharray: 0;
 }
 
+/* Эффекты при наведении и активации */
 .honeycomb-item:hover .hex-border,
 .honeycomb-item.is-active .hex-border {
 	stroke: var(--color-leaf);
-	transition: stroke 0.4s ease;
 }
 
-.honeycomb-item.is-active {
+.honeycomb-item:hover {
+	transform: scale(1.05) !important;
+	transition: transform 0.3s ease;
+}
+
+/* Управление кликабельностью */
+.honeycomb-item {
+	/* Позволяет нажимать на иконки */
 	pointer-events: auto;
+	cursor: pointer;
+	text-decoration: none;
 }
 
-.honey-svg, .honeycomb-item img {
+/* Если внутри есть картинка, заставляем её вписаться в маску */
+.honeycomb-item image {
 	width: 100%;
 	height: 100%;
-	will-change: transform;
+	object-fit: cover;
 }
-
-.item-bottom-1 { left: -61%; top: 90%; }
-.item-bottom-2 { left: -37%; top: 90%; }
-.item-bottom-3 { left: -13%; top: 90%; }
-.item-bottom-4 { left: 11%; top: 90%; }
-.item-bottom-5 { left: 35%; top: 90%; }
-.item-bottom-6 { left: 59%; top: 90%; }
 
 .footer-contact {
 	position: fixed;
@@ -172,76 +283,6 @@ body {
 	margin: 0 4px;
 }
 
-.legal-overlay {
-	position: relative;
-	width: 150%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -25%);
-	text-align: center;
-	pointer-events: none;
-	transition: opacity 0.6s ease;
-	cursor: pointer;
-	padding-top: 10px;
-	padding-bottom: 130px;
-	will-change: transform, opacity;
-}
-
-.legal-overlay.is-visible {
-	opacity: 1;
-}
-
-.legal-content h3 {
-	color: var(--color-sun);
-	letter-spacing: 2px;
-	font-weight: 300;
-	font-size: 3vmin;
-	margin: 0px 0px;
-	will-change: transform, opacity;
-}
-
-.legal-content p {
-	color: var(--color-leaf);
-	line-height: 1.3;
-	letter-spacing: 1px;
-	font-weight: 200;
-	font-size: 2.5vmin;
-	will-change: transform, opacity;
-	margin: 5px 0px;
-}
-
-.active-email {
-	color: var(--color-leaf);
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-sun);
-	padding-bottom: 2px;
-	transition: all 0.3s ease;
-	pointer-events: auto;
-	font-weight: 300;
-	font-size: 3vmin;
-	will-change: transform;
-}
-
-.active-email:hover {
-	border-bottom-color: var(--color-leaf);
-}
-
-.active-link {
-	color: var(--color-leaf);
-	text-decoration: none;
-	border-bottom: 1px solid var(--color-sun);
-	padding-bottom: 2px;
-	transition: all 0.3s ease;
-	pointer-events: auto;
-	font-weight: 300;
-	font-size: 3vmin;
-	will-change: transform;
-}
-
-.active-link:hover {
-	border-bottom-color: var(--color-leaf);
-}
-
 /* Убираем системную подсветку при нажатии на мобильных устройствах */
 * {
 	-webkit-tap-highlight-color: transparent;
@@ -250,8 +291,7 @@ body {
 /* Дополнительная защита для логотипа и иконок */
 .scene-container,
 .main-logo,
-.honeycomb-item,
-.legal-overlay {
+.honeycomb-item {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	/* Запрещаем выделение элементов при долгом нажатии */
 	-webkit-touch-callout: none;
@@ -260,11 +300,11 @@ body {
 }
 
 /* Настройки для узких экранов (телефоны) */
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {*/
 	/* Первый ряд (3 иконки) */
-	.item-bottom-1 { left: -61%; top: 90%; }
-	.item-bottom-2 { left: -37%; top: 90%; }
-	.item-bottom-3 { left: -13%; top: 90%; }
+/*	.item-bottom-1 { left: -61%; top: 90%; }*/
+/*	.item-bottom-2 { left: -37%; top: 90%; }*/
+/*	.item-bottom-3 { left: -13%; top: 90%; }*/
 	/* Второй ряд (3 иконки) */
 /*	.item-bottom-4 { left: 11%; top: 120%; }*/
 /*	.item-bottom-5 { left: 35%; top: 120%; }*/
@@ -273,22 +313,19 @@ body {
 	/* Увеличиваем масштаб иконок, чтобы они были крупнее на телефоне */
 /*	.honeycomb-item {*/
 /*		width: 25vmin;*/
-	}
-}
+/*	}*/
+/*}*/
 
 /*Ориентация (Portrait vs Landscape)*/
-@media (orientation: portrait) {
+/*@media (orientation: portrait) {*/
 	/* Крупнее, когда места по ширине мало */
 /*	.honeycomb-item { width: 30vmin; }*/
-}
-
-
-
+/*}*/
 
 /*комбинация запросов*/
 /* Если это телефон (узкий экран) И он сенсорный */
-@media (max-width: 600px) and (pointer: coarse) {
+/*@media (max-width: 600px) and (pointer: coarse) {*/
 	/* Поднимаем логотип чуть выше */
 /*	.scene-container { top: 40%; }*/
 /*	.honeycomb-item { width: 25vmin; }*/
-}
+/*}*/

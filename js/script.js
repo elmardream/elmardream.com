@@ -1,15 +1,21 @@
+// --- Элементы структуры ---
+const sectionLogo = document.querySelector('.section-logo');
 const mainLogo = document.querySelector('.main-logo');
+const sectionText = document.querySelector('.section-text');
+const sectionIcons = document.querySelector('.section-icons');
+const honeycombs = document.querySelectorAll('.honeycomb-item');
+// --- Элементы логотипа (Фонарик и Пульс) ---
 const clickPulse = document.querySelectorAll('.click-pulse');
 const solPaths = document.querySelectorAll('#sol path');
 const rippleGreen = document.querySelector('.ripple-green');
 const rippleOrange = document.querySelector('.ripple-orange');
 const allLights = [rippleGreen, rippleOrange, ...solPaths];
 const ripples = [rippleGreen, rippleOrange];
-const honeycombs = document.querySelectorAll('.honeycomb-item');
-const legalContent = document.querySelectorAll('.legal-content');
-const closeBtn = document.querySelector('.legal-close');
+// --- Управление контентом ---
+//const legalContent = document.querySelectorAll('.legal-content');
+//const closeBtn = document.querySelector('.legal-close');
 const legalItems = document.querySelectorAll('.legal-item');
-const legalOverlay = document.getElementById('legal-overlay');
+//const legalOverlay = document.getElementById('legal-overlay');
 const legalTitle = document.getElementById('legal-title');
 const legalText = document.getElementById('legal-text');
 const legalAction = document.getElementById('legal-action');
@@ -68,88 +74,95 @@ const legalData = {
 
 let isWelcomeShowing = false;
 
+
+// 2. Функция появления контента (Текст + Иконки)
+function revealApp() {
+	const tl = gsap.timeline();
+	
+	tl.to(sectionText, {
+		opacity: 1,
+		duration: 0.8,
+		ease: "power2.out"
+	})
+	.to(honeycombs, {
+		opacity: 1,
+		scale: 1,
+		y: 0, // Убираем сдвиг, если он был в CSS
+		stagger: 0.1, // Появляются по очереди
+		duration: 0.6,
+		ease: "back.out(1.7)",
+		pointerEvents: "auto"
+	}, "-=0.4"); // Начинаем чуть раньше завершения текста
+}
+
+
 function showLegalInfo(type, hideClose = false) {
 	const data = legalData[type];
 	if (!data) return;
 	
-	// Гасим ВСЕ активные элементы на странице
+	// 1. Убираем активность со всех элементов
 	document.querySelectorAll('.honeycomb-item, .legal-item').forEach(el => {
 		el.classList.remove('is-active');
 	});
 	
-	// Обновляем текст в оверлее
+	// 2. Подставляем текст в наш "Средний этаж"
 	legalTitle.innerText = data.title;
 	legalText.innerText = data.text;
 	legalAction.innerHTML = data.action || "";
 	
-	// Сброс активных классов
-	honeycombs.forEach(el => el.classList.remove('is-active'));
-
-	// АКТИВАЦИЯ
-	// Ищем элемент, у которого либо data-info равно нашему типу,
-	// либо href ведет на этот тип (для футера)
+	// 3. Подсвечиваем активную иконку или ссылку в футере
 	const activeEl = document.querySelector(`[data-info="${type}"], [href="#${type}"]`);
-	
 	if (activeEl) {
 		activeEl.classList.add('is-active');
 	}
 	
-	// ПРОВЕРКА КНОПКИ
-	if (closeBtn) {
-		closeBtn.style.display = hideClose ? 'none' : 'block';
-	}
+	// 4. ГЛАВНОЕ: Показываем наш этаж (используем sectionText вместо legalOverlay)
+	gsap.to(sectionText, {
+		opacity: 1,
+		duration: 0.6,
+		pointerEvents: "auto",
+		overwrite: true
+	});
 	
-	legalOverlay.classList.add('is-visible');
-	
-	// АНИМАЦИЯ: Мягкое появление текста
+	// 5. Анимация появления текста (уже была у тебя, она отличная)
 	gsap.fromTo(".legal-content",
-				{ force3D: true, willChange: "transform", y: 20, opacity: 0 },
+				{ y: 20, opacity: 0 },
 				{ y: 0, opacity: 1, duration: 1.1, ease: "power2.out", overwrite: true }
 				);
 }
 
+
 function burstHoneycombs(e) {
-	const rect = mainLogo.getBoundingClientRect();
-	
-	// Расчет точки клика относительно центра логотипа
-	const clickX = ((e.clientX - (rect.left + rect.width / 2)) / rect.width) * 100;
-	const clickY = ((e.clientY - (rect.top + rect.height / 2)) / rect.height) * 100;
-									  
-	honeycombs.forEach(item => {
-		const style = window.getComputedStyle(item);
-		const itemX = parseFloat(style.left) || 0;
-		const itemY = parseFloat(style.top) || 0;
-		
-		const distance = Math.sqrt(
-			Math.pow(clickX - itemX, 2) + Math.pow(clickY - itemY, 2)
-								   );
-		const delay = distance * 0.001;
-		
-		// При наведении — показываем инфо в оверлее
-		item.addEventListener('mouseenter', () => {
-		const infoKey = item.getAttribute('data-info');
-			if (infoKey) {
-				showLegalInfo(infoKey);
-			}
-		});
-		
-		// Запуск анимации
-		gsap.fromTo(item, {force3D: true, willChange: "transform",
-			opacity: 0,
-			scale: 0,
+	// 1. АНИМАЦИЯ (Мышцы): Иконки будут "выстреливать" при каждом вызове функции
+
+	gsap.fromTo(honeycombs,
+				{ opacity: 0, scale: 0 },
+				{
+		opacity: 1,
+		scale: 1,
+		duration: 0.5,
+		// Иконки начнут появляться из центра ряда и расходиться к краям
+		stagger: {
+			each: 0.05,
+			from: "center"
 		},
-					{
-			opacity: 1,
-			scale: 1,
-			duration: 0.5,
-			delay: delay,
-			ease: "back.out(1.7)",
-			clearProps: "will-change",
-			overwrite: true
+		ease: "back.out(2)",
+		overwrite: true
+	}
+				);
+	// 2. ИНИЦИАЛИЗАЦИЯ (Мозги): Вешаем слушатель только если его еще нет
+	honeycombs.forEach(item => {
+		if (!item.dataset.initialized) {
+			item.addEventListener('mouseenter', () => {
+				const infoKey = item.getAttribute('data-info');
+				if (infoKey) showLegalInfo(infoKey);
+			});
+			// Ставим метку, что на эту иконку слушатель уже повешен
+			item.dataset.initialized = "true";
 		}
-					);
 	});
 }
+
 
 function getSVGPoint(e, svg) {
 	const p = svg.createSVGPoint();
@@ -167,6 +180,12 @@ function moveSpotlight(e) {
 	// Передаем координаты в наш расчет точки SVG
 	const point = getSVGPoint({ clientX, clientY }, mainLogo);
 	
+	// Показываем приветствие
+	if (!isWelcomeShowing) {
+		showLegalInfo('welcome', true);
+		isWelcomeShowing = true;
+	}
+	
 	// Проявляем светлячков
 	gsap.to(allLights, {
 		opacity: 1,
@@ -182,44 +201,120 @@ function moveSpotlight(e) {
 	});
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-		
-	window.addEventListener('load', () => {
-		setTimeout(() => {
-			// Используем функцию
-			showLegalInfo('welcome');
-			// иконки еще не появились - передаем "фейковое" событие с координатами центра экрана
-			burstHoneycombs({
-				clientX: window.innerWidth / 2,
-				clientY: window.innerHeight / 2
-			});
-		}, 200);
+
+
+// 1. Запуск при старте
+window.addEventListener('load', () => {
+	// Небольшая пауза, чтобы градиент фона успел проявиться
+	setTimeout(() => {
+		showLegalInfo('welcome', true);
+		// Запускаем иконки из центра экрана
+		burstHoneycombs({
+			clientX: window.innerWidth / 2,
+			clientY: window.innerHeight / 2
+		});
+	}, 500);
+});
+
+// 2. Интерактив логотипа (Мышь и Тач)
+mainLogo.addEventListener('mousemove', moveSpotlight);
+
+mainLogo.addEventListener('touchmove', (e) => {
+	moveSpotlight(e);
+	if (e.cancelable) e.preventDefault();
+}, { passive: false });
+
+// 3. Клик / Нажатие (Взрыв и Волна)
+mainLogo.addEventListener('mousedown', (e) => {
+	const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+	
+	// Всегда запускаем взрыв иконок (твой эффект прыжка)
+	burstHoneycombs(e);
+	
+	// Оранжевая волна только для десктопа
+	if (!isTouchDevice) {
+		const point = getSVGPoint(e, mainLogo);
+		gsap.killTweensOf(clickPulse);
+		gsap.set(clickPulse, { attr: { cx: point.x, cy: point.y, r: 0 }, opacity: 1 });
+		gsap.to(clickPulse, {
+			attr: { r: 800 },
+			opacity: 0,
+			duration: 1.5,
+			ease: "expo.out"
+		});
+	}
+});
+
+// 4. Уход мыши (Гасим свет)
+mainLogo.addEventListener('mouseleave', () => {
+	isWelcomeShowing = false; // СБРОС ФЛАГА
+	
+	gsap.to(allLights, {
+		opacity: 0,
+		duration: 1.7,
+		delay: 0.5,
+		ease: "power2.inOut"
 	});
 });
 
-// Слушаем курсор на ссылках в футере
+// 5. Навигация в футере (Ссылки)
 legalItems.forEach(item => {
-	item.addEventListener('mouseenter', (e) => {
+	item.addEventListener('mouseenter', () => {
 		const type = item.getAttribute('href').replace('#', '');
-		// вызываем функцию
 		showLegalInfo(type);
 	});
 });
 
-
-
-mainLogo.addEventListener('mousemove', moveSpotlight);
-mainLogo.addEventListener('touchmove', (e) => {
-	moveSpotlight(e);
-	// Это ВАЖНО: блокируем системный сдвиг экрана, пока палец на логотипе
-	if (e.cancelable) e.preventDefault();
-	// Показываем приветствие только ОДИН РАЗ при входе
-	if (!isWelcomeShowing) {
-		showLegalInfo('welcome');
-		isWelcomeShowing = true;
+// 6. Блокировка системного скролла (Мобилки)
+document.addEventListener('touchmove', (e) => {
+	// Разрешаем скролл ТОЛЬКО внутри текстового этажа
+	if (!e.target.closest('.section-text')) {
+		if (e.cancelable) e.preventDefault();
 	}
-	
 }, { passive: false });
+//
+//
+//
+//
+//
+//window.addEventListener('DOMContentLoaded', () => {
+//		
+//	window.addEventListener('load', () => {
+//		setTimeout(() => {
+			// Используем функцию
+//			showLegalInfo('welcome');
+			// иконки еще не появились - передаем "фейковое" событие с координатами центра экрана
+//			burstHoneycombs({
+//				clientX: window.innerWidth / 2,
+//				clientY: window.innerHeight / 2
+//			});
+//		}, 200);
+//	});
+//});
+
+// Слушаем курсор на ссылках в футере
+//legalItems.forEach(item => {
+//	item.addEventListener('mouseenter', (e) => {
+//		const type = item.getAttribute('href').replace('#', '');
+		// вызываем функцию
+//		showLegalInfo(type);
+//	});
+//});
+//
+//
+//
+//mainLogo.addEventListener('mousemove', moveSpotlight);
+//mainLogo.addEventListener('touchmove', (e) => {
+//	moveSpotlight(e);
+	// Это ВАЖНО: блокируем системный сдвиг экрана, пока палец на логотипе
+//	if (e.cancelable) e.preventDefault();
+	// Показываем приветствие только ОДИН РАЗ при входе
+//	if (!isWelcomeShowing) {
+//		showLegalInfo('welcome');
+//		isWelcomeShowing = true;
+//	}
+//	
+//}, { passive: false });
 
 // mainLogo.addEventListener('mousemove', (e) => {
 //	const point = getSVGPoint(e, mainLogo);
@@ -239,48 +334,48 @@ mainLogo.addEventListener('touchmove', (e) => {
 	
 //});
 
-mainLogo.addEventListener('mousedown', (e) => {
+//mainLogo.addEventListener('mousedown', (e) => {
 	
 	// Проверяем: это устройство с мышкой (hover) или сенсорное?
-	const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-	
+//	const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+//	
 	// Вызываем функцию
-	burstHoneycombs(e);
+//	burstHoneycombs(e);
 	
 	// 3. УСЛОВИЕ ДЛЯ ВОЛНЫ: запускаем пульс только если это НЕ сенсорный экран
-	if (!isTouchDevice) {
+//	if (!isTouchDevice) {
 		
 		// Рассчитываем точку для импульса
-		const point = getSVGPoint(e, mainLogo);
+//		const point = getSVGPoint(e, mainLogo);
 		
 		// Анимируем импульс
-		gsap.killTweensOf(clickPulse);
-		gsap.set(clickPulse, {force3D: true,
-			attr: { cx: point.x, cy: point.y, r: 0 },
-			opacity: 1
-		});
-		
-		gsap.to(clickPulse, {
-			attr: { r: 800 },
-			opacity: 0,
-			duration: 1.5,
-			ease: "expo.out",
-			overwrite: true
-		});
-	}
-});
-
-mainLogo.addEventListener('mouseleave', () => {
-	
-	isWelcomeShowing = false;
-	
-	gsap.to(allLights, {
-		opacity: 0,
-		duration: 1.7,
-		delay: 0.9,
-		ease: "power2.inOut",
-	});
-});
+//		gsap.killTweensOf(clickPulse);
+//		gsap.set(clickPulse, {force3D: true,
+//			attr: { cx: point.x, cy: point.y, r: 0 },
+//			opacity: 1
+//		});
+//		
+//		gsap.to(clickPulse, {
+//			attr: { r: 800 },
+//			opacity: 0,
+//			duration: 1.5,
+//			ease: "expo.out",
+//			overwrite: true
+//		});
+//	}
+//});
+//
+//mainLogo.addEventListener('mouseleave', () => {
+//	
+//	isWelcomeShowing = false;
+//	
+//	gsap.to(allLights, {
+//		opacity: 0,
+//		duration: 1.7,
+//		delay: 0.9,
+//		ease: "power2.inOut",
+//	});
+//});
 
 // Запрещаем "оттягивание" и скролл всей страницы при касании
 //document.addEventListener('touchmove', function(e) {
@@ -289,9 +384,9 @@ mainLogo.addEventListener('mouseleave', () => {
 //	}
 //}, { passive: false });
 
-document.addEventListener('touchmove', function(e) {
+//document.addEventListener('touchmove', function(e) {
 	// Блокируем движение для всего, кроме случаев, когда внутри оверлея нужно что-то прокрутить
 //	if (!e.target.closest('.legal-overlay')) {
 //		e.preventDefault();
 //	}
-}, { passive: false });
+//}, { passive: false });
