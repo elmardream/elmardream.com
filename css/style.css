@@ -307,12 +307,9 @@ body {
 		max-width: 70%;
 		margin-top: -15%;
 	}
-	.legal-content h3 {
-		margin-top: 35px;
-	}
-	
 	
 	.legal-content h3 {
+		margin-top: 25px;
 		font-weight: 400;
 		font-size: 4vmin;
 	}
