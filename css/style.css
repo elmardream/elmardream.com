@@ -82,8 +82,6 @@ body {
 	/* Разрешаем перенос */
 	flex-wrap: wrap;
 	align-items: center;
-	/* Центрируем ВСЕ ряды вместе по вертикали */
-/*	align-content: center;*/
 	justify-content: center;
 }
 
@@ -180,7 +178,7 @@ body {
 	display: flex;
 	/* Авто-перенос на второй ряд на мобилках! */
 	flex-wrap: wrap;
-	align-content: center;
+/*	align-content: center;*/
 	justify-content: center;
 	/* Расстояние между сотами */
 	gap: 10px;
@@ -297,6 +295,9 @@ body {
 
 /* Настройки для узких экранов (телефоны) */
 @media (max-width: 480px) {
+	.main-logo {
+		padding-bottom: 15%;
+	}
 	/* Увеличиваем масштаб иконок, чтобы они были крупнее на телефоне */
 	.honeycomb-item {
 		width: 20vmin;
@@ -304,6 +305,7 @@ body {
 	.honeycomb-wrapper {
 		/* Ограничиваем ширину */
 		max-width: 70%;
+		margin-top: -15%;
 	}
 	.legal-content h3 {
 		margin-top: 35px;
