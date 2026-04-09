@@ -83,7 +83,7 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	/* Центрируем ВСЕ ряды вместе по вертикали */
-	align-content: center;
+/*	align-content: center;*/
 	justify-content: center;
 }
 
@@ -180,6 +180,7 @@ body {
 	display: flex;
 	/* Авто-перенос на второй ряд на мобилках! */
 	flex-wrap: wrap;
+	align-content: center;
 	justify-content: center;
 	/* Расстояние между сотами */
 	gap: 10px;
@@ -295,7 +296,7 @@ body {
 }
 
 /* Настройки для узких экранов (телефоны) */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 	/* Увеличиваем масштаб иконок, чтобы они были крупнее на телефоне */
 	.honeycomb-item {
 		width: 20vmin;
