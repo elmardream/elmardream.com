@@ -79,7 +79,11 @@ body {
 	/* Это еще 25% (1/4) */
 	flex: 1;
 	display: flex;
+	/* Разрешаем перенос */
+	flex-wrap: wrap;
 	align-items: center;
+	/* Центрируем ВСЕ ряды вместе по вертикали */
+	align-content: center;
 	justify-content: center;
 }
 
@@ -301,7 +305,7 @@ body {
 		max-width: 70%;
 	}
 	.legal-content h3 {
-		margin-top: 20px;
+		margin-top: 50px;
 	}
 }
 
