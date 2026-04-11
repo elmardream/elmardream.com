@@ -3,8 +3,7 @@ html {
 	padding: 0;
 	/* Защита от "подтягивания" экрана при движении пальцем вниз */
 	overscroll-behavior: none;
-	/* Запрещаем системную прокрутку страницы */
-/*	overflow: hidden;*/
+
 }
 
 /* БАЗОВЫЕ НАСТРОЙКИ */
@@ -27,7 +26,7 @@ body {
     width: 100%;
     position: relative;
 	/* Защита от "подтягивания" экрана при движении пальцем вниз */
-	overscroll-behavior: none;
+/*	overscroll-behavior: none;*/
 }
 
 /* Принудительно задаем шрифт для всех текстовых элементов в SVG */
@@ -56,7 +55,7 @@ svg text {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    padding: 100px 35px 30px 35px;
+    padding: 100px 25px 30px 25px;
     box-sizing: border-box;
 }
 
@@ -272,7 +271,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     stroke-opacity: 1;
     /* Заставляет браузер отрисовывать вектор максимально точно */
     shape-rendering: geometricPrecision;
-/*	will-change: transform, opacity;*/
+	will-change: transform, opacity;
 }
 
 /* Контейнер для SVG районов */
@@ -780,12 +779,12 @@ a {
     display: inline-block;
     transition: color 0.4s ease,
     transform 0.4s ease;
-backface-visibility: hidden;
--webkit-backface-visibility: hidden;
+/*backface-visibility: hidden;*/
+/*-webkit-backface-visibility: hidden;*/
 }
 
 a:hover {
-will-change: transform;
+/*will-change: transform;*/
     color: #EB7B08;
     transform: scale(1.05);
 }
