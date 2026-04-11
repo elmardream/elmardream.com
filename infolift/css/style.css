@@ -55,7 +55,7 @@ svg text {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    padding: 100px 25px 30px 25px;
+    padding: 100px 5px 30px 5px;
     box-sizing: border-box;
 }
 
@@ -338,10 +338,10 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     opacity: 0;
     pointer-events: none;
     /* Добавляем эти свойства для четкости */
-    shape-rendering: geometricPrecision;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-	will-change: transform;
+/*    shape-rendering: geometricPrecision;*/
+/*    text-rendering: optimizeLegibility;*/
+/*    -webkit-font-smoothing: antialiased;*/
+/*	will-change: transform;*/
 	
 }
 
