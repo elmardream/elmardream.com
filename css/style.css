@@ -83,7 +83,6 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	padding: 0 10px;
 }
 
 .main-logo {
@@ -186,7 +185,7 @@ body {
 	width: 100%;
 	/* Чтобы иконки не расползались слишком широко */
 	max-width: 900px;
-	margin: 0;
+	margin: 0 10px;
 }
 
 /*  Сами иконки */
