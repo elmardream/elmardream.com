@@ -47,7 +47,6 @@
 		A7A684AB2F8554AF00DCA5CA /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = favicon.svg; sourceTree = "<group>"; };
 		A7A684AC2F8554AF00DCA5CA /* fin.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = fin.webp; sourceTree = "<group>"; };
 		A7A684AD2F8554AF00DCA5CA /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
-		A7A684AE2F8554AF00DCA5CA /* logo old 1440.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "logo old 1440.svg"; sourceTree = "<group>"; };
 		A7A684AF2F8554AF00DCA5CA /* Logo-first.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Logo-first.svg"; sourceTree = "<group>"; };
 		A7A684B02F8554AF00DCA5CA /* Logo-new.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Logo-new.svg"; sourceTree = "<group>"; };
 		A7A684B12F8554AF00DCA5CA /* preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preview.png; sourceTree = "<group>"; };
@@ -61,13 +60,11 @@
 		A7A684BF2F8554AF00DCA5CA /* ScrollTrigger.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ScrollTrigger.min.js; sourceTree = "<group>"; };
 		A7A684C12F8554AF00DCA5CA /* 404.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = 404.html; sourceTree = "<group>"; };
 		A7A684C22F8554AF00DCA5CA /* about.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
-		A7A684C32F8554AF00DCA5CA /* communications.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = communications.html; sourceTree = "<group>"; };
 		A7A684C42F8554AF00DCA5CA /* contact.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = contact.html; sourceTree = "<group>"; };
 		A7A684C52F8554AF00DCA5CA /* districts.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = districts.html; sourceTree = "<group>"; };
 		A7A684C62F8554AF00DCA5CA /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		A7A684C72F8554AF00DCA5CA /* news.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = news.html; sourceTree = "<group>"; };
 		A7A684C82F8554AF00DCA5CA /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
-		A7A684C92F8554AF00DCA5CA /* sitemap.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sitemap.html; sourceTree = "<group>"; };
 		A7A684CA2F8554AF00DCA5CA /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		A7A684CB2F8554AF00DCA5CA /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +152,6 @@
 				A7A684AB2F8554AF00DCA5CA /* favicon.svg */,
 				A7A684AC2F8554AF00DCA5CA /* fin.webp */,
 				A7A684AD2F8554AF00DCA5CA /* logo.svg */,
-				A7A684AE2F8554AF00DCA5CA /* logo old 1440.svg */,
 				A7A684AF2F8554AF00DCA5CA /* Logo-first.svg */,
 				A7A684B02F8554AF00DCA5CA /* Logo-new.svg */,
 				A7A684B12F8554AF00DCA5CA /* preview.png */,
@@ -174,28 +170,6 @@
 			path = css;
 			sourceTree = "<group>";
 		};
-		A7A684B82F8554AF00DCA5CA /* fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = fonts;
-			sourceTree = "<group>";
-		};
-		A7A684B92F8554AF00DCA5CA /* houses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = houses;
-			sourceTree = "<group>";
-		};
-		A7A684BA2F8554AF00DCA5CA /* img */ = {
-			isa = PBXGroup;
-			children = (
-				A7A684B92F8554AF00DCA5CA /* houses */,
-			);
-			path = img;
-			sourceTree = "<group>";
-		};
 		A7A684C02F8554AF00DCA5CA /* js */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,18 +186,14 @@
 			children = (
 				A7A684B52F8554AF00DCA5CA /* assets */,
 				A7A684B72F8554AF00DCA5CA /* css */,
-				A7A684B82F8554AF00DCA5CA /* fonts */,
-				A7A684BA2F8554AF00DCA5CA /* img */,
 				A7A684C02F8554AF00DCA5CA /* js */,
 				A7A684C12F8554AF00DCA5CA /* 404.html */,
 				A7A684C22F8554AF00DCA5CA /* about.html */,
-				A7A684C32F8554AF00DCA5CA /* communications.html */,
 				A7A684C42F8554AF00DCA5CA /* contact.html */,
 				A7A684C52F8554AF00DCA5CA /* districts.html */,
 				A7A684C62F8554AF00DCA5CA /* index.html */,
 				A7A684C72F8554AF00DCA5CA /* news.html */,
 				A7A684C82F8554AF00DCA5CA /* privacy.html */,
-				A7A684C92F8554AF00DCA5CA /* sitemap.html */,
 				A7A684CA2F8554AF00DCA5CA /* terms.html */,
 				A7A684CB2F8554AF00DCA5CA /* test.html */,
 			);

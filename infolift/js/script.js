@@ -7,7 +7,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const START_Y_PX = 1310;
     const END_X_PX = 1795;
     const END_Y_PX = 1750;
-
+	const rail = document.querySelector('.zoom-container');
+	const house = document.getElementById('houseLayer');
+	const labelEl = document.getElementById('infoLabel');
+	const finalLayer = document.getElementById('finalLayer');
+	
     let isMenuOpen = false;
     let isHeaderVisible = false;
     let hasAnimatedDistricts = false;
@@ -33,22 +37,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const sizeGroup = document.getElementById('sizeGroup');
     const districtsData = {
 
-        "d1": { title: "ЦЕНТР", desc: "Историческое ядро города, административные здания, торговые центры,\nстадионы и парки.\n\n240 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели."},
-        "d2": { title: "МЕЛЬНИКОВ ЛУГ", desc: "Живописный\nжилой массив рядом\nс озерами и зонами отдыха.\n\n185 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d3": { title: "ВОЛОТОВА", desc: "Развивающийся район\nс современной застройкой\nи новыми школами.\n\n285 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d4": { title: "СЕЛЬМАШ 2", desc: "Промышленно-жилой сектор с развитой инфраструктурой.\n\n205 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d5": { title: "СЕЛЬМАШ 1", desc: "Сердце машиностроения, рабочие кварталы,\nстадион, парки.\n\n215 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d6": { title: "ЗАПАДНЫЙ", desc: "Крупный спальный район\nс торговыми центрами\nи рынками.\n\n80 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d7": { title: "СОВЕТСКИЙ 2", desc: "Университетский городок\nи жилые молодежные кварталы.\n\n240 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d8": { title: "СОВЕТСКИЙ 1", desc: "Новый микрорайон,\nтихие зеленые улицы\nи уютные жилые кварталы.\n\n240 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." },
-        "d9": { title: "НОВОБЕЛИЦА", desc: "Заречная часть города,\nокруженная лесами,\nс новостройками\nи особой атмосферой.\n\n215 лифтов доступны\nдля размещения рекламы.\n\nМинимальный\nсрок размещения -\n2 недели." }
+        "d1": { title: "ЦЕНТР", desc: "Исторический центр, административные\nи торговые центры,\nстадионы и парки.\n\n240 лифтов доступны\nдля размещения рекламы."},
+        "d2": { title: "МЕЛЬНИКОВ ЛУГ", desc: "Живописный жилой\nмассив рядом с озерами\nи зонами отдыха.\n\n185 лифтов доступны\nдля размещения рекламы." },
+        "d3": { title: "ВОЛОТОВА", desc: "Развивающийся\nгустонаселенный район\nс новостройками\nи школами.\n\n285 лифтов доступны\nдля размещения рекламы." },
+        "d4": { title: "СЕЛЬМАШ 2", desc: "Промышленно-жилой сектор с развитой инфраструктурой.\n\n205 лифтов доступны\nдля размещения рекламы." },
+        "d5": { title: "СЕЛЬМАШ 1", desc: "Сердце машиностроения, рабочие кварталы,\nстадион, парки.\n\n215 лифтов доступны\nдля размещения рекламы." },
+        "d6": { title: "ЗАПАДНЫЙ", desc: "Крупный спальный район\nс торговыми центрами\nи рынками.\n\n80 лифтов доступны\nдля размещения рекламы." },
+        "d7": { title: "СОВЕТСКИЙ 2", desc: "Университетский городок\nи жилые молодежные кварталы.\n\n240 лифтов доступны\nдля размещения рекламы." },
+        "d8": { title: "СОВЕТСКИЙ 1", desc: "Новый микрорайон,\nтихие зеленые улицы\nи жилые кварталы.\n\n240 лифтов доступны\nдля размещения рекламы." },
+        "d9": { title: "НОВОБЕЛИЦА", desc: "Заречная часть города,\nокруженная лесами,\nс новостройками\nи особой атмосферой.\n\n215 лифтов доступны\nдля размещения рекламы." }
     };
 
     const sizedata = {
-        "s1": { title: "А3", desc: "Вертикальная ориентация.\n\nРазмер макета\n408 х 285 мм.\n\nСтоимость размещения\n8р. 14к.\n\nСкидка 5-20%\nв зависимости от объема." },
-        "s2": { title: "А4", desc: "Горизонтальная ориентация.\n\nРазмер макета\n285 х 200 мм.\n\nСтоимость размещения\n4р. 97к.\n\nСкидка 5-20%\nв зависимости от объема." },
-        "s3": { title: "А5", desc: "Вертикальная ориентация.\n\nРазмер макета\n140 х 200 мм.\n\nСтоимость размещения\n3р. 4к.\n\nСкидка 5-20%\nв зависимости от объема." },
-        "s4": { title: "А6", desc: "Горизонтальная ориентация.\n\nРазмер макета\n140 х 98 мм.\n\nСтоимость размещения\n1р. 79к.\n\nСкидка 5-20%\nв зависимости от объема." }
+        "s1": { title: "А3", desc: "Размер макета\n408 х 285 мм.\n\nСтоимость размещения\n8р. 14к." },
+        "s2": { title: "А4", desc: "Размер макета\n285 х 200 мм.\n\nСтоимость размещения\n4р. 97к." },
+        "s3": { title: "А5", desc: "Размер макета\n140 х 200 мм.\n\nСтоимость размещения\n3р. 4к." },
+        "s4": { title: "А6", desc: "Размер макета\n140 х 98 мм.\n\nСтоимость размещения\n1р. 79к." }
     };
 
     function closeMobileMenu() {
@@ -396,10 +400,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateMapState() {
-            const rail = document.querySelector('.zoom-container');
-            const house = document.getElementById('houseLayer');
-            const labelEl = document.getElementById('infoLabel');
-
+			
             if (!rail || !layerCountry || !layerCity) return;
             const wW = window.innerWidth;
             const wH = window.innerHeight;
@@ -491,9 +492,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
             // --- 2. город ---
             if (alphaC > 0) {
-                const cityS = 0.35 + (prog * (baseS * 0.02));
-                const cityTX = 4010; 
-                const cityTY = 4150;
+                const cityS = 0.3 + (prog * (baseS * 0.02));
+                const cityTX = 4830;
+                const cityTY = 4960;
 
                 // Если мы в зоне дома (hProg > 0), город плавно гаснет.
                 // Если мы в зоне страны (скроллим вверх), город гаснет по alphaC.
@@ -528,20 +529,18 @@ window.addEventListener('DOMContentLoaded', () => {
                     currentScale *= (1 + (0.15 * zoomFactor));
                 }
 
-                // 3. ЭТАП: резкий улет (после 0.55)
+                // 3. ЭТАП: резкий улет
                 if (prog >= 0.55) {
                     const warpFactor = Math.max(0, Math.min(1, (prog - 0.55) * 30));
 
                 // В самом начале сбрасываем всё, что было в лифте
-                  //   if (warpFactor > 0.1 && hasAnimatedSize) {
-                  //     resetAllStates();
-                  // }
+                     if (warpFactor > 0.1 && hasAnimatedSize) {
+                       resetAllStates();
+                   }
 
                     currentScale *= (1 + (0.9 * warpFactor)); 
                     const lateFade = Math.max(0, (warpFactor - 0.7) * 3.33);
                     currentOpacity = 1 - Math.min(1, lateFade);
-
-                    const finalLayer = document.getElementById('finalLayer');
 
                     if (finalLayer) {
                     // fIn - прилет. fZoom - бесконечный рост до конца 
@@ -549,7 +548,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         const fZoom = Math.max(0, Math.min(1, (prog - 0.55) * 2.8)); 
 
                     // Масштаб: база 0.44 * прилет * плавный рост на 20%
-                        const fScale = (baseS * 0.44) * fIn * (1 + (0.20 * fZoom));
+                        const fScale = (baseS * 0.6) * fIn * (1 + (0.20 * fZoom));
                         const targetX = 1000;
                         const targetY = 1500;
 
@@ -570,14 +569,14 @@ window.addEventListener('DOMContentLoaded', () => {
                     gsap.set('#finalLayer', { display: 'none', opacity: 0 });
                 }
 
-            // 4. ЕДИНЫЙ ВЫВОД (Один gsap.set на все случаи жизни)
+            // 4. ЕДИНЫЙ ВЫВОД
                 gsap.set(house, { 
 force3D: true, 
 willChange: "transform",
                     display: (currentOpacity > 0.01) ? 'block' : 'none',
                     opacity: currentOpacity,
                     scale: currentScale,
-                    x: (wW / 2) - (1000 * currentScale), 
+                    x: (wW / 2) - (1100 * currentScale), 
                     y: (wH / 2) - (1550 * currentScale),
                     transformOrigin: "0 0",
                     pointerEvents: (currentOpacity < 0.1) ? 'none' : 'all',
@@ -645,8 +644,8 @@ willChange: "transform",
         // Задаем текст только один раз, чтобы не дергать движок
                 if (labelEl && labelEl.textContent !== "МЫ НАХОДИМСЯ") {
                     labelEl.textContent = "МЫ НАХОДИМСЯ";
-                    districtNameEl.textContent = "БЦ Пушкинъ Плаза";
-                    districtDescEl.textContent = "Гомель, ул. Пушкина 2,\nлевый цокольный этаж.\n\nВремя работы:\nПонедельник - Пятница\n9:00 - 18:00\n";
+                    districtNameEl.textContent = "Пушкинъ Плаза";
+                    districtDescEl.textContent = "Гомель, ул. Пушкина 2,\nцокольный этаж.\n\nВремя работы:\nПонедельник - Пятница\n9:00 - 18:00\n";
                 }
             }
 
@@ -709,12 +708,4 @@ willChange: "transform",
                 closeMobileMenu(); 
             } 
         });
-
     });
-
-// Запрещаем "оттягивание" и скролл всей страницы при касании
-//document.addEventListener('touchmove', function(e) {
-//	if (e.target.closest('.dynamic-header, .zoom-container, .zoom-sticky-wrapper, .map-layer')) {
-//		e.preventDefault();
-//	}
-//}, { passive: false });

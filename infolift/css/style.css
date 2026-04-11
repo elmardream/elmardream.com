@@ -347,14 +347,16 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 }
 
 .house-img {
-    width: 3000px;
-    height: 3000px;
     top: 0;
     left: 0;
     object-fit: cover;
 	/* Накладываем кадры друг на друга */
     position: absolute;
+}
 
+#frame4 {
+	left: 10%;
+	top: 28%;
 }
 
 #frame1, #frame2, #frame3, #frame4 {
@@ -367,12 +369,12 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 }
 
 .info-window-glass {
-    min-height: 230px;
+    min-height: 180px;
     position: fixed;
     top: 100px;
     /* Зеркальная формула для левого края хедера: */
     left: max(5%, calc(50% - 500px));
-    width: 205px;
+    width: 185px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.02);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
@@ -524,11 +526,9 @@ footer {
     .menu-toggle {
         display: flex;
         position: absolute;
-        top: 70%;
-        right: 20px;
-        transform: translateY(-50%);
+        right: 10px;
         width: 50px;
-        height: 32px;
+        height: 50px;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -548,8 +548,10 @@ footer {
 
     /* ЛИНИИ КНОПКИ */
     .menu-toggle .line {
+		top: 50%;
+		transform: translateY(-50%);
         position: absolute;
-        width: 20px;
+        width: 22px;
         height: 2px;
         background: #5d5d5d;
         border-radius: 2px;
@@ -557,11 +559,11 @@ footer {
     }
 
     .menu-toggle .line:nth-child(1) {
-        transform: translateY(-3px);
+        transform: translateY(-5px);
     }
 
     .menu-toggle .line:nth-child(2) {
-        transform: translateY(3px);
+        transform: translateY(5px);
     }
 
     /* Интерактив линий */
@@ -587,7 +589,7 @@ footer {
     position: fixed;
     top: 100px;
     right: max(5%, calc(50% - 500px));
-    width: 205px;
+    width: 170px;
     background: rgba(255, 255, 255, 0.02);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
@@ -649,11 +651,11 @@ footer {
     opacity: 0;
     width: 90%;
     max-width: 1000px;
-    height: 66px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.02);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
-    border-radius: 24px;
+    border-radius: 25px;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -671,7 +673,7 @@ footer {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 24px;
+    border-radius: 25px;
     padding: 1px;
     background: linear-gradient(to bottom, 
         rgba(255, 255, 255, 0.25) 0%, 
@@ -685,6 +687,7 @@ footer {
 
 /* 2. ЛЕВАЯ ЗОНА (КОНТЕЙНЕР ЛОГОТИПА) */
 .logo-link {
+	margin-top: 3px;
     margin-right: 28px;
 }
 
@@ -692,7 +695,6 @@ footer {
     width: 200px;
     height: 30px;
     pointer-events: none;
-/*    fill: none;*/
 }
 
 /* ЦЕНТРАЛЬНАЯ ЗОНА */
@@ -720,7 +722,7 @@ footer {
 /* ПРАВЫЙ БЛОК */
 .header-socials {
     display: flex;
-    gap: 4px;
+    gap: 5px;
 }
 
 .social-icon-link {
@@ -740,7 +742,7 @@ footer {
 
 .social-icon-link:hover {
 	will-change: transform;
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 .social-icon-link:hover svg {
@@ -770,11 +772,6 @@ footer {
         height: 25px;
     }
 }
-
-/* ---  КАРТА САЙТА (SITEMAP) --- */
-/*.sitemap-item p {*/
-/*    margin-top: -15px;*/
-/*}*/
 
 /* --- ГЛОБАЛЬНЫЙ СТАНДАРТ ССЫЛОК --- */
 a {

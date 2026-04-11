@@ -246,7 +246,7 @@ mainLogo.addEventListener('mousedown', (e) => {
 
 // 4. Уход мыши (Гасим свет)
 mainLogo.addEventListener('mouseleave', () => {
-	isWelcomeShowing = false; // СБРОС ФЛАГА
+	isWelcomeShowing = false;
 	
 	gsap.to(allLights, {
 		opacity: 0,
