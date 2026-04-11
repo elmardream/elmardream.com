@@ -23,9 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let hasAnimatedTime = false;
     let isFinalTextSet = false;
 	// Используем переменную-флаг, чтобы знать, что всё уже чисто
-	let isCurrentlyReset = false;
-	let districtsTL, sizeTL;
-
+	let isCurrentlyReset = true;
 
     const logoWrapper = document.querySelector('.logo-animation-wrapper');
     const mainMap = document.getElementById('mainMap');
@@ -100,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function animateDistrictsParade() {
-		if (districtsTL) districtsTL.kill();
+
         if (hasAnimatedDistricts) return;
         hasAnimatedDistricts = true;
 
@@ -109,9 +107,8 @@ window.addEventListener('DOMContentLoaded', () => {
             districtsGroup.style.pointerEvents = "none";
         }
 
-//        const tl = gsap.timeline();
-		districtsTL = gsap.timeline();
-//		const tl = districtsTL;
+        const tl = gsap.timeline();
+
         for (let i = 1; i <= 9; i++) {
 
          const d = document.getElementById(`d${i}`);
@@ -141,8 +138,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (text) gsap.set(text, { opacity: 0 });
 
                 // Сама анимация
-				districtsTL.to(path, {
-                    strokeDashoffset: 0,
+                tl.to(path, { 
+                    strokeDashoffset: 0, 
                     duration: 0.3, 
                     ease: "power2.inOut" 
                 })
@@ -152,7 +149,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         // Добавляем команду прямо в очередь таймлайна
-		districtsTL.add(() => {
+        tl.add(() => {
 
             // 1. Включаем только САМИ ПУТИ (точечно)
             for (let i = 1; i <= 9; i++) {
@@ -258,10 +255,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (sizeGroup) {
             sizeGroup.style.pointerEvents = "none";
         }
-		sizeTL = gsap.timeline({
-			defaults: {
-				force3D: false}
-		});
+
+        const tl = gsap.timeline({
+    defaults: { 
+        force3D: false}
+});
 
         for (let i = 1; i <= 4; i++) {
 
@@ -291,24 +289,19 @@ window.addEventListener('DOMContentLoaded', () => {
                     if (text) gsap.set(text, { opacity: 0 });
 
                     // рисуем линии
-					sizeTL.to(path, { strokeDashoffset: 0, duration: 0.7, ease: "power3.inOut",
+					tl.to(path, { strokeDashoffset: 0, duration: 0.7, ease: "power3.inOut",
 						force3D: false
 					})
                     // заливка
-					.to(path, { fill: "#eb7b08", fillOpacity: 0.2,
-						duration: 0.2,
-//						force3D: false
+					.to(path, { fill: "#eb7b08", fillOpacity: 0.2, duration: 0.2,
+						force3D: false
 					}, "-=0.2")
-					.to(text, {
-						opacity: 1,
-						duration: 0.18,
-//						force3D: false
-					}, "<");
+                    .to(text, { opacity: 1, duration: 0.18, force3D: false }, "<");
                 }}
             }
 
             // Добавляем команду прямо в очередь таймлайна
-		sizeTL.add(() => {
+            tl.add(() => {
 
                 // 1. Включаем только САМИ ПУТИ 
                 for (let i = 1; i <= 4; i++) {
@@ -431,73 +424,57 @@ window.addEventListener('DOMContentLoaded', () => {
             const hProg = Math.max(0, Math.min(1, (prog - houseTrigger) * 10));
 
 
+            function resetAllStates() {
+            // Проверяем, нужно ли вообще что-то сбрасывать, чтобы не дергать GSAP зря
+                if (!hasAnimatedDistricts && !hasAnimatedSize && !isCityZoneActive && !isHouseTextSet) return;
+                if (districtsGroup) districtsGroup.style.pointerEvents = "none";
+                if (sizeGroup) sizeGroup.style.pointerEvents = "none";
 
-			
-			
-			
-			
-			
-			function resetAllStates() {
-				// Если всё уже и так сброшено — ничего не делаем. Выходим.
-				if (isCurrentlyReset) return;
-				
-				// 1. Остановка анимации (если она шла)
-				if (districtsTL) {
-					districtsTL.kill(); // Полностью останавливаем прогресс
-					districtsTL = null; // Очищаем ссылку
-				}
-				
-				// Убиваем размеры (лифт)
-				if (sizeTL) {
-					sizeTL.kill();
-					sizeTL = null;
-				}
-				
-				// 2. Жесткое выключение интерактивности
-				if (districtsGroup) {
-					districtsGroup.style.pointerEvents = "none";
-					districtsGroup.removeEventListener('mouseover', handleDistrictOver);
-				}
-				
-				if (sizeGroup) {
-					sizeGroup.style.pointerEvents = "none";
-					sizeGroup.removeEventListener('mouseover', handleSizeOver);
-				}
-				
-				// 3. Сброс путей (мгновенно прячем и блокируем)
-				const allPaths = document.querySelectorAll('#d path');
-				gsap.set(allPaths, {
-					opacity: 0,
-					pointerEvents: "none",
-					clearProps: "all" // Очищаем всё, что наворотил GSAP
-				});
-				
-				
-				
-				hasAnimatedDistricts = false;
-				hasAnimatedSize = false;
-				isCityZoneActive = false;
-				isHouseTextSet = false;
-				lastDistrictId = null;
-				lastSizeId = null;
-				
-				// Прячем всё
-				gsap.set(['#d path', '#d text', '#sizeGroup path', '#sizeGroup text'], {
-					opacity: 0,
-					pointerEvents: "none"
-				});
-				
-				if (infoWindow) infoWindow.classList.remove('is-visible');
-				
-				
-				
-				// Ставим флаг, что всё очищено
-				isCurrentlyReset = true;
-			}
+                hasAnimatedDistricts = false;
+                hasAnimatedSize = false;
+                isCityZoneActive = false;
+                isHouseTextSet = false;
+                lastDistrictId = null;
+                lastSizeId = null;
 
-			
-			
-			
+            // 1. ПЛАВНОЕ ГАШЕНИЕ ОКНА И ТЕКСТА
+                if (infoWindow) 
+                    infoWindow.classList.remove('is-visible');
+                const allLabels = [labelEl, districtNameEl, districtDescEl];
+                gsap.to(allLabels, { 
+                    opacity: 0, 
+                    duration: 0.2, 
+                    overwrite: true,
+                    onComplete: () => {
+                        if (labelEl) labelEl.textContent = "";
+                        if (districtNameEl) districtNameEl.textContent = "";
+                        if (districtDescEl) districtDescEl.innerHTML = "";
+                        gsap.set(allLabels, { opacity: 1 });
+                    }
+                });
+
+                // 2. ПЛАВНОЕ ГАШЕНИЕ ПУТЕЙ
+                const finalPaths = [
+                    ...(districtsGroup?.querySelectorAll('path') || []),
+                    ...(districtsGroup?.querySelectorAll('text') || []), 
+                    ...(sizeGroup?.querySelectorAll('path') || []),
+                    ...(sizeGroup?.querySelectorAll('text') || [])
+                ];
+                if (finalPaths.length) {
+                    gsap.killTweensOf(finalPaths);
+                    gsap.to(finalPaths, { 
+                        opacity: 0, 
+                        duration: 0.1,
+                        overwrite: true,
+                        onComplete: () => {
+                        // Выключаем мышь для путей, чтобы не мешали
+                            finalPaths.forEach(el => {
+                                if (el.tagName === 'path') el.style.pointerEvents = "none";
+                            });
+                        }
+                    });
+                }  
+            }
             // --- 1. страна ---
             const zProg = Math.max(0, Math.min(1, prog / 0.2));
             const cScale = baseS + (zProg * (baseS * 2.5));
@@ -517,7 +494,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
             // --- 2. город ---
             if (alphaC > 0) {
-				isCurrentlyReset = false;
                 const cityS = 0.3 + (prog * (baseS * 0.02));
                 const cityTX = 4830;
                 const cityTY = 4960;
@@ -542,18 +518,13 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
 
-			
-			
-			
             // --- 3. лифт---
             if (hProg > 0) {
-				isCurrentlyReset = false;
+
                 // 1. прилет
                 let currentScale = hProg * (baseS * 0.36);
                 let currentOpacity = Math.min(1, hProg * 4);
-				
-				
-				
+
                 // 2. ЭТАП: плавный зум (0.35 -> 0.55)
                 if (hProg >= 1 && prog > 0.35) {
                     const zoomFactor = Math.max(0, Math.min(1, (prog - 0.35) * 4)); 
@@ -563,21 +534,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 // 3. ЭТАП: резкий улет
                 if (prog >= 0.55) {
                     const warpFactor = Math.max(0, Math.min(1, (prog - 0.55) * 30));
-					
-					// Универсальный сброс для зазора между Лифтом и Финалом
-//					if (prog > 0.55 && prog < 0.6) {
-						// Если мы в этом промежутке, и что-то активно (окно открыто) — сбрасываем всё
-//						if (!isCurrentlyReset) {
-//							resetAllStates();
-//						}
-//					}
+
+                // В самом начале сбрасываем всё, что было в лифте
+                     if (warpFactor > 0.1 && hasAnimatedSize) {
+                       resetAllStates();
+                   }
 
                     currentScale *= (1 + (0.9 * warpFactor)); 
-//                    const lateFade = Math.max(0, (warpFactor - 0.7) * 3.33);
-//                    currentOpacity = 1 - Math.min(1, lateFade);
+                    const lateFade = Math.max(0, (warpFactor - 0.7) * 3.33);
+                    currentOpacity = 1 - Math.min(1, lateFade);
 
-					currentOpacity = 1 - Math.min(1, warpFactor * 2.5);
-					
                     if (finalLayer) {
                     // fIn - прилет. fZoom - бесконечный рост до конца 
                         const fIn = Math.max(0, Math.min(1, (prog - 0.55) * 20));
@@ -633,81 +599,62 @@ willChange: "transform",
                 gsap.set(house, { display: 'none', opacity: 0 });
             }
 
-			
-			
-			
-			// --- ПУЛЬТ ОКНА ---
-			
-			// 1. ЗОНА: ГОРОД (Районы)
-			if (alphaC >= 1 && hProg <= 0.25) {
-				
-				if (!isCityZoneActive) {
-					isCityZoneActive = true;
-					// Сбрасываем флаг следующей зоны
-					isHouseTextSet = false;
-					isCurrentlyReset = false;
-					
-					if (infoWindow) infoWindow.classList.add('is-visible');
-					
-					gsap.set([labelEl, districtNameEl, districtDescEl], { opacity: 1 });
-					
-					labelEl.textContent = "АДРЕСНАЯ ПРОГРАММА";
-					districtNameEl.textContent = "1905 ЛИФТОВ";
-					districtDescEl.textContent = "В 9 районах Гомеля\n1905 лифтовых кабин\nоборудованы конструкциями\nдля размещения\nрекламных материалов.\n\nМинимальный\nсрок размещения -\n2 недели.";
-					
-					if (districtsGroup) districtsGroup.style.pointerEvents = "none";
-					animateDistrictsParade();
-				}
-			}
-			
-			// 2. ЗОНА: ЛИФТ (Размеры)
-			else if (hProg >= 1 && prog < 0.55) {
-				
-				if (!isHouseTextSet) {
-					isHouseTextSet = true;
-					// Сбрасываем флаг предыдущей зоны
-					isCityZoneActive = false;
-					isCurrentlyReset = false;
-					
-					if (infoWindow) infoWindow.classList.add('is-visible');
-					
-					gsap.set([labelEl, districtNameEl, districtDescEl], { opacity: 1 });
-					
-					labelEl.textContent = "РАЗМЕРЫ МАКЕТОВ";
-					districtNameEl.textContent = "А3, А4, А5, А6";
-					districtDescEl.textContent = "Стенд для объявлений\nпредставляет собой\n2 ячейки формата А3.\n\nНаходясь в лифте,\nрекламное объявление\nневозможно закрыть,\nотключить, смахнуть,\nигнорировать и т.д.\n\nВашу рекламу увидят!";
-					
-					if (districtsGroup) districtsGroup.style.pointerEvents = "none";
-					if (sizeGroup) sizeGroup.style.pointerEvents = "none";
-					animateSizeParade();
-				}
-			}
-			
-			// 3. ЗОНА: ФИНАЛ (Адрес)
-			else if (prog >= 0.6 && prog < 0.83) {
-				
-				// Если окно не видно или текст не тот — включаем
-				if (!infoWindow.classList.contains('is-visible') || labelEl.textContent !== "адрес дома") {
-					isCurrentlyReset = false;
-					isHouseTextSet = true;
-					
-					if (infoWindow) infoWindow.classList.add('is-visible');
-					gsap.set([labelEl, districtNameEl, districtDescEl], { opacity: 1 });
-					
-					labelEl.textContent = "МЫ НАХОДИМСЯ";
-					districtNameEl.textContent = "Пушкинъ Плаза";
-					districtDescEl.textContent = "Гомель, ул. Пушкина 2,\nцокольный этаж.\n\nВремя работы:\nПонедельник - Пятница\n9:00 - 18:00";
-				}
-			}
-			
-			// 4. ЗОНА: СБРОС (Если мы вне активных зон)
-			else {
+        // --- ПУЛЬТ ОКНА ---
+            if (alphaC >= 1 && hProg <= 0.25) {
 
-				if (!isCurrentlyReset) {
-					resetAllStates();
-				}
-			}
-       }
+            // обычный режим - районы видны
+                if (infoWindow) infoWindow.classList.add('is-visible');
+
+                if (labelEl && labelEl.textContent !== "АДРЕСНАЯ ПРОГРАММА") 
+                    labelEl.textContent = "АДРЕСНАЯ ПРОГРАММА";
+
+                if (!isCityZoneActive) {
+                    isCityZoneActive = true;
+                    districtNameEl.textContent = "1905 ЛИФТОВ";
+                    districtDescEl.textContent = "В 9 районах Гомеля\n1905 лифтовых кабин\nоборудованы конструкциями\nдля размещения\nрекламных материалов.\n\nМинимальный\nсрок размещения -\n2 недели.";
+
+                // Выключаем мышь для всей группы ПЕРЕД началом анимации
+                    if (districtsGroup) districtsGroup.style.pointerEvents = "none"; 
+                    animateDistrictsParade(); 
+                }
+            } 
+
+            else if (hProg >= 1 && prog < 0.55) {
+
+            // обычный режим - размеры видны
+                if (infoWindow) infoWindow.classList.add('is-visible');
+
+                if (labelEl && labelEl.textContent !== "РАЗМЕРЫ МАКЕТОВ") 
+                    labelEl.textContent = "РАЗМЕРЫ МАКЕТОВ";
+
+                if (!isHouseTextSet) {
+                    isHouseTextSet = true;
+                    districtNameEl.textContent = "А3, А4, А5, А6";
+                    districtDescEl.textContent = "Стенд для объявлений\nпредставляет собой\n2 ячейки формата А3.\n\nНаходясь в лифте,\nрекламное объявление\nневозможно закрыть,\nотключить, смахнуть,\nигнорировать и т.д.\n\nВашу рекламу увидят!";
+
+                    if (sizeGroup) sizeGroup.style.pointerEvents = "none"; 
+                    animateSizeParade(); 
+                }
+            }
+
+            else if (prog >= 0.6 && prog < 0.83) {
+
+                if (!isHouseTextSet) isHouseTextSet = true;
+
+                if (infoWindow) infoWindow.classList.add('is-visible');
+
+        // Задаем текст только один раз, чтобы не дергать движок
+                if (labelEl && labelEl.textContent !== "МЫ НАХОДИМСЯ") {
+                    labelEl.textContent = "МЫ НАХОДИМСЯ";
+                    districtNameEl.textContent = "Пушкинъ Плаза";
+                    districtDescEl.textContent = "Гомель, ул. Пушкина 2,\nцокольный этаж.\n\nВремя работы:\nПонедельник - Пятница\n9:00 - 18:00\n";
+                }
+            }
+
+            else {
+                resetAllStates()
+            }
+        }
 
 
     /* --- 5. ЗАПУСК ПРИ ЗАГРУЗКЕ --- */
@@ -723,9 +670,7 @@ willChange: "transform",
 
             // Входная анимация
             const introTl = gsap.timeline({
-				defaults: {
-					force3D: false
-				}
+    defaults: { force3D: false } 
 });
             const mainL = document.getElementById('l');
             if (mainL) {

@@ -272,7 +272,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     stroke-opacity: 1;
     /* Заставляет браузер отрисовывать вектор максимально точно */
     shape-rendering: geometricPrecision;
-	will-change: transform, opacity;
+/*	will-change: transform, opacity;*/
 }
 
 /* Контейнер для SVG районов */
@@ -374,8 +374,8 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     top: 100px;
     /* Зеркальная формула для левого края хедера: */
     left: max(5%, calc(50% - 500px));
-    width: 185px;
-    padding: 20px;
+    width: 175px;
+    padding: 12px;
     background: rgba(255, 255, 255, 0.02);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
@@ -589,12 +589,12 @@ footer {
     position: fixed;
     top: 100px;
     right: max(5%, calc(50% - 500px));
-    width: 170px;
+    width: 130px;
     background: rgba(255, 255, 255, 0.02);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
     border-radius: 20px;
-    padding: 12px 16px;
+    padding: 12px 14px;
     flex-direction: column;
     gap: 10px;
     z-index: 9998;
@@ -734,14 +734,13 @@ footer {
 }
 
 .social-icon-link svg {
-    width: 20px;
-    height: 20px;
+/*    width: 20px;*/
+/*    height: 20px;*/
     fill: #787878;
 	display: block;
 }
 
 .social-icon-link:hover {
-	will-change: transform;
 	transform: scale(1.1);
 }
 
@@ -775,6 +774,7 @@ footer {
 
 /* --- ГЛОБАЛЬНЫЙ СТАНДАРТ ССЫЛОК --- */
 a {
+	will-change: transform;
     text-decoration: none;
     color: inherit;
     display: inline-block;

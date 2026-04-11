@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		A70346C62F8A9EA50013A2F7 /* script old.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "script old.js"; sourceTree = "<group>"; };
 		A7A684822F85461E00DCA5CA /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
 		A7A684832F85461E00DCA5CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		A7A684842F85461E00DCA5CA /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = favicon.svg; sourceTree = "<group>"; };
@@ -36,7 +37,7 @@
 		A7A6849F2F8554AF00DCA5CA /* WhatsApp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatsApp.svg; sourceTree = "<group>"; };
 		A7A684A12F8554AF00DCA5CA /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
 		A7A684A22F8554AF00DCA5CA /* apple-touch-icon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "apple-touch-icon.svg"; sourceTree = "<group>"; };
-		A7A684A32F8554AF00DCA5CA /* artboard-city.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "artboard-city.webp"; sourceTree = "<group>"; };
+		A7A684A32F8554AF00DCA5CA /* artboard-city-whight.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "artboard-city-whight.webp"; sourceTree = "<group>"; };
 		A7A684A42F8554AF00DCA5CA /* artboard-city-d.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "artboard-city-d.svg"; sourceTree = "<group>"; };
 		A7A684A52F8554AF00DCA5CA /* artboard-country.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "artboard-country.svg"; sourceTree = "<group>"; };
 		A7A684A62F8554AF00DCA5CA /* artboard-country orig.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "artboard-country orig.svg"; sourceTree = "<group>"; };
@@ -141,7 +142,7 @@
 				A7A684A02F8554AF00DCA5CA /* icons */,
 				A7A684A12F8554AF00DCA5CA /* apple-touch-icon.png */,
 				A7A684A22F8554AF00DCA5CA /* apple-touch-icon.svg */,
-				A7A684A32F8554AF00DCA5CA /* artboard-city.webp */,
+				A7A684A32F8554AF00DCA5CA /* artboard-city-whight.webp */,
 				A7A684A42F8554AF00DCA5CA /* artboard-city-d.svg */,
 				A7A684A52F8554AF00DCA5CA /* artboard-country.svg */,
 				A7A684A62F8554AF00DCA5CA /* artboard-country orig.svg */,
@@ -176,6 +177,7 @@
 				A7A684BC2F8554AF00DCA5CA /* CustomEase.min.js */,
 				A7A684BD2F8554AF00DCA5CA /* gsap.min.js */,
 				A7A684BE2F8554AF00DCA5CA /* script.js */,
+				A70346C62F8A9EA50013A2F7 /* script old.js */,
 				A7A684BF2F8554AF00DCA5CA /* ScrollTrigger.min.js */,
 			);
 			path = js;
