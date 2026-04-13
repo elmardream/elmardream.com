@@ -8,6 +8,16 @@
 
 /* Begin PBXFileReference section */
 		A70346C62F8A9EA50013A2F7 /* script old.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "script old.js"; sourceTree = "<group>"; };
+		A70346C72F8D151D0013A2F7 /* artboard-city.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "artboard-city.webp"; sourceTree = "<group>"; };
+		A70346C82F8D151D0013A2F7 /* lift-dark1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-dark1.webp"; sourceTree = "<group>"; };
+		A70346C92F8D151D0013A2F7 /* lift-dark2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-dark2.webp"; sourceTree = "<group>"; };
+		A70346CA2F8D151D0013A2F7 /* lift-dark3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-dark3.webp"; sourceTree = "<group>"; };
+		A70346CB2F8D151D0013A2F7 /* lift-light1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-light1.webp"; sourceTree = "<group>"; };
+		A70346CC2F8D151D0013A2F7 /* lift-light2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-light2.webp"; sourceTree = "<group>"; };
+		A70346CD2F8D151D0013A2F7 /* lift-light3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-light3.webp"; sourceTree = "<group>"; };
+		A70346CE2F8D151D0013A2F7 /* logo-heder.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "logo-heder.svg"; sourceTree = "<group>"; };
+		A70346CF2F8D151D0013A2F7 /* map-city.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "map-city.webp"; sourceTree = "<group>"; };
+		A70346D02F8D151D0013A2F7 /* office-dark.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "office-dark.webp"; sourceTree = "<group>"; };
 		A7A684822F85461E00DCA5CA /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
 		A7A684832F85461E00DCA5CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		A7A684842F85461E00DCA5CA /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = favicon.svg; sourceTree = "<group>"; };
@@ -139,6 +149,16 @@
 		A7A684B52F8554AF00DCA5CA /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				A70346C72F8D151D0013A2F7 /* artboard-city.webp */,
+				A70346C82F8D151D0013A2F7 /* lift-dark1.webp */,
+				A70346C92F8D151D0013A2F7 /* lift-dark2.webp */,
+				A70346CA2F8D151D0013A2F7 /* lift-dark3.webp */,
+				A70346CB2F8D151D0013A2F7 /* lift-light1.webp */,
+				A70346CC2F8D151D0013A2F7 /* lift-light2.webp */,
+				A70346CD2F8D151D0013A2F7 /* lift-light3.webp */,
+				A70346CE2F8D151D0013A2F7 /* logo-heder.svg */,
+				A70346CF2F8D151D0013A2F7 /* map-city.webp */,
+				A70346D02F8D151D0013A2F7 /* office-dark.webp */,
 				A7A684A02F8554AF00DCA5CA /* icons */,
 				A7A684A12F8554AF00DCA5CA /* apple-touch-icon.png */,
 				A7A684A22F8554AF00DCA5CA /* apple-touch-icon.svg */,

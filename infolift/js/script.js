@@ -158,7 +158,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-
     function enableMapInteractivity() {
         // Проверяем, не висят ли уже слушатели (чтобы не дублировать)
         if (!districtsGroup) return;
@@ -285,8 +284,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-
-
         function enableSizeInteractivity() {
             if (!sizeGroup) return;
         // Проверяем, не висят ли уже слушатели (чтобы не дублировать)
@@ -391,13 +388,6 @@ window.addEventListener('DOMContentLoaded', () => {
         // рассчет прогресса для лифта с размерами макетов
             const hProg = Math.max(0, Math.min(1, (prog - houseTrigger) * 10));
 
-
-
-			
-			
-			
-			
-			
 			function resetAllStates() {
 				// Если всё уже и так сброшено — ничего не делаем. Выходим.
 				if (isCurrentlyReset) return;
@@ -432,9 +422,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					pointerEvents: "none",
 					clearProps: "all" // Очищаем всё, что наворотил GSAP
 				});
-				
-				
-				
+
 				hasAnimatedDistricts = false;
 				hasAnimatedSize = false;
 				isCityZoneActive = false;
@@ -449,16 +437,11 @@ window.addEventListener('DOMContentLoaded', () => {
 				});
 				
 				if (infoWindow) infoWindow.classList.remove('is-visible');
-				
-				
-				
+
 				// Ставим флаг, что всё очищено
 				isCurrentlyReset = true;
 			}
 
-			
-			
-			
             // --- 1. страна ---
             const zProg = Math.max(0, Math.min(1, prog / 0.2));
             const cScale = baseS + (zProg * (baseS * 2.5));
@@ -482,7 +465,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 const cityS = (0.3 + (prog * (baseS * 0.02))) * 2;
                 const cityTX = 1690;
                 const cityTY = 1500;
-				
 
                 // Если мы в зоне дома (hProg > 0), город плавно гаснет.
                 // Если мы в зоне страны (скроллим вверх), город гаснет по alphaC.
@@ -503,10 +485,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 gsap.set(layerCity, { opacity: 0, pointerEvents: "none" });
             }
 
-
-			
-			
-			
             // --- 3. лифт---
             if (hProg > 0) {
 				isCurrentlyReset = false;
@@ -587,9 +565,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 gsap.set(house, { display: 'none', opacity: 0 });
             }
 
-			
-			
-			
 			// --- ПУЛЬТ ОКНА ---
 			
 			// 1. ЗОНА: ГОРОД (Районы)
@@ -662,7 +637,6 @@ window.addEventListener('DOMContentLoaded', () => {
 				}
 			}
        }
-
 
     /* --- 5. ЗАПУСК ПРИ ЗАГРУЗКЕ --- */
         if (isHomePage && mainMap) {
