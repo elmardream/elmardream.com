@@ -50,15 +50,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const sizeGroup = document.getElementById('sizeGroup');
     const districtsData = {
 
-        "d1": { title: "ЦЕНТР", desc: "Исторический центр, административные\nи торговые центры,\nстадионы и парки.\n\n240 лифтов доступны\nдля размещения рекламы."},
-        "d2": { title: "МЕЛЬНИКОВ ЛУГ", desc: "Живописный\nжилой массив\nрядом с озерами\nи зонами отдыха.\n\n185 лифтов доступны\nдля размещения рекламы." },
-        "d3": { title: "ВОЛОТОВА", desc: "Развивающийся\nгустонаселенный район\nс новостройками\nи школами.\n\n285 лифтов доступны\nдля размещения рекламы." },
-        "d4": { title: "СЕЛЬМАШ 2", desc: "Промышленно-жилой сектор с развитой инфраструктурой.\n\n205 лифтов доступны\nдля размещения рекламы." },
-        "d5": { title: "СЕЛЬМАШ 1", desc: "Сердце машиностроения, рабочие кварталы,\nстадион, парки.\n\n215 лифтов доступны\nдля размещения рекламы." },
-        "d6": { title: "ЗАПАДНЫЙ", desc: "Крупный\nспальный район\nс торговыми центрами\nи рынками.\n\n80 лифтов доступны\nдля размещения рекламы." },
-        "d7": { title: "СОВЕТСКИЙ 2", desc: "Университетский\nгородок и жилые\nмолодежные кварталы.\n\n240 лифтов доступны\nдля размещения рекламы." },
-        "d8": { title: "СОВЕТСКИЙ 1", desc: "Новый микрорайон,\nтихие зеленые улицы\nи жилые кварталы.\n\n240 лифтов доступны\nдля размещения рекламы." },
-        "d9": { title: "НОВОБЕЛИЦА", desc: "Заречная часть города,\nокруженная лесами,\nс новостройками\nи особой атмосферой.\n\n215 лифтов доступны\nдля размещения рекламы." }
+        "d1": { title: "ЦЕНТР", desc: "Исторический центр, административные\nи торговые центры,\nстадионы и парки.\n\n240 лифтов доступны\nдля размещения рекламы.", mobileDesc: "240 лифтов доступны\nдля размещения рекламы."},
+        "d2": { title: "МЕЛЬНИКОВ ЛУГ", desc: "Живописный\nжилой массив\nрядом с озерами\nи зонами отдыха.\n\n185 лифтов доступны\nдля размещения рекламы.", mobileDesc: "185 лифтов доступны\nдля размещения рекламы." },
+        "d3": { title: "ВОЛОТОВА", desc: "Развивающийся\nгустонаселенный район\nс новостройками\nи школами.\n\n285 лифтов доступны\nдля размещения рекламы.", mobileDesc: "285 лифтов доступны\nдля размещения рекламы." },
+        "d4": { title: "СЕЛЬМАШ 2", desc: "Промышленно-жилой сектор с развитой инфраструктурой.\n\n205 лифтов доступны\nдля размещения рекламы.", mobileDesc: "205 лифтов доступны\nдля размещения рекламы." },
+        "d5": { title: "СЕЛЬМАШ 1", desc: "Сердце машиностроения, рабочие кварталы,\nстадион, парки.\n\n215 лифтов доступны\nдля размещения рекламы.", mobileDesc: "215 лифтов доступны\nдля размещения рекламы." },
+        "d6": { title: "ЗАПАДНЫЙ", desc: "Крупный\nспальный район\nс торговыми центрами\nи рынками.\n\n80 лифтов доступны\nдля размещения рекламы.", mobileDesc: "80 лифтов доступны\nдля размещения рекламы." },
+        "d7": { title: "СОВЕТСКИЙ 2", desc: "Университетский\nгородок и жилые\nмолодежные кварталы.\n\n240 лифтов доступны\nдля размещения рекламы.", mobileDesc: "240 лифтов доступны\nдля размещения рекламы."},
+        "d8": { title: "СОВЕТСКИЙ 1", desc: "Новый микрорайон,\nтихие зеленые улицы\nи жилые кварталы.\n\n240 лифтов доступны\nдля размещения рекламы.", mobileDesc: "240 лифтов доступны\nдля размещения рекламы." },
+        "d9": { title: "НОВОБЕЛИЦА", desc: "Заречная часть города,\nокруженная лесами,\nс новостройками\nи особой атмосферой.\n\n215 лифтов доступны\nдля размещения рекламы.", mobileDesc: "215 лифтов доступны\nдля размещения рекламы." }
     };
 
     const sizedata = {
@@ -209,13 +209,35 @@ window.addEventListener('DOMContentLoaded', () => {
             districtNameEl.classList.add('fade-out');
             districtDescEl.classList.add('fade-out');
             setTimeout(() => {
-                if (districtNameEl) districtNameEl.textContent = data.title;
-                if (districtDescEl) districtDescEl.textContent = data.desc;
-                districtNameEl.classList.remove('fade-out');
-                districtDescEl.classList.remove('fade-out');
-            }, 200);
-        }
-    }
+				
+//                if (districtNameEl) districtNameEl.textContent = data.title;
+//                if (districtDescEl) districtDescEl.textContent = data.desc;
+//                districtNameEl.classList.remove('fade-out');
+//                districtDescEl.classList.remove('fade-out');
+//            }, 200);
+//        }
+//    }
+				if (districtNameEl) districtNameEl.textContent = data.title;
+				
+				if (districtDescEl) {
+					// --- ЛОГИКА МОБИЛЬНОГО ТЕКСТА ---
+					// Проверяем ширину экрана (менее 480px считается мобильным)
+					const isMobile = window.innerWidth <= 480;
+					
+					// Если это мобилка и у нас есть короткое описание — используем его
+					if (isMobile && data.mobileDesc) {
+						districtDescEl.textContent = data.mobileDesc;
+					} else {
+						// Иначе показываем полную версию
+						districtDescEl.textContent = data.desc;
+					}
+				}
+				
+				districtNameEl.classList.remove('fade-out');
+				districtDescEl.classList.remove('fade-out');
+			}, 200);
+		}
+	}
 
     function handleDistrictOut(e) {
         const path = e.target.closest('path');
@@ -583,7 +605,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					
 					labelEl.textContent = "АДРЕСНАЯ ПРОГРАММА";
 					districtNameEl.textContent = "1905 ЛИФТОВ";
-					districtDescEl.textContent = "В 9 районах Гомеля\n1905 лифтовых кабин\nоборудованы конструкциями\nдля размещения\nрекламных материалов.\n\nМинимальный\nсрок размещения -\n2 недели.";
+					districtDescEl.textContent = "Оборудованы конструкциями\nдля размещения\nрекламных материалов.\n\nСрок размещения -\n2 недели.";
 					
 					if (districtsGroup) districtsGroup.style.pointerEvents = "none";
 					animateDistrictsParade();
@@ -605,7 +627,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					
 					labelEl.textContent = "РАЗМЕРЫ МАКЕТОВ";
 					districtNameEl.textContent = "А3, А4, А5, А6";
-					districtDescEl.textContent = "Стенд для объявлений\nпредставляет собой\n2 ячейки формата А3.\n\nНаходясь в лифте,\nрекламное объявление\nневозможно закрыть,\nотключить, смахнуть,\nигнорировать и т.д.\n\nВашу рекламу увидят!";
+					districtDescEl.textContent = "Рекламное объявление\nневозможно закрыть,\nотключить, смахнуть,\nигнорировать и т.д.\n\nВашу рекламу увидят!";
 					
 					if (districtsGroup) districtsGroup.style.pointerEvents = "none";
 					if (sizeGroup) sizeGroup.style.pointerEvents = "none";
