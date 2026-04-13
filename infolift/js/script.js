@@ -12,6 +12,15 @@ window.addEventListener('DOMContentLoaded', () => {
 	const labelEl = document.getElementById('infoLabel');
 	const finalLayer = document.getElementById('finalLayer');
 	
+	// Коллекция для Города
+	const districtPaths = Array.from({length: 9}, (_, i) => document.getElementById(`d${i+1}`));
+	const districtTexts = Array.from({length: 9}, (_, i) => document.getElementById(`t${i+1}`));
+	
+	// Коллекция для Лифта
+	const sizePaths = Array.from({length: 4}, (_, i) => document.getElementById(`s${i+1}`));
+	const sizeTexts = Array.from({length: 4}, (_, i) => document.getElementById(`st${i+1}`));
+
+	
     let isMenuOpen = false;
     let isHeaderVisible = false;
     let hasAnimatedDistricts = false;
@@ -99,76 +108,56 @@ window.addEventListener('DOMContentLoaded', () => {
         return targetScale;
     }
 
-    function animateDistrictsParade() {
-		if (districtsTL) districtsTL.kill();
-        if (hasAnimatedDistricts) return;
-        hasAnimatedDistricts = true;
-
-        // выключаем мышь чтобы старые слушатели не мешали
-        if (districtsGroup) {
-            districtsGroup.style.pointerEvents = "none";
-        }
-
-//        const tl = gsap.timeline();
+	function animateDistrictsParade() {
+		if (hasAnimatedDistricts) return;
+		hasAnimatedDistricts = true;
+		
+		if (districtsGroup) districtsGroup.style.pointerEvents = "none";
+		
 		districtsTL = gsap.timeline();
-//		const tl = districtsTL;
-        for (let i = 1; i <= 9; i++) {
-
-         const d = document.getElementById(`d${i}`);
-
-         if (d) {
-            // СБРОС: масштаб 1, поворот 0, позиция 0
-            gsap.set(d, { scale: 1, rotation: 0, x: 0, y: 0, clearProps: "transform" });
-
-            const path = document.getElementById(`d${i}`);
-            const text = document.getElementById(`t${i}`);
-
-            if (path) {
-
-                // Принудительно вычисляем длину, даже если элемент был скрыт
-                const len = path.getTotalLength() || 1000; 
-
-                // Устанавливаем начальное состояние
-                gsap.set(path, { 
-                    strokeDasharray: len, 
-                    strokeDashoffset: len, 
-                    strokeOpacity: 1, 
-                    fillOpacity: 0, 
-                    opacity: 1,
-                    stroke: "#eb7b08",
-                });
-
-                if (text) gsap.set(text, { opacity: 0 });
-
-                // Сама анимация
-				districtsTL.to(path, {
-                    strokeDashoffset: 0,
-                    duration: 0.3, 
-                    ease: "power2.inOut" 
-                })
-                .to(path, { fill: "#eb7b08", fillOpacity: 0.2, duration: 0.18 }, "<")
-                .to(text, { opacity: 1, duration: 0.18 }, "<");
-            }}
-        }
-
-        // Добавляем команду прямо в очередь таймлайна
+		
+		// 1. Мгновенная подготовка всех элементов (без цикла)
+		gsap.set(districtPaths, {
+			strokeDasharray: 1500, // Усредненное значение или 2000
+			strokeDashoffset: 1500,
+			strokeOpacity: 1,
+			fillOpacity: 0,
+			opacity: 1,
+			stroke: "#eb7b08",
+			clearProps: "transform"
+		});
+		gsap.set(districtTexts, { opacity: 0 });
+		
+		// 2. Анимация всех элементов ОДНОЙ командой через stagger
+		districtsTL.to(districtPaths, {
+			strokeDashoffset: 0,
+			duration: 0.4,
+			ease: "power2.inOut",
+			stagger: 0.1 // Задержка между появлением районов
+		})
+		.to(districtPaths, {
+			fill: "#eb7b08",
+			fillOpacity: 0.2,
+			duration: 0.2,
+			stagger: 0.1
+		}, 0.1) // Начинаем заливку чуть позже старта отрисовки
+		.to(districtTexts, {
+			opacity: 1,
+			duration: 0.2,
+			stagger: 0.1
+		}, 0.1);
+		
 		districtsTL.add(() => {
+			districtPaths.forEach(d => {
+				if (d) {
+					d.style.pointerEvents = "all";
+					d.style.cursor = "pointer";
+				}
+			});
+			enableMapInteractivity();
+		});
+	}
 
-            // 1. Включаем только САМИ ПУТИ (точечно)
-            for (let i = 1; i <= 9; i++) {
-
-                const d = document.getElementById(`d${i}`);
-
-                if (d) {
-                    d.style.pointerEvents = "all";
-                    d.style.cursor = "pointer";
-                }
-            }
-
-            // 2. Запускаем слушатели событий
-            enableMapInteractivity();
-        });
-    }
 
     function enableMapInteractivity() {
         // Проверяем, не висят ли уже слушатели (чтобы не дублировать)
@@ -250,81 +239,53 @@ window.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    function animateSizeParade() {
-
-        if (hasAnimatedSize) return;
-        hasAnimatedSize = true;
-
-        if (sizeGroup) {
-            sizeGroup.style.pointerEvents = "none";
-        }
-		sizeTL = gsap.timeline({
-			defaults: {
-				force3D: false}
+	function animateSizeParade() {
+		if (hasAnimatedSize) return;
+		hasAnimatedSize = true;
+		
+		if (sizeGroup) sizeGroup.style.pointerEvents = "none";
+		sizeTL = gsap.timeline();
+		
+		// 1. ПОДГОТОВКА: Все макеты и тексты невидимы
+		gsap.set(sizePaths, {
+			opacity: 0,
+			fillOpacity: 0,
+			strokeOpacity: 1,
+			stroke: "#eb7b08",
+			strokeWidth: 10
 		});
-
-        for (let i = 1; i <= 4; i++) {
-
-            const s = document.getElementById(`s${i}`);
-
-            if (s) {
-
-                // СБРОС: масштаб 1, поворот 0, позиция 0
-                gsap.set(s, { scale: 1, rotation: 0, x: 0, y: 0, clearProps: "transform" });
-
-                const path = document.getElementById(`s${i}`);
-                const text = document.getElementById(`st${i}`);
-
-                if (path) {
-
-                    const len = path.getTotalLength() || 1000;
-
-                    gsap.set(path, { 
-                        strokeDasharray: len, 
-                        strokeDashoffset: len, 
-                        strokeOpacity: 1, 
-                        fillOpacity: 0,
-                        opacity: 1, 
-                        stroke: "#eb7b08",
-                    });
-
-                    if (text) gsap.set(text, { opacity: 0 });
-
-                    // рисуем линии
-					sizeTL.to(path, { strokeDashoffset: 0, duration: 0.7, ease: "power3.inOut",
-						force3D: false
-					})
-                    // заливка
-					.to(path, { fill: "#eb7b08", fillOpacity: 0.2,
-						duration: 0.2,
-//						force3D: false
-					}, "-=0.2")
-					.to(text, {
-						opacity: 1,
-						duration: 0.18,
-//						force3D: false
-					}, "<");
-                }}
-            }
-
-            // Добавляем команду прямо в очередь таймлайна
+		gsap.set(sizeTexts, { opacity: 0 });
+		
+		// 2. ПОСЛЕДОВАТЕЛЬНОЕ ПОЯВЛЕНИЕ (4 макета)
+		// stagger: 0.4 создаст ощутимую паузу между появлением контуров
+		sizeTL.to(sizePaths, {
+			opacity: 1,
+			duration: 0.8,
+			stagger: 0.5,
+			ease: "power2.out"
+		})
+		// 3. ЗАЛИВКА: Начинается для каждого пути по мере его появления
+		.to(sizePaths, {
+			fill: "#eb7b08",
+			fillOpacity: 0.2,
+			duration: 0.4,
+			stagger: 0.4
+		}, 0.3) // 0.3 — это задержка старта заливки относительно первой линии
+		
+		// 4. ТЕКСТ: Появляется одновременно с заливкой своего контура
+		.to(sizeTexts, {
+			opacity: 1,
+			duration: 0.4,
+			stagger: 0.4
+		}, 0.3);
+		
 		sizeTL.add(() => {
+			sizePaths.forEach(s => { if (s) s.style.pointerEvents = "all"; });
+			enableSizeInteractivity();
+		});
+	}
 
-                // 1. Включаем только САМИ ПУТИ 
-                for (let i = 1; i <= 4; i++) {
 
-                    const s = document.getElementById(`s${i}`);
-
-                    if (s) {
-                        s.style.pointerEvents = "all";
-                        s.style.cursor = "pointer";
-                    }
-                }
-
-                // 2. Запускаем слушатели событий
-                enableSizeInteractivity();
-            });
-        }
 
         function enableSizeInteractivity() {
             if (!sizeGroup) return;
@@ -518,9 +479,10 @@ window.addEventListener('DOMContentLoaded', () => {
             // --- 2. город ---
             if (alphaC > 0) {
 				isCurrentlyReset = false;
-                const cityS = 0.3 + (prog * (baseS * 0.02));
-                const cityTX = 4830;
-                const cityTY = 4960;
+                const cityS = (0.3 + (prog * (baseS * 0.02))) * 2;
+                const cityTX = 1690;
+                const cityTY = 1500;
+				
 
                 // Если мы в зоне дома (hProg > 0), город плавно гаснет.
                 // Если мы в зоне страны (скроллим вверх), город гаснет по alphaC.
@@ -549,10 +511,8 @@ window.addEventListener('DOMContentLoaded', () => {
             if (hProg > 0) {
 				isCurrentlyReset = false;
                 // 1. прилет
-                let currentScale = hProg * (baseS * 0.36);
+                let currentScale = hProg * (baseS * 0.73);
                 let currentOpacity = Math.min(1, hProg * 4);
-				
-				
 				
                 // 2. ЭТАП: плавный зум (0.35 -> 0.55)
                 if (hProg >= 1 && prog > 0.35) {
@@ -563,18 +523,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 // 3. ЭТАП: резкий улет
                 if (prog >= 0.55) {
                     const warpFactor = Math.max(0, Math.min(1, (prog - 0.55) * 30));
-					
-					// Универсальный сброс для зазора между Лифтом и Финалом
-//					if (prog > 0.55 && prog < 0.6) {
-						// Если мы в этом промежутке, и что-то активно (окно открыто) — сбрасываем всё
-//						if (!isCurrentlyReset) {
-//							resetAllStates();
-//						}
-//					}
 
                     currentScale *= (1 + (0.9 * warpFactor)); 
-//                    const lateFade = Math.max(0, (warpFactor - 0.7) * 3.33);
-//                    currentOpacity = 1 - Math.min(1, lateFade);
 
 					currentOpacity = 1 - Math.min(1, warpFactor * 2.5);
 					
@@ -583,12 +533,13 @@ window.addEventListener('DOMContentLoaded', () => {
                         const fIn = Math.max(0, Math.min(1, (prog - 0.55) * 20));
                         const fZoom = Math.max(0, Math.min(1, (prog - 0.55) * 2.8)); 
 
-                    // Масштаб: база 0.44 * прилет * плавный рост на 20%
-                        const fScale = (baseS * 0.6) * fIn * (1 + (0.20 * fZoom));
-                        const targetX = 1000;
-                        const targetY = 1500;
+                    // Масштаб: база * прилет * плавный рост на 20%
+                        const fScale = (baseS * 0.75) * fIn * (1 + (0.20 * fZoom));
+                        const targetX = 650;
+                        const targetY = 400;
 
                         gsap.set(finalLayer, {
+							force3D: true,
                             display: (prog > 0.55) ? 'block' : 'none',
                             opacity: 1,
                             scale: fScale,
@@ -606,14 +557,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
 
             // 4. ЕДИНЫЙ ВЫВОД
-                gsap.set(house, { 
-force3D: true, 
-willChange: "transform",
+				// --- НАСТРОЙКА ПОЛОЖЕНИЯ  ---
+				const LIFT_CENTER_X = 600;
+				const LIFT_CENTER_Y = 500;
+				
+                gsap.set(house, {
+					force3D: true,
                     display: (currentOpacity > 0.01) ? 'block' : 'none',
                     opacity: currentOpacity,
                     scale: currentScale,
-                    x: (wW / 2) - (1100 * currentScale), 
-                    y: (wH / 2) - (1550 * currentScale),
+					x: (window.innerWidth / 2) - (LIFT_CENTER_X * currentScale),
+					y: (window.innerHeight / 2) - (LIFT_CENTER_Y * currentScale),
                     transformOrigin: "0 0",
                     pointerEvents: (currentOpacity < 0.1) ? 'none' : 'all',
                     zIndex: 100
@@ -722,11 +676,7 @@ willChange: "transform",
             gsap.set(mainMap, { opacity: 1 });
 
             // Входная анимация
-            const introTl = gsap.timeline({
-				defaults: {
-					force3D: false
-				}
-});
+            const introTl = gsap.timeline();
             const mainL = document.getElementById('l');
             if (mainL) {
                 const len = mainL.getTotalLength();

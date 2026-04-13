@@ -96,7 +96,8 @@ body {
 	/* Технические фиксы для Chrome и Safari */
 	overflow: hidden;
 	backface-visibility: hidden;
-	outline: 1px solid transparent;
+	outline: 2px solid transparent;
+	inline: 1px solid transparent;
 	/* Убеждаемся, что логотип стоит на "полу" этажа */
 	display: block;
 	margin-top: auto;

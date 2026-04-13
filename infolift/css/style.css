@@ -1,6 +1,7 @@
 html {
 	margin: 0;
 	padding: 0;
+	width: 100%;
 	/* Защита от "подтягивания" экрана при движении пальцем вниз */
 	overscroll-behavior: none;
 
@@ -8,14 +9,12 @@ html {
 
 /* БАЗОВЫЕ НАСТРОЙКИ */
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+	margin: 0;
+	padding: 0;
     /* Центрирует всё содержимое по горизонтали */
     min-height: 100vh;
     /* Растягивает тело сайта на всю высоту экрана */
     background-color: #ffffff;
-    transition: background-color 0.5s ease;
     /* Плавная смена темы день/ночь */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     /* Системные шрифты */
@@ -25,17 +24,31 @@ body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
-	/* Защита от "подтягивания" экрана при движении пальцем вниз */
-/*	overscroll-behavior: none;*/
 }
 
-/* Принудительно задаем шрифт для всех текстовых элементов в SVG */
-svg text {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+.home-page {
+	/* Разрешает только вертикальный скролл */
+	touch-action: pan-y;
+	overflow-x: hidden;
 }
 
 
+/* Возвращаем "притяжение" футера для всех страниц, КРОМЕ главной */
+body:not(.home-page) {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 
+/* Контентная часть на текстовых страницах заберет всё свободное место */
+body:not(.home-page) .content-section {
+	flex: 1 0 auto;
+}
+
+/* Сам футер теперь всегда будет внизу на текстовых страницах */
+body:not(.home-page) footer {
+	flex-shrink: 0;
+}
 
 /* ШИРОКАЯ ЗОНА (ДЛЯ КАРТЫ И ГЛАВНОЙ) */
 .wide-container {
@@ -104,8 +117,8 @@ p {
 body:not(.home-page) .content-section>* {
     opacity: 0;
     animation: contentFadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+	/* Базовая задержка для самого первого элемента */
     animation-delay: 0.3s;
-    /* Базовая задержка для самого первого элемента */
 }
 
 body:not(.home-page) .content-section>*:nth-child(2) {
@@ -206,19 +219,6 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     transform: translateY(0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --- ГЛАВНАЯ СТРАНИЦА: ПОЛНОЭКРАННАЯ КАРТА И КОНТЕНТ --- */
 .zoom-container {
     position: relative;
@@ -232,9 +232,8 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     top: 0;
     left: 0;
 	/* Используем vw/vh для строгого соответствия окну */
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    z-index: 50;
 	/* Обрезает карту при увеличении */
     overflow: hidden;
 }
@@ -267,20 +266,34 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 }
 
 #l, #l1, #l2, #l3, #l4, #l5, #l6, #L0, #L1, #L2, #L3, #L4, #L5, #L6, #L7, #L8, #c1, #c2, #c3, #c4, #c5, #c6, #p1, #p2, #p3, #p4, #p5, #p6, #mapLetters path, #mapLetters polygon {
-/*    fill-opacity: 0;*/
     stroke-opacity: 1;
     /* Заставляет браузер отрисовывать вектор максимально точно */
     shape-rendering: geometricPrecision;
-	will-change: transform, opacity;
+}
+
+#imgCity {
+	width: 1500px;
+	height: 1150px;
+	top: 0;
+	left: 0;
+	border-radius: 120px;
+	/* Обязательно добавляем это, чтобы Chrome и Safari не "мылили" края */
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	/* Для четкости в Chrome и Safari */
+	image-rendering: -webkit-optimize-contrast;
+	-webkit-transform: translateZ(0);
+	image-rendering: high-quality;
+	pointer-events: none;
+	mix-blend-mode: normal;
 }
 
 /* Контейнер для SVG районов */
 .districts-svg {
     position: absolute;
-    top: 0;
+    top: -205px;
     left: 0;
-    width: 100%;
-    height: 100%;
+	width: 1550px;
+	height: 1550px;
 	/* Сам SVG "прозрачен" для кликов... */
     pointer-events: none;
 }
@@ -294,26 +307,32 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     stroke-opacity: 0;
     stroke-width: 7; 
     cursor: default;
-	will-change: transform, opacity;
+/*	убираем  микро-щели, которые «моргают» во время движения*/
+	shape-rendering: geometricPrecision;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
 
 .district-label {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
     font-size: 40px;
     font-weight: 700;
     fill: #5d5d5d;
     opacity: 0;
     pointer-events: none;
-	will-change: transform;
+	will-change: opacity;
+	paint-order: stroke fill;
 }
 
 /* Контейнер для SVG районов */
 .rooms-svg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -210px;
+    left: -5px;
+	width: 1500px;
+	height: 1500px;
 	/* Сам SVG "прозрачен" для кликов... */
     pointer-events: none;
 }
@@ -329,7 +348,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     stroke-opacity: 0;
     stroke-width: 9; 
     cursor: default;
-	will-change: transform, opacity;
+	will-change: opacity;
 }
 
 .size-label {
@@ -337,12 +356,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     fill: #ffffff;
     opacity: 0;
     pointer-events: none;
-    /* Добавляем эти свойства для четкости */
-/*    shape-rendering: geometricPrecision;*/
-/*    text-rendering: optimizeLegibility;*/
-/*    -webkit-font-smoothing: antialiased;*/
-/*	will-change: transform;*/
-	
+	paint-order: stroke fill;
 }
 
 .house-img {
@@ -351,20 +365,61 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     object-fit: cover;
 	/* Накладываем кадры друг на друга */
     position: absolute;
+	border-radius: 150px;
+}
+
+/* Обращаемся к картинке внутри нашего кадра */
+.house-img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 120px;
+	/* чтобы Chrome и Safari не "мылили" края */
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	image-rendering: high-quality;
+	-webkit-transform: translateZ(0);
+}
+
+/* Контейнер лифта — теперь это наш главный "якорь" */
+#houseLayer {
+	position: absolute;
+	width: 1500px;
+	height: 1079px;
+	transform-origin: 0 0;
+}
+
+#frame1 {
+	position: absolute;
+	top: 0;
+	left: 500px;
+	width: 614px;
+	height: 1079px;
+	object-fit: contain;
+	pointer-events: none;
+}
+
+#frame2, #frame3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1500px;
+	height: 1079px;
+	object-fit: contain;
+  pointer-events: none;
 }
 
 #frame4 {
-	left: 10%;
-	top: 28%;
+	width: 1500px;
+	height: 898px;
+	top: 0;
+	left: 0;
+	pointer-events: none;
 }
 
-#frame1, #frame2, #frame3, #frame4 {
-/* Для четкости */
-  image-rendering: -webkit-optimize-contrast;
-  /* Принудительный GPU слой */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  pointer-events: none;
+/* 3. Масштабируем всё через родителя */
+.house-sequence-wrapper {
+	position: absolute;
+	inset: 0;
 }
 
 .info-window-glass {
@@ -379,13 +434,22 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
     border-radius: 20px;
-    z-index: 9997;
+    z-index: 100;
     opacity: 0;
     pointer-events: none; 
     transform: translateY(-15px);
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
 	/* Чтобы текст не вылезал за границы во время анимации */
      overflow: hidden;
+}
+
+/* Оптимизируем блюр: только если браузер мощный */
+@supports (backdrop-filter: blur(1px)) {
+	.info-window-glass {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px) saturate(180%);
+		-webkit-backdrop-filter: blur(10px) saturate(180%);
+	}
 }
 
 /* Эффект стеклянной грани для окна подсказок */
@@ -426,7 +490,6 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 	line-height: 1.2;
 	opacity: 1;
 	transition: opacity 0.2s ease-in-out;
-	will-change: opacity;
 }
 
 .info-text  {
@@ -435,7 +498,6 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 	line-height: 1.4;
 	opacity: 1;
 	transition: opacity 0.2s ease-in-out;
-	will-change: opacity;
 	/* Заставляет браузер учитывать переносы \n */
 	white-space: pre-line;
 }
@@ -452,12 +514,10 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 
 /* ФУТЕР */
 footer {
-    width: 100%;
     margin-top: auto;
     padding: 10px 0;
     border-top: 1px solid rgba(151, 151, 151, 0.15);
     position: relative;
-    z-index: 10;
 }
 
 .footer-content {
@@ -533,6 +593,7 @@ footer {
         cursor: pointer;
         z-index: 3100;
         animation: fadeInSequence 0.7s forwards;
+		-webkit-tap-highlight-color: transparent;
     }
 
     @keyframes fadeInSequence {
@@ -547,10 +608,11 @@ footer {
 
     /* ЛИНИИ КНОПКИ */
     .menu-toggle .line {
-		top: 50%;
-		transform: translateY(-50%);
+		top: 47%;
+		left: 50%;
+		margin-left: -15px;
         position: absolute;
-        width: 22px;
+        width: 23px;
         height: 2px;
         background: #5d5d5d;
         border-radius: 2px;
@@ -565,20 +627,23 @@ footer {
         transform: translateY(5px);
     }
 
-    /* Интерактив линий */
-    .menu-toggle:hover .line:nth-child(1) {
-        background: #EB7B08;
-        transform: translateY(0) rotate(-45deg);
-    }
-
-    .menu-toggle:hover .line:nth-child(2) {
-        background: #EB7B08;
-        transform: translateY(0) rotate(45deg);
-    }
-
-    .menu-toggle.active .line {
-        background: #EB7B08;
-    }
+	/* --- ХОВЕР (ТОЛЬКО ДЛЯ МЫШКИ) --- */
+	@media (hover: hover) {
+		.menu-toggle:hover .line {
+			background: #EB7B08;
+		}
+	}
+	
+	/* --- АКТИВНОЕ СОСТОЯНИЕ (КРЕСТИК) --- */
+	/* Когда класс .active добавлен через JS */
+	.menu-toggle.active .line:nth-child(1) {
+		background: #EB7B08;
+		transform: translateY(0) rotate(-45deg); /* Сводим в центр (16+26)/2 */
+	}
+	.menu-toggle.active .line:nth-child(2) {
+		background: #EB7B08;
+		transform: translateY(0) rotate(45deg);
+	}
 }
 
 /* --- МОБИЛЬНАЯ ШТОРКА --- */
@@ -662,9 +727,6 @@ footer {
     padding: 0 30px;
     box-sizing: border-box;
     will-change: top, opacity;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    backface-visibility: hidden;
 }
 
 /* ОКАНТОВКА */
@@ -686,13 +748,13 @@ footer {
 
 /* 2. ЛЕВАЯ ЗОНА (КОНТЕЙНЕР ЛОГОТИПА) */
 .logo-link {
-	margin-top: 3px;
     margin-right: 28px;
 }
 
 .logo-svg {
-    width: 200px;
-    height: 30px;
+    width: 210px;
+    height: 27px;
+	display: block;
     pointer-events: none;
 }
 
@@ -733,8 +795,6 @@ footer {
 }
 
 .social-icon-link svg {
-/*    width: 20px;*/
-/*    height: 20px;*/
     fill: #787878;
 	display: block;
 }
@@ -773,20 +833,21 @@ footer {
 
 /* --- ГЛОБАЛЬНЫЙ СТАНДАРТ ССЫЛОК --- */
 a {
-	will-change: transform;
+/*	will-change: transform;*/
     text-decoration: none;
     color: inherit;
     display: inline-block;
     transition: color 0.4s ease,
     transform 0.4s ease;
-/*backface-visibility: hidden;*/
-/*-webkit-backface-visibility: hidden;*/
 }
 
-a:hover {
-/*will-change: transform;*/
-    color: #EB7B08;
-    transform: scale(1.05);
+/* Эффект при наведении — только для устройств с мышкой */
+@media (hover: hover) {
+	a:hover {
+		will-change: transform;
+		color: #EB7B08;
+		transform: scale(1.05);
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -825,23 +886,19 @@ p,
     }
 }
 
-/* Убираем системную подсветку при нажатии на мобильных устройствах */
-* {
+/* --- ОПТИМИЗАЦИЯ ТАЧ-ИНТЕРФЕЙСА --- */
+html, body {
 	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
 }
 
 /* Дополнительная защита для логотипа и иконок */
-.wide-container,
-.content-section,
 .zoom-container,
 .district-path,
 .room-path,
 .dynamic-header,
 .menu-toggle
 {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	/* Запрещаем выделение элементов при долгом нажатии */
-	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
 }
