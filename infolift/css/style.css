@@ -430,7 +430,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     left: max(5%, calc(50% - 500px));
     width: 175px;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.45);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
     border-radius: 20px;
@@ -446,7 +446,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 /* Оптимизируем блюр: только если браузер мощный */
 @supports (backdrop-filter: blur(1px)) {
 	.info-window-glass {
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(255, 255, 255, 0.45);
 		backdrop-filter: blur(10px) saturate(180%);
 		-webkit-backdrop-filter: blur(10px) saturate(180%);
 	}
@@ -462,7 +462,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     /* градиент: от блика сверху к тени снизу */
     background: linear-gradient(
         to bottom, 
-        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(255, 255, 255, 0.45) 0%,
         rgba(0, 0, 0, 0.1) 100%
     );
     /* оставляем только 1px по краю */
@@ -654,7 +654,7 @@ footer {
     top: 100px;
     right: max(5%, calc(50% - 500px));
     width: 130px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.45);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     backdrop-filter: blur(10px) saturate(180%);
     border-radius: 20px;
