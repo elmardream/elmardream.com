@@ -15,9 +15,10 @@
 		A70346CB2F8D151D0013A2F7 /* lift-light1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-light1.webp"; sourceTree = "<group>"; };
 		A70346CC2F8D151D0013A2F7 /* lift-light2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-light2.webp"; sourceTree = "<group>"; };
 		A70346CD2F8D151D0013A2F7 /* lift-light3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-light3.webp"; sourceTree = "<group>"; };
-		A70346CE2F8D151D0013A2F7 /* logo-heder.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "logo-heder.svg"; sourceTree = "<group>"; };
+		A70346CE2F8D151D0013A2F7 /* logo-infolift.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "logo-infolift.svg"; sourceTree = "<group>"; };
 		A70346CF2F8D151D0013A2F7 /* map-city.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "map-city.webp"; sourceTree = "<group>"; };
 		A70346D02F8D151D0013A2F7 /* office-dark.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "office-dark.webp"; sourceTree = "<group>"; };
+		A70346D12F8D56460013A2F7 /* office-light.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "office-light.webp"; sourceTree = "<group>"; };
 		A7A684822F85461E00DCA5CA /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
 		A7A684832F85461E00DCA5CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		A7A684842F85461E00DCA5CA /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = favicon.svg; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		A7A6849F2F8554AF00DCA5CA /* WhatsApp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatsApp.svg; sourceTree = "<group>"; };
 		A7A684A12F8554AF00DCA5CA /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
 		A7A684A22F8554AF00DCA5CA /* apple-touch-icon.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "apple-touch-icon.svg"; sourceTree = "<group>"; };
-		A7A684A32F8554AF00DCA5CA /* artboard-city-whight.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "artboard-city-whight.webp"; sourceTree = "<group>"; };
 		A7A684A42F8554AF00DCA5CA /* artboard-city-d.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "artboard-city-d.svg"; sourceTree = "<group>"; };
 		A7A684A52F8554AF00DCA5CA /* artboard-country.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "artboard-country.svg"; sourceTree = "<group>"; };
 		A7A684A62F8554AF00DCA5CA /* artboard-country orig.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "artboard-country orig.svg"; sourceTree = "<group>"; };
@@ -56,14 +56,10 @@
 		A7A684A92F8554AF00DCA5CA /* c1-rb.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "c1-rb.svg"; sourceTree = "<group>"; };
 		A7A684AA2F8554AF00DCA5CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		A7A684AB2F8554AF00DCA5CA /* favicon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = favicon.svg; sourceTree = "<group>"; };
-		A7A684AC2F8554AF00DCA5CA /* fin.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = fin.webp; sourceTree = "<group>"; };
 		A7A684AD2F8554AF00DCA5CA /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
 		A7A684AF2F8554AF00DCA5CA /* Logo-first.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Logo-first.svg"; sourceTree = "<group>"; };
 		A7A684B02F8554AF00DCA5CA /* Logo-new.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Logo-new.svg"; sourceTree = "<group>"; };
 		A7A684B12F8554AF00DCA5CA /* preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preview.png; sourceTree = "<group>"; };
-		A7A684B22F8554AF00DCA5CA /* sh1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = sh1.webp; sourceTree = "<group>"; };
-		A7A684B32F8554AF00DCA5CA /* sh2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = sh2.webp; sourceTree = "<group>"; };
-		A7A684B42F8554AF00DCA5CA /* sh3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = sh3.webp; sourceTree = "<group>"; };
 		A7A684B62F8554AF00DCA5CA /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		A7A684BC2F8554AF00DCA5CA /* CustomEase.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CustomEase.min.js; sourceTree = "<group>"; };
 		A7A684BD2F8554AF00DCA5CA /* gsap.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = gsap.min.js; sourceTree = "<group>"; };
@@ -149,6 +145,7 @@
 		A7A684B52F8554AF00DCA5CA /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				A70346D12F8D56460013A2F7 /* office-light.webp */,
 				A70346C72F8D151D0013A2F7 /* artboard-city.webp */,
 				A70346C82F8D151D0013A2F7 /* lift-dark1.webp */,
 				A70346C92F8D151D0013A2F7 /* lift-dark2.webp */,
@@ -156,13 +153,12 @@
 				A70346CB2F8D151D0013A2F7 /* lift-light1.webp */,
 				A70346CC2F8D151D0013A2F7 /* lift-light2.webp */,
 				A70346CD2F8D151D0013A2F7 /* lift-light3.webp */,
-				A70346CE2F8D151D0013A2F7 /* logo-heder.svg */,
+				A70346CE2F8D151D0013A2F7 /* logo-infolift.svg */,
 				A70346CF2F8D151D0013A2F7 /* map-city.webp */,
 				A70346D02F8D151D0013A2F7 /* office-dark.webp */,
 				A7A684A02F8554AF00DCA5CA /* icons */,
 				A7A684A12F8554AF00DCA5CA /* apple-touch-icon.png */,
 				A7A684A22F8554AF00DCA5CA /* apple-touch-icon.svg */,
-				A7A684A32F8554AF00DCA5CA /* artboard-city-whight.webp */,
 				A7A684A42F8554AF00DCA5CA /* artboard-city-d.svg */,
 				A7A684A52F8554AF00DCA5CA /* artboard-country.svg */,
 				A7A684A62F8554AF00DCA5CA /* artboard-country orig.svg */,
@@ -171,14 +167,10 @@
 				A7A684A92F8554AF00DCA5CA /* c1-rb.svg */,
 				A7A684AA2F8554AF00DCA5CA /* favicon.ico */,
 				A7A684AB2F8554AF00DCA5CA /* favicon.svg */,
-				A7A684AC2F8554AF00DCA5CA /* fin.webp */,
 				A7A684AD2F8554AF00DCA5CA /* logo.svg */,
 				A7A684AF2F8554AF00DCA5CA /* Logo-first.svg */,
 				A7A684B02F8554AF00DCA5CA /* Logo-new.svg */,
 				A7A684B12F8554AF00DCA5CA /* preview.png */,
-				A7A684B22F8554AF00DCA5CA /* sh1.webp */,
-				A7A684B32F8554AF00DCA5CA /* sh2.webp */,
-				A7A684B42F8554AF00DCA5CA /* sh3.webp */,
 			);
 			path = assets;
 			sourceTree = "<group>";
