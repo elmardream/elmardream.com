@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		A70346C62F8A9EA50013A2F7 /* script old.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "script old.js"; sourceTree = "<group>"; };
-		A70346C72F8D151D0013A2F7 /* artboard-city.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "artboard-city.webp"; sourceTree = "<group>"; };
 		A70346C82F8D151D0013A2F7 /* lift-dark1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-dark1.webp"; sourceTree = "<group>"; };
 		A70346C92F8D151D0013A2F7 /* lift-dark2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-dark2.webp"; sourceTree = "<group>"; };
 		A70346CA2F8D151D0013A2F7 /* lift-dark3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lift-dark3.webp"; sourceTree = "<group>"; };
@@ -146,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				A70346D12F8D56460013A2F7 /* office-light.webp */,
-				A70346C72F8D151D0013A2F7 /* artboard-city.webp */,
 				A70346C82F8D151D0013A2F7 /* lift-dark1.webp */,
 				A70346C92F8D151D0013A2F7 /* lift-dark2.webp */,
 				A70346CA2F8D151D0013A2F7 /* lift-dark3.webp */,

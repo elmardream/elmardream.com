@@ -470,14 +470,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 // Если мы в зоне страны (скроллим вверх), город гаснет по alphaC.
                 let currentCityOpacity = alphaC;
 
-                gsap.to(layerCity, {
-                    opacity: currentCityOpacity, 
+                gsap.set(layerCity, {
+                    opacity: currentCityOpacity,
                     scale: cityS,
                     x: (wW / 2) - (cityTX * cityS),
                     y: (wH / 2) - (cityTY * cityS),
                     pointerEvents: hProg > 0 ? "none" : "all",
-                    duration: 0, 
-                    overwrite: "auto"
+//                    duration: 0, 
+//                    overwrite: "auto"
+					force3D: false
                 });
             } else {
                 resetAllStates();

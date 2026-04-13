@@ -50,6 +50,12 @@ body:not(.home-page) footer {
 	flex-shrink: 0;
 }
 
+* {
+	/* Помогает Chrome лучше обсчитывать границы текста */
+	text-rendering: optimizeLegibility;
+}
+
+
 /* ШИРОКАЯ ЗОНА (ДЛЯ КАРТЫ И ГЛАВНОЙ) */
 .wide-container {
     max-width: 1200px;
@@ -253,7 +259,8 @@ body:not(.home-page) .content-section>*:nth-child(22) {
     height: 3000px;
     top: 0;
     left: 0;
-    will-change: transform, opacity;
+	backface-visibility: hidden;
+/*    will-change: transform, opacity;*/
 }
 
 .map-img {
@@ -846,7 +853,7 @@ a {
 	a:hover {
 		will-change: transform;
 		color: #EB7B08;
-		transform: scale(1.05);
+		transform: scale(1.05) rotateZ(0.001deg);
 	}
 }
 
