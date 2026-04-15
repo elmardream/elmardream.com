@@ -478,7 +478,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (alphaC > 0) {
 			isCurrentlyReset = false;
 			const cityS = (0.3 + (prog * (baseS * 0.02))) * 2;
-			const cityTX = 1690;
+			const cityTX = 1720;
 			const cityTY = 1500;
 			
 			// Если мы в зоне дома (hProg > 0), город плавно гаснет.
@@ -527,7 +527,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					
 					// Масштаб: база * прилет * плавный рост на 20%
 					const fScale = (baseS * 0.75) * fIn * (1 + (0.20 * fZoom));
-					const targetX = 650;
+					const targetX = 550;
 					const targetY = 400;
 					
 					gsap.set(finalLayer, {
@@ -550,7 +550,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			
 			// 4. ЕДИНЫЙ ВЫВОД
 			// --- НАСТРОЙКА ПОЛОЖЕНИЯ  ---
-			const LIFT_CENTER_X = 600;
+			const LIFT_CENTER_X = 550;
 			const LIFT_CENTER_Y = 500;
 			
 			gsap.set(house, {
