@@ -427,13 +427,13 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 }
 
 .info-window-glass {
-	min-height: 130px;
+	min-height: 170px;
 	position: fixed;
 	top: 100px;
 	/* Зеркальная формула для левого края хедера: */
 	left: max(5%, calc(50% - 500px));
-	width: 175px;
-	padding: 12px;
+	width: 230px;
+	padding: 25px;
 	background: rgba(255, 255, 255, 0.45);
 	-webkit-backdrop-filter: blur(10px) saturate(180%);
 	backdrop-filter: blur(10px) saturate(180%);
@@ -480,24 +480,24 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 
 /* Стили заголовков внутри "стекла" */
 .info-label {
-	font-size: 13px;
+	font-size: 15px;
 	color: #EB7B08;
 	text-transform: uppercase;
-	margin-bottom: 4px;
+	margin-bottom: 8px;
 }
 
 .info-title {
-	font-size: 21px;
+	font-size: 26px;
 	color: #EB7B08;
 	font-weight: bold;
-	margin-bottom: 8px;
+	margin-bottom: 15px;
 	line-height: 1.2;
 	opacity: 1;
 	transition: opacity 0.2s ease-in-out;
 }
 
 .info-text  {
-	font-size: 15px;
+	font-size: 18px;
 	color: #5d5d5d;
 	line-height: 1.4;
 	opacity: 1;
@@ -564,6 +564,25 @@ footer {
 		pointer-events: none;
 		transition: opacity 0.5s ease, visibility 0.5s ease;
 	}
+	.info-window-glass {
+		width: 175px;
+		padding: 12px;
+		min-height: 130px;
+	}
+	.info-label {
+		font-size: 13px;
+		margin-bottom: 4px;
+	}
+	.info-title {
+		font-size: 21px;
+		margin-bottom: 8px;
+		line-height: 1.2;
+	}
+	.info-text  {
+		font-size: 15px;
+		line-height: 1.4;
+	}
+		
 }
 
 /* --- ЭТАП 2: 680px (Тает десктопная навигация) --- */
@@ -863,12 +882,12 @@ a {
 	.district-label,
 	.nav-desktop,
 	.nav-mobile {
-		color: #b0b0b0;
+		color: #bdbdbd;
 	}
 	
 	.social-icon-link svg,
 	.district-label {
-		fill: #d0d0d0;
+		fill: #bdbdbd;
 	}
 	
 	body {
@@ -876,7 +895,7 @@ a {
 	}
 	
 	.menu-toggle .line {
-		background: #d0d0d0;
+		background: #bdbdbd;
 	}
 	
 	/* Меняем заливку всех областей (l1, l2 и т.д.) */

@@ -11,15 +11,12 @@ window.addEventListener('DOMContentLoaded', () => {
 	const house = document.getElementById('houseLayer');
 	const labelEl = document.getElementById('infoLabel');
 	const finalLayer = document.getElementById('finalLayer');
-	
 	// Коллекция для Города
 	const districtPaths = Array.from({length: 9}, (_, i) => document.getElementById(`d${i+1}`));
 	const districtTexts = Array.from({length: 9}, (_, i) => document.getElementById(`t${i+1}`));
-	
 	// Коллекция для Лифта
 	const sizePaths = Array.from({length: 4}, (_, i) => document.getElementById(`s${i+1}`));
 	const sizeTexts = Array.from({length: 4}, (_, i) => document.getElementById(`st${i+1}`));
-	
 	
 	let isMenuOpen = false;
 	let isHeaderVisible = false;
@@ -34,7 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	// Используем переменную-флаг, чтобы знать, что всё уже чисто
 	let isCurrentlyReset = false;
 	let districtsTL, sizeTL;
-	
 	
 	const logoWrapper = document.querySelector('.logo-animation-wrapper');
 	const mainMap = document.getElementById('mainMap');
@@ -478,7 +474,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (alphaC > 0) {
 			isCurrentlyReset = false;
 			const cityS = (0.3 + (prog * (baseS * 0.02))) * 2;
-			const cityTX = 1720;
+			const cityTX = 1710;
 			const cityTY = 1500;
 			
 			// Если мы в зоне дома (hProg > 0), город плавно гаснет.
