@@ -294,7 +294,7 @@ body:not(.home-page) .content-section>*:nth-child(22) {
 /* Контейнер для SVG районов */
 .districts-svg {
 	position: absolute;
-	top: -205px;
+	top: -165px;
 	left: 0;
 	width: 1550px;
 	height: 1550px;
@@ -558,13 +558,16 @@ footer {
 
 /* --- ЭТАП 1: 900px - 681px (Тают соцсети) --- */
 @media (max-width: 900px) {
+	
 	.header-socials {
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
 		transition: opacity 0.5s ease, visibility 0.5s ease;
 	}
+	
 	.info-window-glass {
+		top: 90px;
 		width: 175px;
 		padding: 12px;
 		min-height: 130px;
@@ -673,7 +676,7 @@ footer {
 	color: #5d5d5d;
 	display: none;
 	position: fixed;
-	top: 100px;
+	top: 90px;
 	right: max(5%, calc(50% - 500px));
 	width: 130px;
 	background: rgba(255, 255, 255, 0.45);
