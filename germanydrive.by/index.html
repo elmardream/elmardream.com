@@ -3,19 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
   <title>Germany Drive | Автомобили из Германии</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
+  <meta name="description" content="Подбираем и доставляем автомобили из Германии и стран Евросоюза в Беларусь.">
+  <meta name="keywords" content="Подобрать автомобиль, подбор авто, купить авто, пригнать авто, пригнать автомобиль из Германии, пригнать из Европы, купить в Германии, обследование автомобиля, осмотр авто, автоподбор, проверить авто в Германии, проверить авто в ЕС, купить автомобиль на аукционе, участвовать в аукционе, mobile.de, autoscout24.de, доставка автомобиля из Европы, автовоз из Германии, автовоз из ЕС, автовоз из Польши, автовоз из Литвы, авто из ЕС, купить авто за границей, доставка авто в Беларусь, регистрация автомобиля, регистрация автомобиля в Беларуси, растаможка автомобиля, льготная растаможка, найти льготника для растаможки, купить авто в Гомеле, пригнать авто в Гомель.">
+<meta property="og:title" content="Germany Drive | Автомобили из Германии">
+<meta property="og:description" content="Подберем и доставим автомобиль из Германии в Беларусь за 5 дней.">
+<meta property="og:image" content="assets/img/preview.png">
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Carter+One&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,44 +35,100 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Scout</h1>
+        <img src="assets/img/logo.webp" alt="Логотип Germany Drive">
+        <h7 class="sitename">Germany Drive</h7>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
+<!--          <li><a href="#hero" class="active">Главная</a></li>-->
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+<!--          <li><a href="#team">Наша команда</a></li>-->
+		  <li><a href="#contact">Контакты</a></li>
+          <li class="dropdown">
+			  <a>
+				  <span>Поиск авто</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+			  </a>
+			  <ul>
+				  <li><a href="https://www.mobile.de" target="_blank" rel="noopener noreferrer" data-info="external-link1" aria-label="Ссылка на веб-сайт mobile.de (откроется в новом окне)">mobile.de</a></li>
+				  <li><a href="https://www.autoscout24.de" target="_blank" rel="noopener noreferrer" data-info="external-link2" aria-label="Ссылка на веб-сайт autoscout24.de (откроется в новом окне)">autoscout24.de</a></li>
+				  <li><a href="https://www.openlane.eu" target="_blank" rel="noopener noreferrer" data-info="external-link3" aria-label="Ссылка на веб-сайт openlane.eu (откроется в новом окне)">openlane.eu</a></li>
+				  <li><a href="https://www.kleinanzeigen.de/s-autos/anbieter:gewerblich/anzeige:angebote/c216?utm_source=google&utm_medium=cpc&utm_campaign=de_ka_motors_google_c2c_perf_ps-used-cars-commercial-offers-brand&gad_source=1&gad_campaignid=22578842332&gbraid=0AAAAA_e4Y9q5Rk9-z6g3Zw0pfG6QKzD7N" target="_blank" rel="noopener noreferrer" data-info="external-link4" aria-label="Ссылка на веб-сайт kleinanzeigen.de (откроется в новом окне)">kleinanzeigen.de</a></li>
+				  <li><a href="https://autoplius.lt" target="_blank" rel="noopener noreferrer" data-info="external-link5" aria-label="Ссылка на веб-сайт autoplius.lt (откроется в новом окне)">autoplius.lt</a></li>
+			  </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+		  <li class="dropdown">
+			  <a>
+				  <span>Логистика</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+			  </a>
+			  <ul>
+				  <li><a href="https://www.dbschenker.com/global" target="_blank" rel="noopener noreferrer" data-info="logistic-link1" aria-label="Ссылка на веб-сайт Dbschenker (откроется в новом окне)">DB SCHENKER</a></li>
+				  <li><a href="https://www.kuehne-nagel.com/de" target="_blank" rel="noopener noreferrer" data-info="logistic-link2" aria-label="Ссылка на веб-сайт Kuehne-Nagel (откроется в новом окне)">Kuehne-Nagel</a></li>
+				  <li><a href="https://www.dachser.de/de/" target="_blank" rel="noopener noreferrer" data-info="logistic-link3" aria-label="Ссылка на веб-сайт Dachser (откроется в новом окне)">DACHSER</a></li>
+				  <li><a href="https://www.dsv.com/de-de/" target="_blank" rel="noopener noreferrer" data-info="logistic-link4" aria-label="Ссылка на веб-сайт Dsv.com (откроется в новом окне)">DSV</a></li>
+				  <li><a href="https://deutschland.raben-group.com" target="_blank" rel="noopener noreferrer" data-info="logistic-link5" aria-label="Ссылка на веб-сайт Raben-Group (откроется в новом окне)">Raben</a></li>
+				  <li><a href="https://www.dslv.org/de/die-branche/logistikmarkt" target="_blank" rel="noopener noreferrer" data-info="logistic-link6" aria-label="Ссылка на веб-сайт Dslv (откроется в новом окне)">DSLV</a></li>
+				  <li><a href="https://www.trans-o-flex.com" target="_blank" rel="noopener noreferrer" data-info="logistic-link7" aria-label="Ссылка на веб-сайт Trans-O-Flex (откроется в новом окне)">trans-o-flex</a></li>
+				  <li><a href="https://www.rhenus.group/de/de/" target="_blank" rel="noopener noreferrer" data-info="logistic-link8" aria-label="Ссылка на веб-сайт Rhenus.group (откроется в новом окне)">RHENUS LOGICTICS</a></li>
+				  <li><a href="https://de.freight-amazon.com/promoDE?utm_source=google&utm_medium=cpc&utm_campaign=%7BMidLowConverting_Google%7D&utm_content=176182423854&utm_term=warentransport%20deutschland" target="_blank" rel="noopener noreferrer" data-info="logistic-link9" aria-label="Ссылка на веб-сайт De.freight-Amazon (откроется в новом окне)">Amazon Freight</a></li>
+			  </ul>
+		  </li>
+          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
-
+	  <a class="btn-getstarted" href="javascript:void(0)" data-modal-target="modal-message">Напишите нам</a>
     </div>
   </header>
 
+  <div id="modal-message" class="modal-overlay">
+	  
+	  <div class="modal-content">
+		  
+		  <span class="close-icon">&times;</span>
+		  
+		  <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
+			  
+			  <form action="forms/contact.php" method="post" class="php-email-form">
+				  
+				  <div class="row">
+					  
+					  <div class="col-md-6 form-group">
+						  <input type="text" name="name" class="form-control" id="name" placeholder="Имя" required="">
+					  </div>
+					  
+					  <div class="col-md-6 form-group mt-3 mt-md-0">
+						  <input type="email" class="form-control" name="email" id="email" placeholder="Электронная почта" required="">
+					  </div>
+				  </div>
+				  
+				  <div class="form-group mt-3">
+					  <input type="text" class="form-control" name="subject" id="subject" placeholder="Номер телефона" required="">
+				  </div>
+				  
+				  <div class="form-group mt-3">
+					  <textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required=""></textarea>
+				  </div>
+				  
+				  <div class="my-3">
+					  <div class="loading">Загрузка</div>
+					  <div class="error-message"></div>
+					  <div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
+				  </div>
+				  
+				  <h9>
+					  Сообщая свои данные вы соглашаетесь с <a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal-privacy">политикой приватности </a>сайта.</h9>
+				  
+				  <div class="form-submit">
+					  <button type="submit">Отправить сообщение</button>
+				  </div>
+			  </form>
+		  </div>
+	  </div>
+  </div>
+  
   <main class="main">
 
     <!-- Hero Section -->
@@ -80,35 +138,35 @@
           <div class="col-lg-6">
             <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
               <div class="hero-tag">
-                <i class="bi bi-rocket-takeoff"></i>
-                <span>Innovative Solutions</span>
+<img src="assets/img/logo-white-small.webp" alt="Логотип  Germany Drive"  style="max-height: 40px; width: 40px;">
+				<h7 style="margin-left: 8px;" class="logo">Germany Drive</h7>
               </div>
-              <h1>Achieving <span class="highlight">Outstanding Results</span> for Your Growth</h1>
-              <p class="lead">Our dedicated team provides exceptional service to help you reach your business goals effectively.</p>
+			  
+              <h1>Подберем и <span class="highlight">доставим автомобиль</span> из Германии в Беларусь <span class="highlight">за 5 дней.</span></h1>
+              <p class="lead">Надежная комапания, которая обеспечит сопровождение покупки и доставки автомобиля на каждом из этапов.</p>
               <ul class="hero-features">
-                <li><i class="bi bi-check-circle"></i> Streamlined operational processes</li>
-                <li><i class="bi bi-check-circle"></i> Enhanced customer engagement strategies</li>
-                <li><i class="bi bi-check-circle"></i> Data-driven decision support</li>
+                <li><i class="bi bi-check-circle"></i> Полноценный офис и договор оказания услуг</li>
+                <li><i class="bi bi-check-circle"></i>Высокий рейтинг и положительные отзывы клиентов</li>
+                <li><i class="bi bi-check-circle"></i> Собственные эксперты в Германии и странах Евросоюза</li>
               </ul>
               <div class="hero-cta">
-                <a href="#services" class="btn btn-primary">Explore Our Services</a>
-                <a href="tel:+1 (555) 987-6543" class="btn btn-link"><i class="bi bi-telephone"></i> +1 (555) 987-6543</a>
+                <a href="tel:+375 (29) 164 99 99" class="btn btn-primary mt-4" aria-label="Позвонить нам по телефону +375 29 164 99 99">Позвонить  +375 (29) 164 99 99</a>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="hero-image-wrapper" data-aos="fade-up" data-aos-delay="300">
-              <img src="assets/img/about/about-square-13.webp" alt="" class="img-fluid hero-image">
+              <img src="assets/img/office/office-0.webp" alt="" class="img-fluid hero-image">
               <div class="stat-card top-right">
-                <div class="stat-value">18.9K</div>
-                <div class="stat-label">Improved market presence</div>
+                <div class="stat-value">86 заказов</div>
+                <div class="stat-label">Выполнено в 2025 году</div>
                 <div class="stat-icon">
                   <i class="bi bi-graph-up-arrow"></i>
                 </div>
               </div>
               <div class="stat-card bottom-left">
-                <div class="stat-value">+450%</div>
-                <div class="stat-label">Increased lead generation</div>
+                <div class="stat-value">+150%</div>
+                <div class="stat-label">Рост в текущем году</div>
                 <div class="stat-icon">
                   <i class="bi bi-graph-up"></i>
                 </div>
@@ -117,7 +175,7 @@
           </div>
         </div>
       </div>
-    </section><!-- /Hero Section -->
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -126,8 +184,8 @@
 
         <div class="row justify-content-center mb-5">
           <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="section-heading">Our Vision &amp; Mission</h2>
-            <p class="lead">We're dedicated to transforming businesses through innovative solutions and strategic expertise that drive sustainable growth.</p>
+			  <h2 class="section-heading">Наша миссия</h2>
+            <p class="lead">Покупка автомобиля в Германии и его доставка в Беларусь — сложный, законодательно регламентированный процесс, который в 2026 году из-за санкционных ограничений требует участия профессионалов.</p>
           </div>
         </div>
 
@@ -135,40 +193,40 @@
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="feature-box">
               <div class="icon-container">
-                <i class="bi bi-lightbulb"></i>
+                <i class="bi bi-laptop"></i>
               </div>
-              <h4>Innovation</h4>
-              <p>Pioneering solutions that challenge conventional thinking and create new opportunities for success.</p>
+              <h4>Поиск</h4>
+              <p>Специалист ищет<br>подходящие варианты авто<br>на Mobile.de, AutoScout24,<br>закрытых дилерских аукционах.<br>Оптимальный возраст<br>от 3 до 5 лет.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-box">
               <div class="icon-container">
-                <i class="bi bi-graph-up-arrow"></i>
+                <i class="bi bi-clipboard-check"></i>
               </div>
-              <h4>Growth</h4>
-              <p>Facilitating sustainable expansion through strategic planning and calculated execution.</p>
+              <h4>Осмотр</h4>
+              <p>Эксперты в Германии<br>и других странах Евросоюза<br>выезжают к продавцу,<br>проверяют авто,<br>сверяют VIN-номер,<br>делают отчет.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="feature-box">
               <div class="icon-container">
-                <i class="bi bi-shield-check"></i>
+                <i class="bi bi-currency-euro"></i>
               </div>
-              <h4>Integrity</h4>
-              <p>Upholding the highest standards of ethics, transparency and accountability in all our endeavors.</p>
+              <h4>Покупка</h4>
+              <p>С продавцом<br>оговариваем продажу на экспорт:<br>Netto-цена — без НДС<br>для юридических лиц,<br>или Brutto — с НДС<br>для физических лиц.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
             <div class="feature-box">
               <div class="icon-container">
-                <i class="bi bi-people-fill"></i>
+                <i class="bi bi-car-front-fill"></i>
               </div>
-              <h4>Collaboration</h4>
-              <p>Working alongside our clients as partners to achieve mutual growth and shared success.</p>
+              <h4>Доставка</h4>
+              <p>Организуем<br>доставку авто "под ключ"<br>самым надежным<br> маршрутом и перевозчиком,<br> документальное сопровождение<br>до оформления в МРЭО</p>
             </div>
           </div>
         </div>
@@ -176,43 +234,43 @@
         <div class="row align-items-center about-showcase">
           <div class="col-lg-6 order-lg-2" data-aos="fade-left" data-aos-delay="300">
             <div class="about-image-grid">
-              <img src="assets/img/about/about-15.webp" class="img-grid-main" alt="Our company vision">
-              <img src="assets/img/about/about-17.webp" class="img-grid-secondary" alt="Our team">
-              <img src="assets/img/about/about-square-5.webp" class="img-grid-tertiary" alt="Our workspace">
+              <img src="assets/img/office/office-1.webp" class="img-grid-main" alt="Our company vision">
+              <img src="assets/img/office/office-2.webp" class="img-grid-secondary" alt="Our team">
+              <img src="assets/img/office/office-3.webp" class="img-grid-tertiary" alt="office inside">
               <div class="experience-badge" data-aos="zoom-in" data-aos-delay="500">
-                <span class="years">15+</span>
-                <span class="text">Years of Excellence</span>
+                <span class="years"> 5+</span>
+                <span class="text">Лет опыта</span>
               </div>
             </div>
           </div>
           <div class="col-lg-6 order-lg-1" data-aos="fade-right" data-aos-delay="200">
             <div class="about-content-box">
-              <h3>Transforming Businesses Since 2008</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida tortor in lectus pharetra, at iaculis orci scelerisque. Cras porta enim id neque interdum, at fermentum odio venenatis.</p>
+              <h3><span class="highlight">Доставляем</span> автомобили из Германии <span class="highlight">с 2020 года</span> </h3>
+              <p class="mb-4">Основные варианты покупки авто в Германии: через дилера, аукцион или частного продавца. Дилеры предлагают машины в хорошем техническом состоянии по более высокой цене. На аукционах цены ниже, но есть риск скрытых дефектов. Особое внимание уделяем проверке документов при покупке у частных продавцов.</p>
 
               <div class="progress-item">
                 <div class="d-flex justify-content-between">
-                  <span class="progress-title">Strategic Planning</span>
-                  <span class="progress-percent">94%</span>
+                  <span class="progress-title">Покупка у дилера</span>
+                  <span class="progress-percent">84%</span>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" style="width: 84%" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress-item">
                 <div class="d-flex justify-content-between">
-                  <span class="progress-title">Business Development</span>
-                  <span class="progress-percent">87%</span>
+                  <span class="progress-title">Покупка на аукционе</span>
+                  <span class="progress-percent">97%</span>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" style="width: 97%" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress-item">
                 <div class="d-flex justify-content-between">
-                  <span class="progress-title">Market Research</span>
+                  <span class="progress-title">Покупка у частных лиц</span>
                   <span class="progress-percent">92%</span>
                 </div>
                 <div class="progress">
@@ -220,7 +278,7 @@
                 </div>
               </div>
 
-              <a href="about.html" class="btn btn-discover mt-4">Learn More About Us</a>
+			  <a href="tel:+375 (29) 164 99 99" class="btn btn-discover mt-4" aria-label="Позвонить нам по телефону +375 29 164 99 99">Позвонить в &nbsp;<span class="highlight"> Germany Drive </span>&nbsp; +375 (29) 164 99 99</a>
             </div>
           </div>
         </div>
@@ -238,8 +296,8 @@
 
           <div class="col-lg-6 col-md-12">
             <div class="stats-overview text-center text-lg-start" data-aos="fade-right" data-aos-delay="200">
-              <h3>Our growth in numbers</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod magna vel libero tincidunt, in finibus nisi faucibus. Proin vel erat nec orci sagittis ullamcorper vel at urna.</p>
+              <h3>Мы в цифрах</h3>
+              <p>Покупка авто в Европе — это строгий расчет, тщательная проверка документов и выверенная логистика, а не сказки про «бесплатную доставку» и «машины в идеале за копейки». Мы предпочитаем точность цифр, а не размытые фразы и рекламные слоганы. Возможно, мы не дадим вам «самую низкую цену в городе», но мы гарантируем ответственный подход к выполнению заказа на каждом этапе.</p>
             </div>
           </div>
 
@@ -247,67 +305,90 @@
             <div class="stats-grid" data-aos="zoom-in" data-aos-delay="300">
               <div class="stats-card">
                 <div class="stats-icon">
-                  <i class="bi bi-people-fill"></i>
+                  <i class="bi bi-person-heart"></i>
                 </div>
                 <div class="stats-content">
                   <div class="stats-number">
-                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
+                    <span data-purecounter-start="0" data-purecounter-end="143" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
                   </div>
-                  <p>Happy Clients</p>
+                  <p>Счастливые клиенты</p>
                 </div>
               </div>
 
               <div class="stats-card">
                 <div class="stats-icon">
-                  <i class="bi bi-folder2-open"></i>
+                  <i class="bi bi-check2-circle"></i>
                 </div>
                 <div class="stats-content">
                   <div class="stats-number">
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
+                    <span data-purecounter-start="0" data-purecounter-end="191" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
                   </div>
-                  <p>Completed Projects</p>
+                  <p>Выполненные заказы</p>
+                </div>
+              </div>
+
+			  <div class="stats-card">
+				  <div class="stats-icon">
+					  <i class="bi bi-headset"></i>
+				  </div>
+				  <div class="stats-content">
+					  <div class="stats-number">
+						  <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
+					  </div>
+					  <p>Количество звонков в день</p>
+				  </div>
+			  </div>
+			  
+              <div class="stats-card">
+                <div class="stats-icon">
+                  <i class="bi bi-person-lines-fill"></i>
+                </div>
+                <div class="stats-content">
+                  <div class="stats-number">
+                    <span data-purecounter-start="0" data-purecounter-end="817" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
+                  </div>
+                  <p>Проведено консультаций за год</p>
                 </div>
               </div>
 
               <div class="stats-card">
                 <div class="stats-icon">
-                  <i class="bi bi-headset"></i>
+                  <i class="bi bi-person-fill-gear"></i>
                 </div>
                 <div class="stats-content">
                   <div class="stats-number">
-                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
+                    <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
                   </div>
-                  <p>Support Hours</p>
+                  <p>Исследуем автомобилей в день</p>
                 </div>
               </div>
-
-              <div class="stats-card">
-                <div class="stats-icon">
-                  <i class="bi bi-person-workspace"></i>
-                </div>
-                <div class="stats-content">
-                  <div class="stats-number">
-                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
-                  </div>
-                  <p>Expert Team Members</p>
-                </div>
-              </div>
+			  
+			  <div class="stats-card">
+				  <div class="stats-icon">
+					  <i class="bi bi-person-workspace"></i>
+				  </div>
+				  <div class="stats-content">
+					  <div class="stats-number">
+						  <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span><span class="plus">+</span>
+					  </div>
+					  <p>Наша команда</p>
+				  </div>
+			  </div>
             </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Stats Section -->
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="services section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Услуги</h2>
+		<p>Мы предлагаем четкий алгоритм действий, где вы контролируете каждый этап, а мы берем на себя техническую и юридическую рутину. Подробный официальный договор является гарантом исполнения обязательств обеих сторон.<br>
+		
+		</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -316,17 +397,17 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="services-headline" data-aos="fade-up">
-                <p class="services-subtitle">Expert Guidance</p>
-                <h2 class="services-title">Innovative Solutions We Provide</h2>
+                <p class="services-subtitle">Экспертное сопровождение</p>
+                <h2 class="services-title">Ответственность перед <span class="highlight">клиентом</span></h2>
               </div>
 
               <div class="services-description" data-aos="fade-up" data-aos-delay="100">
-                <p>Our team delivers cutting-edge strategies to help you achieve your goals. Discover how our tailored services can benefit your business.</p>
+                <p>Мы гарантируем, что машина не в угоне или залоге у немецкого банка. Мы отвечаем за корректность оформления экспортной декларации, брифа и купчей для таможни РБ. В зависимости от способа доставки, мы несем ответственность за состояние автомобиля до момента передачи клиенту. Мы четко придерживаемся сроков, указанных в договоре.</p>
               </div>
 
               <div class="services-image-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="services-image">
-                  <img src="assets/img/services/services-12.webp" alt="Services" class="img-fluid">
+                  <img src="assets/img/office/office-4.webp" alt="Services" class="img-fluid">
                 </div>
               </div>
             </div>
@@ -336,70 +417,76 @@
                 <div class="row gy-4">
                   <!-- Service Item 1 -->
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                      <div class="service-content text-center">
-                        <div class="service-icon">
-                          <i class="bi bi-cash-stack"></i>
-                        </div>
-                        <div class="service-info">
-                          <h3><a href="#">Strategic Planning</a></h3>
-                          <p>We offer customized plans to optimize your operations and improve overall efficiency across the board.</p>
+					  <div class="service-card">
+						  <div class="service-content text-center">
+							  <div class="service-icon">
+								  <i class="bi bi-camera"></i>
+							  </div>
+							  <div class="service-info">
+								  <h3><a>Осмотр</a></h3>
+								  <p>Мы предоставляем комплекс услуг по проверке технического и юридического состояния машины: первичный осмотр, компьютерную диагностику, проверку лакокрасочного покрытия (ЛКП) и истории обслуживания.
+								  </p>
                           <div class="service-action">
-                            <a href="service-details.html" class="read-more-btn">Details <i class="bi bi-arrow-right"></i></a>
+<a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal1" aria-label="Откроется окно с дополнительной информацией об осмотре автомобиля">
+	Подробнее<i class="bi bi-arrow-right"></i>
+</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Service Item 2 -->
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                      <div class="service-content text-center">
-                        <div class="service-icon">
-                          <i class="bi bi-list-check"></i>
-                        </div>
-                        <div class="service-info">
-                          <h3><a href="#">Digital Marketing</a></h3>
-                          <p>Our expert team crafts engaging campaigns that connect with your audience and drive conversions effectively.</p>
+					  <div class="service-card">
+						  <div class="service-content text-center">
+							  <div class="service-icon">
+								  <i class="bi bi-translate"></i>
+							  </div>
+							  <div class="service-info">
+								  <h3><a>Переговоры</a></h3>
+								  <p>При покупке автомобиля из Германии мы выполняем роль автоброкера и перегонщика, осуществляя переговоры, направленные на снижение цены, проверку юридической чистоты и организацию экспорта.</p>
                           <div class="service-action">
-                            <a href="service-details.html" class="read-more-btn">View More <i class="bi bi-arrow-right"></i></a>
+<a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal2" aria-label="Откроется окно с дополнительной информацией о переговорах с продавцом автомобиля">
+	Подробнее<i class="bi bi-arrow-right"></i>
+</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Service Item 3 -->
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card">
                       <div class="service-content text-center">
                         <div class="service-icon">
-                          <i class="bi bi-bar-chart"></i>
+                          <i class="bi bi-wallet2"></i>
                         </div>
                         <div class="service-info">
-                          <h3><a href="#">Performance Analysis</a></h3>
-                          <p>We analyze your data to provide actionable insights, helping you make informed decisions for future growth.</p>
+                          <h3><a>Покупка</a></h3>
+                          <p>Мы контролируем весь процесс оформления пакета документов, необходимых для снятия с учета, экспорта из ЕС и таможенной очистке в Республике Беларусь. Оказываем поддержку в постановке на учет.</p>
                           <div class="service-action">
-                            <a href="service-details.html" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+<a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal3" aria-label="Откроется окно с дополнительной информацией о покупке автомобиля">
+	Подробнее<i class="bi bi-arrow-right"></i>
+</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Service Item 4 -->
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-card">
                       <div class="service-content text-center">
                         <div class="service-icon">
-                          <i class="bi bi-pie-chart"></i>
+                          <i class="bi bi-truck"></i>
                         </div>
                         <div class="service-info">
-                          <h3><a href="#">Market Research</a></h3>
-                          <p>Understanding your market is key, and we provide comprehensive research to give you a competitive edge.</p>
+                          <h3><a>Доставка</a></h3>
+                          <p>Мы рекомендуем задействовать  проверенные логистические компании, так как прямая перегонка сейчас сопряжена с трудностями на границе. Транспортировка осуществляется через Литву или Польшу.</p>
                           <div class="service-action">
-                            <a href="service-details.html" class="read-more-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+<a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal4" aria-label="Откроется окно с дополнительной информацией о доставке автомобиля">
+	Подробнее<i class="bi bi-arrow-right"></i>
+</a>
                           </div>
                         </div>
                       </div>
@@ -413,134 +500,284 @@
 
       </div>
 
-    </section><!-- /Services Section -->
+    </section>
+	
+	<div id="modal1" class="modal-overlay">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h8>Осмотр</h8>
+				<span class="close-icon">&times;</span>
+			</div>
+			<div class="modal-body">Если имеется физический доступ к выбранному вами автомобилю, наш сотрудник в Германии лично выезжает на осмотр.<br>
+				<br>
+				1. Техническая и кузовная диагностика<br>
+				Проверка ЛКП:<br>Измерение толщины лакокрасочного покрытия на всех деталях для выявления перекрашенных, шпаклеванных или замененных элементов.<br>
+				Осмотр кузова:<br>Поиск коррозии, скрытых повреждений рамы или несущих частей.<br>
+				Компьютерная диагностика:<br> Подключение сканера для чтения ошибок электронных блоков управления (двигатель, АКПП, ABS, подушки безопасности).<br>
+				Осмотр узлов и агрегатов:<br>Проверка двигателя на наличие подтеков масла, осмотр подвески, проверка тормозной системы.<br>
+				Тест-драйв:<br>Проверка работы двигателя под нагрузкой, переключения передач, поведения подвески и рулевого управления.<br>
+				<br>
+				2. Юридическая проверка и история<br>
+				Проверка пробега:<br>Анализ сервисной книжки, данных TÜV (немецкий техосмотр) и электронных баз на предмет скручивания пробега.<br>
+				Проверка истории обслуживания:<br> Подтверждение регулярности ТО и замен деталей.<br>
+				Юридическая чистота:<br>Проверка документов на машину, подтверждение того, что автомобиль не находится в залоге, не числится в угоне и не имеет обременений.<br>
+				Проверка истории аварий:<br>Запрос отчетов о прошлых ДТП.<br>
+				<br>
+				3. Отчетность и осмотр на месте<br>
+				Фото- и видеоотчет:<br>Подробная съемка кузова, салона, подкапотного пространства, днища, проблемных мест, а также фото показаний толщиномера.<br>
+				Акт осмотра:<br>Письменное заключение эксперта о состоянии автомобиля с рекомендациями по покупке.<br>
+				<br>
+				4. Дополнительные услуги<br>
+				Независимая диагностика:<br>Организация осмотра на немецком СТО (DEKRA или TÜV) по запросу клиента.<br>
+				Проверка документов продавца:<br> Проверка легальности деятельности автохауса (дилера) и возможности возврата НДС (MwSt).<br>
+				<br>
+				Итоговый результат:<br>Вы получаете полный отчет о состоянии автомобиля до того, как будет принято решение о покупке, что позволяет избежать приобретения битых или неисправных машин.<br>
+				</div>
+		</div>
+	</div>
+	
+	<div id="modal2" class="modal-overlay">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h8>Переговоры</h8>
+				<span class="close-icon">&times;</span>
+			</div>
+			<div class="modal-body">С кем мы, как посредник, ведем переговоры:<br><br>
+				Немецкие автохаусы (официальные дилеры):<br>для покупки авто с прозрачной историей, обслуживанием и оформлением документов на экспорт (часто с возвратом НДС/MwSt).<br>
+				Частные продавцы в Германии:<br> переговоры о цене и осмотре автомобиля.<br>
+				Лизинговые аукционы (европейские):<br> мы выступаем участником торгов, проверяя историю авто по закрытым базам.<br>
+				Немецкие таможенные агенты (Zollamt):<br> для оформления экспортной декларации (EX-1).<br>
+				KFZ-Zulassungsstelle (местные органы регистрации):<br> для получения транзитных номеров (Zollkennzeichen).<br>
+				Транспортные компании:<br> организация автовоза из Германии/Литвы в Беларусь.<br><br>
+				Основные цели ведения переговоров:<br>
+				Снижение цены (торг):<br>Мы торгуемся с продавцом (дилером или частником), используя аргументы о состоянии авто (царапины, необходимость ТО, пробег), пытаясь получить скидку.<br>
+				Возврат НДС (MwSt):<br>Если автомобиль продается с НДС, мы договариваемся о его возврате или о покупке по «нетто-цене» (Netto) с предоставлением документов, подтверждающих вывоз за пределы ЕС.<br>
+				Техническое состояние и документы:<br> Мы запрашиваем результаты осмотра, подтверждение сервисной истории, сверяем данные Брифа (техпаспорта) с реальным годом выпуска и объемом двигателя.<br>
+				Условия сделки:<br>Согласовываем условия купли-продажи (Kaufvertrag) и организации оплаты (через банк).<br>
+				Логистика:<br>Договариваемся о времени и месте осмотра, оформлении страховки и доставке.<br><br>
+				Итоговый результат:<br>Наш опыт, технический немецкий, проверенные контакты и надежные партнеры - все это в совокупности позволяет избежать множества проблем, возникающих в процессе покупки дорогостоящего автомобиля.
 
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
+			</div>
+		</div>
+	</div>
+
+	<div id="modal3" class="modal-overlay">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h8>Покупка</h8>
+				<span class="close-icon">&times;</span>
+			</div>
+			<div class="modal-body">Для чего нужен посредник на этом этапе:<br>
+				Проверка юридической чистоты:<br> Автомобиль оформляется напрямую на вас (вы — первый собственник в РБ). Мы готовим экспортные документы (EX-A, T1), возвращаем VAT (НДС) для автомобилей, где это применимо.<br><br>
+				1. Что нужно знать и внимательно проверять на этапе покупки и оформления в Германии:<br>
+				Договор купли-продажи (Kaufvertrag / Rechnung).<br>
+				Важно:<br>Если авто покупается на льготника (по Указу №140), в договоре указываются данные льготника, а не посредника.<br>
+				Технический паспорт (Fahrzeugbrief / Zulassungsbescheinigung Teil II).<br>
+				Большой бриф — основной документ собственника.<br>
+				Свидетельство о регистрации (Fahrzeugschein / Zulassungsbescheinigung Teil I).<br>
+				Малый бриф — свидетельство, подтверждающее допуск к движению.<br>
+				Справка о снятии с учета (Abmeldebescheinigung).<br>
+				Выдается в Kfz-Zulassungsstelle (регистрационный отдел) при снятии автомобиля с учета.<br>
+				Сертификат соответствия / Сертификат COC (Certificate of Conformity).<br>
+				Документ, подтверждающий соответствие евростандартам (желательно, но не всегда обязательно).<br>
+				Диагностическая карта (TÜV / AU - Abgasuntersuchung).<br>
+				Действующий техосмотр, необходим для получения транзитных номеров.<br>
+				<br>
+				2. Экспортные документы (оформляются перед выездом)<br>
+				Экспортная декларация (Ausfuhranmeldung / MRN - Movement Reference Number).<br>
+				Оформляется у брокера на границе или в Германии для подтверждения экспорта из ЕС.<br>
+				Транзитные номера (Ausfuhrkennzeichen / Zollkennzeichen).<br>
+				"Желтые" (краткосрочные) или "красные" (международные) номера.<br>
+				Страховой полис (Doppelkarte / eVB-Nummer).<br>
+				Международная страховка ("Зеленая карта") на время транзита.<br>
+				<br>
+				3. Документы для ввоза в Беларусь (на границе)<br>
+				Пассажирская таможенная декларация (ПТД).<br>
+				Заполняется при въезде в РБ на красном коридоре.<br>
+				Предварительная декларация / Обеспечение (Таможенная расписка).<br>
+				Оформляется заранее до границы, подтверждает оплату пошлин.<br>
+				Договор перевозки / Акт приема-передачи (если авто на автовозе).<br>
+				<br>
+				Итоговый пакет документов для ГАИ РБ:<br>
+				Договор купли-продажи (Kaufvertrag).<br>
+				Техпаспорт (Teil I + Teil II).<br>
+				Экспортная декларация (MRN).<br>
+				Таможенные документы (удостоверение ввоза).<br>
+				СБКТС (Свидетельство о безопасности конструкции ТС) — оформляется уже в РБ.<br><br>
+				Последовательность действий:<br> Заключение договора -> <br>Снятие с учета -> <br>Получение экспортной декларации и транзитных номеров -> <br>Оформление предварительной декларации в РБ -> <br>Пересечение границы -> <br>Таможенная очистка.<br><br>
+				Любоя неточность на любом из этапов при самостоятельной покупке авто без профессионального посредника надолго лишит вас сна и облегчит ваш кошелек.<br>Тем не менее, для тех кто готов рисковать своими деньгами, мы подготовили эту пошаговую инструкцию и предоставляем ссылки на аукционные площадки и логистические компании.<br> Внимательно изучайте наш сайт.
+</div>
+		</div>
+	</div>
+	
+	<div id="modal4" class="modal-overlay">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h8>Доставка</h8>
+				<span class="close-icon">&times;</span>
+			</div>
+			<div class="modal-body">Как мы осуществляем доставку:<br><br>
+				Оформление документов:<br>Мы организуем подготовку экспортной декларации (Ausfuhranmeldung), транзитных номеров и страховки (если нужно).<br>
+				Погрузка:<br>Автомобиль забираюм с площадки продавца/аукциона и грузим на автовоз (если согласована доставка автовозом)<br>
+				Пересечение границы:<br>Транспортировка происходит преимущественно через литовскую границу.<br>
+				Доставка до СВХ:<br>Автомобиль доставляют на склад временного хранения (таможня) в Беларуси<br><br>
+				Рассмотрим возможные варианты доставки в разрезе цены и безопасности:<br>
+				1. Самый безопасный и популярный вариант:<br>Автовоз / Лафет (Autotransport / Autotransporter)<br>
+				Автомобиль грузится на специализированный прицеп или грузовик.<br>
+				Плюсы:<br>Минимальный риск повреждения (авто не едет само), отсутствие пробега по СНГ, возможность застраховать груз. Самый распространенный способ.<br>
+				Минусы:<br>Дороже, чем своим ходом.<br>
+				Сроки:<br>3-5 недель (из-за загруженности границ и сбора машин).<br>
+				Цена:<br>от ~1500–1800€.<br>
+				<br>
+				2. Более дешевый, но менее безопасный вариант:<br>Своим ходом (Überführung auf eigener Achse)<br>
+				Перегонщик (водитель) едет на автомобиле из Германии в Беларусь самостоятельно.<br>
+				Плюсы:<br>Быстрее (3-5 дней), дешевле, так как не нужно оплачивать место на автовозе.<br>
+				Минусы:<br>Пробег по дороге, риск повреждения камнями, усталость водителя, необходимость оформления страховки (зеленая карта) и транзитных номеров.<br>
+				Цена:<br>от ~1500€.<br>
+				<br>
+				3. Самый дорогой и защищенный:<br> Крытый автовоз (Geschlossener Autotransporter)<br>
+				Перевозка в закрытом контейнере/тенте. Используется для элитных или очень дорогих авто.<br>
+				Плюсы:<br>Абсолютная защита от погодных условий и внешних повреждений.<br>
+				Минусы:<br>Самая высокая стоимость.<br><br>
+				Терминология (русский/немецкий)<br>
+				Автовоз / Лафет — Autotransporter / Anhänger (Lafette)<br>
+				Доставка своим ходом — Überführung auf eigener Achse<br>
+				Экспортная декларация — Ausfuhranmeldung (MRN)<br>
+				Транзитные номера — Ausfuhrkennzeichen / Kurzzeitkennzeichen<br>
+				Купить нетто (без НДС) — Netto-Kauf (MwSt. ausweisbar)<br>
+				Автоподбор/Осмотр — Gebrauchtwagen-Check / Kfz-Gutachten<br>
+				Таможня — Zoll<br>
+				Договор купли-продажи — Kaufvertrag<br>
+			</div>
+		</div>
+	</div>
+
+    <!-- tm-logo Section -->
+    <section id="tm-logo" class="tm-logo section">
 
       <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="clients-slider">
-          <div class="clients-track track-1" data-aos="fade-right" data-aos-delay="200">
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
+        <div class="tm-logo-slider">
+          <div class="tm-logo-track track-1" data-aos="fade-right" data-aos-delay="200">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-1.webp" class="img-fluid" alt="tm-logo 1">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-2.webp" class="img-fluid" alt="tm-logo 2">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-3.webp" class="img-fluid" alt="tm-logo 3">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-4.webp" class="img-fluid" alt="tm-logo 4">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-5.webp" class="img-fluid" alt="tm-logo 5">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-6.webp" class="img-fluid" alt="tm-logo 6">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-7.webp" class="img-fluid" alt="tm-logo 7">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-8.webp" class="img-fluid" alt="tm-logo 8">
             </div>
 
             <!-- Duplicate for seamless looping -->
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-1.webp" class="img-fluid" alt="tm-logo 1">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-2.webp" class="img-fluid" alt="tm-logo 2">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-3.webp" class="img-fluid" alt="tm-logo 3">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-4.webp" class="img-fluid" alt="tm-logo 4">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-5.webp" class="img-fluid" alt="tm-logo 5">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-6.webp" class="img-fluid" alt="tm-logo 6">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-7.webp" class="img-fluid" alt="tm-logo 7">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-8.webp" class="img-fluid" alt="tm-logo 8">
             </div>
           </div>
         </div>
 
-        <div class="clients-slider">
-          <div class="clients-track track-2" data-aos="fade-left" data-aos-delay="300">
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
+        <div class="tm-logo-slider">
+          <div class="tm-logo-track track-2" data-aos="fade-left" data-aos-delay="300">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-9.webp" class="img-fluid" alt="tm-logo 9">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-10.webp" class="img-fluid" alt="tm-logo 10">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-11.webp" class="img-fluid" alt="tm-logo 11">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-12.webp" class="img-fluid" alt="tm-logo 12">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-13.webp" class="img-fluid" alt="tm-logo 13">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-14.webp" class="img-fluid" alt="tm-logo 14">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-15.webp" class="img-fluid" alt="tm-logo 15">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-16.webp" class="img-fluid" alt="tm-logo 16">
             </div>
 
             <!-- Duplicate for seamless looping -->
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-9.webp" class="img-fluid" alt="tm-logo 9">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-10.webp" class="img-fluid" alt="tm-logo 10">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-11.webp" class="img-fluid" alt="tm-logo 11">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-12.webp" class="img-fluid" alt="tm-logo 12">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-13.webp" class="img-fluid" alt="tm-logo 13">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-14.webp" class="img-fluid" alt="tm-logo 14">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-15.webp" class="img-fluid" alt="tm-logo 15">
             </div>
-            <div class="clients-slide">
-              <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
+            <div class="tm-logo-slide">
+              <img src="assets/img/tm-logo/tm-logo-16.webp" class="img-fluid" alt="tm-logo 16">
             </div>
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Clients Section -->
+    </section><!-- /tm-logo Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Отзывы клиентов</h2>
+        <p>Наши счастливые клиенты делятся опытом сотрудничества с нашей компанией</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -556,13 +793,16 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
+			  <p>Нужен был автомобиль из Европы. Порекомендовали Germany Drive . Удивило, как ребята достают информацию из разных источников про машину (профессионально)!
+			  По итогу была собрана информация, проведён осмотр автомобиля, толщиномер, диагностика, много фото. Ожидания после увиденного совпали с реальностью, когда уже получил ключи от машины, поэтому покупкой доволен.
+			  Ребятам благодарность за проделанную работу, лояльность и терпение.
+			  Успехов и больше благодарных клиентов!</p>
               <div class="testimonial-footer">
                 <div class="testimonial-author">
-                  <img src="assets/img/person/person-m-3.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
+                  <img src="assets/img/clients/maxim-rogachev.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
                   <div>
-                    <h5>Michael Anderson</h5>
-                    <span>Software Developer</span>
+                    <h5>Максим Рогачёв</h5>
+                    <span></span>
                   </div>
                 </div>
                 <div class="quote-icon">
@@ -582,13 +822,13 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
               </div>
-              <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+              <p>Хорошая компания. Всегда были на связи. Со всеми вопросами помогли быстро и качественно. Очень профисионально подошли к пожеланиям нашим. Доставка быстрая автомобиля. Однозначно рекомендую.</p>
               <div class="testimonial-footer">
                 <div class="testimonial-author">
-                  <img src="assets/img/person/person-f-5.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
+                  <img src="assets/img/clients/victoriya-shumeiko.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
                   <div>
-                    <h5>Sophia Martinez</h5>
-                    <span>Marketing Specialist</span>
+                    <h5>Виктория Шумейко</h5>
+                    <span></span>
                   </div>
                 </div>
                 <div class="quote-icon">
@@ -608,13 +848,14 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
               </div>
-              <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum.</p>
+			  <p>Передаю слова благодарности за проделанную работу всей команды, вы проделали отличную работу по поиску автомобиля, неоднократную проверку нескольких авто, быстрыми ответами на мои вопросы. Показали, рассказали все доступно, без каких либо недосказанностей, всю машину осмотрели.
+			  Вот авто у меня, я доволен и рад, еще раз вас благодарю.</p>
               <div class="testimonial-footer">
                 <div class="testimonial-author">
-                  <img src="assets/img/person/person-m-7.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
+                  <img src="assets/img/clients/anrew-rebenkov.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
                   <div>
-                    <h5>David Wilson</h5>
-                    <span>Graphic Designer</span>
+                    <h5>Андрей Ребенков</h5>
+                    <span></span>
                   </div>
                 </div>
                 <div class="quote-icon">
@@ -634,13 +875,15 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
               </div>
-              <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis.</p>
+			  <p>Команда со 100% пониманием своего дела!
+			  Подбор, проверка, осмотр, выкуп, доставка - все адекватно, грамотно и прозрачно! От момента выбора до момента встречи с автомобилем - прошло не больше недели.
+			  Молодцы!</p>
               <div class="testimonial-footer">
                 <div class="testimonial-author">
-                  <img src="assets/img/person/person-f-9.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
+                  <img src="assets/img/clients/dmitriy-atrohov.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
                   <div>
-                    <h5>Emily Johnson</h5>
-                    <span>UX Designer</span>
+                    <h5>Дмитрий Атрохов</h5>
+                    <span></span>
                   </div>
                 </div>
                 <div class="quote-icon">
@@ -660,13 +903,13 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
               </div>
-              <p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
+              <p>5 звёзд компании GermanyDrive за их работу. Проконсультировали перед покупкой с каким пробегом лучше покупать машину и где, как итог подобрали идеальный вариант под мои запросы. В процессе пригона были на связи и держали в курсе всех событий, присылали фото и видео. Машинку доставили после автомойки чистенькую и красивую, я довольна, буду кататься. Ребятам огромное спасибо:)</p>
               <div class="testimonial-footer">
                 <div class="testimonial-author">
-                  <img src="assets/img/person/person-f-11.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
+                  <img src="assets/img/clients/svetlana-zaslavskaya.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
                   <div>
-                    <h5>Olivia Thompson</h5>
-                    <span>Entrepreneur</span>
+                    <h5>Светлана Заславская</h5>
+                    <span></span>
                   </div>
                 </div>
                 <div class="quote-icon">
@@ -686,13 +929,14 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
               </div>
-              <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+			  <p>Спасибо большое вам за труд и терпение. Долгое время искали с женой компанию по подбору и доставке авто из ЕС, но как-то не ладилось, потом увидел вашу рекламу, зашел, посмотрел условия, написал, и все понеслось.
+			  В итоге нашли машинку (отдельное спасибо Павлу, за борьбу с дилером за выбранный автомобиль), заключили договор, осмотрели и купили, все очень быстро и просто. Было очень приятно работать с такими людьми, следующую машину однозначно будем покупать опять с вашей помощью!!!</p>
               <div class="testimonial-footer">
                 <div class="testimonial-author">
-                  <img src="assets/img/person/person-m-12.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
+                  <img src="assets/img/clients/denis-semakovich.webp" alt="Author" class="img-fluid rounded-circle" loading="lazy">
                   <div>
-                    <h5>James Taylor</h5>
-                    <span>Financial Analyst</span>
+                    <h5>Денис Семакович</h5>
+                    <span></span>
                   </div>
                 </div>
                 <div class="quote-icon">
@@ -703,9 +947,7 @@
           </div><!-- End Testimonial Item -->
 
         </div>
-
       </div>
-
     </section><!-- /Testimonials Section -->
 
     <!-- How We Work Section -->
@@ -713,8 +955,9 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>How We Work</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Процесс покупки автомобиля</h2>
+		<p>Покупка автомобиля в Германии с доставкой в Беларусь - сложный процесс. Даже идеального владения немецким недостаточно: нужен опыт. Малейшие неточности в документах - Zulassungsbescheinigung Teil I (маленький бриф, техпаспорт) и Teil II (большой бриф, документ о собственности) - гарантируют вам финансовые потери, задержки на границе и даже отказ в постановке на учет. Ваше желание заключить с нами договор на покупку и доставку автомобиля оправдано: это минимизирует риски, связанные с языковым барьером, проверкой документов и логистикой.
+	</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -724,12 +967,12 @@
           <div class="step-item" data-aos="fade-right" data-aos-delay="200">
             <div class="step-content">
               <div class="step-icon">
-                <i class="bi bi-lightbulb"></i>
+                <i class="bi bi-file-earmark-text"></i>
               </div>
               <div class="step-info">
-                <span class="step-number">Step 01</span>
-                <h3>Initial Consultation</h3>
-                <p>Conducting thorough discovery sessions to understand your business requirements and objectives. Our expert team analyzes your needs to create a customized approach.</p>
+                <span class="step-number">Шаг 01</span>
+                <h3>Заключение сделаки</h3>
+                <p>Подписывается Kaufvertrag или оформляется Invoice с указанием VIN, цены, данных сторон. Передается Fahrzeugbrief.</p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -737,12 +980,12 @@
           <div class="step-item" data-aos="fade-left" data-aos-delay="300">
             <div class="step-content">
               <div class="step-icon">
-                <i class="bi bi-gear"></i>
+                <i class="bi bi-bank"></i>
               </div>
               <div class="step-info">
-                <span class="step-number">Step 02</span>
-                <h3>Planning &amp; Strategy</h3>
-                <p>Developing comprehensive strategies and detailed project plans based on the initial consultation. We create actionable roadmaps with clear milestones and deliverables.</p>
+                <span class="step-number">Шаг 02</span>
+                <h3>Оплата</h3>
+                <p>Обычно оплата производится безналичным расчетом. Из-за санкций часто используются банки-посредники в третьих странах.</p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -750,12 +993,12 @@
           <div class="step-item" data-aos="fade-right" data-aos-delay="400">
             <div class="step-content">
               <div class="step-icon">
-                <i class="bi bi-bar-chart"></i>
+                <i class="bi bi-file-earmark-ruled"></i>
               </div>
               <div class="step-info">
-                <span class="step-number">Step 03</span>
-                <h3>Development Phase</h3>
-                <p>Executing the planned strategies with precision and agility. Our team implements solutions while maintaining constant communication and progress updates.</p>
+                <span class="step-number">Шаг 03</span>
+                <h3>Снятие с учета</h3>
+                <p>Продавец или перегонщик снимает машину с Abmeldung в Zulassungsstelle, получает Abmeldebescheinigung, Zollkennzeichen, Doppelkarte/eVB, если машина едет своим ходом, либо готовится к погрузке на автовоз.</p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -766,17 +1009,14 @@
                 <i class="bi bi-check2-circle"></i>
               </div>
               <div class="step-info">
-                <span class="step-number">Step 04</span>
-                <h3>Launch &amp; Support</h3>
-                <p>Ensuring smooth deployment and providing ongoing support for implemented solutions. We monitor performance and make necessary adjustments for optimal results.</p>
+                <span class="step-number">Шаг 04</span>
+                <h3>Доставка</h3>
+                <p>На таможне оформляется EX-1/MRN для подтверждения вывоза из ЕС. Автомобиль доставляется на склад временного хранения в Беларуси, таможенный брокер оформляет декларацию. Мы доставляем авто к согласованному с закачиком месту.</p>
               </div>
             </div>
           </div><!-- End Step Item -->
-
         </div>
-
       </div>
-
     </section><!-- /How We Work Section -->
 
     <!-- Faq Section -->
@@ -784,8 +1024,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Frequently Asked Questions</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Часто задаваемые вопросы</h2>
+        <p>Мы знаем о большинстве подводных камней в этом бизнесе и умеем решать проблемы. Вы можете задать нам любые профильные вопросы: «Кто будет оплачивать таможенный депозит?», «С какими аукционами вы работаете и даете ли вы прямой доступ к ним?», «Какие документы я получу о том, что машина прошла таможенную очистку правильно?»... - позвоните нам и мы дадим ответ.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -797,17 +1037,17 @@
               <ul class="nav nav-pills justify-content-center" id="faqTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="general-tab" data-bs-toggle="pill" data-bs-target="#faq-general" type="button" role="tab" aria-controls="general" aria-selected="true">
-                    <i class="bi bi-question-circle me-2"></i>General
+                    <i class="bi bi-question-circle me-2"></i>Подбор
                   </button>
                 </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="pricing-tab" data-bs-toggle="pill" data-bs-target="#faq-pricing" type="button" role="tab" aria-controls="pricing" aria-selected="false">
-                    <i class="bi bi-credit-card me-2"></i>Pricing
+                    <i class="bi bi-credit-card me-2"></i>Покупка
                   </button>
                 </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="support-tab" data-bs-toggle="pill" data-bs-target="#faq-support" type="button" role="tab" aria-controls="support" aria-selected="false">
-                    <i class="bi bi-headset me-2"></i>Support
+                    <i class="bi bi-headset me-2"></i>Прддержка
                   </button>
                 </li>
               </ul>
@@ -821,35 +1061,35 @@
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                     <h3>
                       <span class="num">1</span>
-                      <span class="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                      <span class="question">Как вы проверяете автомобиль?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+                      <p>По базам данных изучаем историю автомобиля и юридическую чистоту. Уже на этапе просмотра фотографий опытный глаз замечает нюансы и недостатки, на которые большинство людей не обратит внимания.<br>Если вариант выглядит достойно - проверяем достоверность сервисного обслуживания. В Германии, несмотря на строгость законов, пробег тоже скручивают - особенно на авто из восточной Европы или у турецких дилеров.<br>Если имеется возможность - выполняем инструментальное обследование - внешнее состояние, оригинальность стекол, толщина лако-красочного покрытия, компьютерная диагностика, состояние ходовой и многое другое.</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <h3>
                       <span class="num">2</span>
-                      <span class="question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span>
+                      <span class="question">Вы можете проверить любой автомобиль?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.</p>
-                      <p>Mauris ultrices eros in cursus turpis massa tincidunt dui. Pellentesque nec nam aliquam sem et tortor. Habitant morbi tristique senectus et netus et malesuada.</p>
+                      <p>При покупке через аукцион нет физической возможности проверить техническое состояние автомобиля.<br>Мы подробно изучаем доступные фотографии, что бы выявить возможные нюансы, повреждения, царапины, дефекты и следы ремонтов.</p>
+                      <p>Не стоит бояться покупки авто на аукционе без детального обследования - даже при осмотре есть риск взять авто со скрытыми дефектами или заменой кузовных элементов, если продавец — профессиональный мошенник.<br>Хотя, в нашей практике таких случаев пока не было.</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                     <h3>
                       <span class="num">3</span>
-                      <span class="question">Dolor sit amet consectetur adipiscing elit pellentesque?</span>
+                      <span class="question">Где лучше покупать авто?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.</p>
-                      <p>Mauris ultrices eros in cursus turpis massa tincidunt dui. Pellentesque nec nam aliquam sem et tortor. Habitant morbi tristique senectus et netus et malesuada.</p>
+                      <p>Мы рекомендуем автомобильные аукционы — это возможность и сэкономить, и получить доступ к огромному каталогу автомобилей.<br>Здесь можно найти лимитированные серии, модели для внутреннего рынка других стран, новые машины с минимальным пробегом. <br>Внимательный подход и поддержка наших специалистов позволят вам купить машину на 15-30% дешевле, чем на местном рынке, и в гораздо лучшем состоянии.</p>
+                      <p> Если вы избегаете покупки на аукционе из-за невозможности провести предварительный осмотр, то при покупке у частного лица или дилера есть свои сложности.<br>Надо учитывать языковой барьер, юридические тонкости и иметь опыт в психологии, что бы вовремя распознать возможные мошеннические действия.<br>Но все решаемо, и в конечном итоге вы получаете отличный автомобиль по отличной цене!</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
@@ -863,34 +1103,44 @@
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                     <h3>
                       <span class="num">1</span>
-                      <span class="question">Ac odio tempor orci dapibus ultrices in iaculis?</span>
+                      <span class="question">Сколько стоит растаможить в Беларуси?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.</p>
+						<p>Таможенная пошлина для авто от 3 до 5 лет:<br>объем двигателя 1.0–1.5 л - 1.7 евро за 1 см³<br>для моторов 1.5–1.8 л — 2.5 евро за 1 см³.<br>
+						НДС: 20% от стоимости автомобиля + пошлина.<br>
+						Утилизационный сбор:<br>
+						до 3 лет — 544,5 BYN<br>
+						старше 3 лет — 1089. BYN<br>
+						Таможенный сбор — 120 BYN.<br>
+						Электромобили: 0% пошлина и НДС в рамках квоты.<br>
+						Гибриды в 2026 году растамаживаются на общих основаниях.<br>
+						Для многодетных семей и инвалидов I/II группы действует льгота 50% на пошлины и налоги.
+						</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <h3>
                       <span class="num">2</span>
-                      <span class="question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span>
+                      <span class="question">Как происходит оплата?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.</p>
-                      <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan.</p>
+                      <p>В 2026 году есть сложности с оплатой: прямые банковские SWIFT-переводы часто не проходят.<br>Основные способы — использование банков третьих стран (Казахстан, Армения, Грузия и т.д.) для перевода средств в Европу, криптовалюта или привоз наличных евро для оплаты продавцу.<br>В любом случае - все действия исключительно в рамках законодательства, и у нас уже есть опыт решения всех этих проблем.</p>
+                      <p></p>
                     </div>
                   </div><!-- End FAQ Item -->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                     <h3>
                       <span class="num">3</span>
-                      <span class="question">Varius vel pharetra vel turpis nunc eget lorem dolor?</span>
+                      <span class="question">Сколько стоят ваши услуги?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.</p>
+                      <p>Свяжитесь с нами что бы получить бесплатную консультацию.<br>
+					  Мы подробно ответим на все вопросы и поможем подобрать оптимальный вариант сотрудничества.</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
@@ -904,35 +1154,39 @@
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                     <h3>
                       <span class="num">1</span>
-                      <span class="question">Tortor vitae purus faucibus ornare suspendisse sed nisi lacus?</span>
+                      <span class="question">Какую поддержку вы оказываете?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
-                      <p>Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est.</p>
+                      <p>В первую очередь - это поиск и диагностика:<br> мы используем немецкие площадки (mobile.de, autoscout24.de) и проводим выездную диагностику (TÜV/DEKRA), проверяя историю, пробег и реальное состояние авто.</p>
+                      <p>Следующий важный этап - решение финансовых вопросов:<br>из-за санкций прямая оплата из Беларуси часто невозможна.<br>Мы организуют оплату через фирмы-посредники или используем наличный расчет.</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <h3>
                       <span class="num">2</span>
-                      <span class="question">Tortor dignissim convallis aenean et tortor at risus viverra?</span>
+                      <span class="question">Вы помогаете с оформлением документов?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit.</p>
+                      <p>Да, наши специалисты в совершенстве владеют немецким языком и знают законодательство в области покупки авто в Германии.<br>Мы берем на себя оформление экспортных документов:<br>подготовка договора купли-продажи (Kaufvertrag), техпаспорта (Fahrzeugbrief), справки о снятии с учета (Abmeldebescheinigung) и экспортной декларации (EUR.1/EX-A).<br>
+					  Так же мы оформляем документы на таможенном складе (СВХ) в Беларуси, помогаем рассчитать и уплатить пошлины/утильсбор, в т.ч. с учетом 140-го Указа.</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                     <h3>
                       <span class="num">3</span>
-                      <span class="question">Venenatis urna cursus eget nunc scelerisque viverra mauris in?</span>
+                      <span class="question">Как вы доставляете авто в Беларусь?</span>
                       <i class="bi bi-plus-lg faq-toggle"></i>
                     </h3>
                     <div class="faq-content">
-                      <p>Mauris ultrices eros in cursus turpis massa tincidunt dui. Pellentesque nec nam aliquam sem et tortor. Habitant morbi tristique senectus et netus et malesuada.</p>
-                      <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.</p>
+                      <p>В 2026 доставка  из Германии в Беларусь стала сложнее из-за санкционных ограничений и таможенных правил.<br> Через некоторые границы ЕС запрещен прямой ввоз автомобилей с двигателями объемом более 1.9 л, поэтому логистика стала дороже и длиннее.<br>
+					  На нашем сайте вы можете найти ссылки на крупнейшие компании, занимающиеся продажей авто и логистикой, что бы самостоятельно изучить этот вопрос.
+					  </p>
+					  <p>Либо вы можете доверить подбор, покупку и доставку "под ключ" нашей компании с заключением договора.<br>
+					  Мы подберем оптимальный по срокам и стоимости вариант доставки.</p>
                     </div>
                   </div><!-- End FAQ Item -->
 
@@ -941,42 +1195,137 @@
             </div>
 
             <div class="faq-cta text-center mt-5" data-aos="fade-up" data-aos-delay="300">
-              <p>Still have questions? We're here to help!</p>
-              <a href="#" class="btn btn-primary">Contact Support</a>
+              <p>Есть вопросы? Мы готовы ответить!</p>
+			  <a href="tel:+375 (29) 164 99 99" class="btn btn-primary" aria-label="Позвонить нам по телефону +375 29 164 99 99"> <span class="highlight">Germany Drive  </span><br>Позвонить +375 (29) 164 99 99</a>
             </div>
-
           </div>
         </div>
-
       </div>
-
     </section><!-- /Faq Section -->
 
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section light-background">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="cta-wrapper">
-          <div class="cta-content" data-aos="fade-right" data-aos-delay="200">
-            <h2>Unlock Your Full Potential Today!</h2>
-            <p>Join thousands of satisfied customers who have transformed their lives with our innovative solutions.</p>
-            <div class="cta-buttons">
-              <a href="#" class="btn-primary">Get Started Now</a>
-              <a href="#" class="btn-outline">Learn More</a>
-            </div>
-          </div>
-          <div class="cta-image" data-aos="fade-left" data-aos-delay="300">
-            <img src="assets/img/illustration/illustration-13.webp" alt="CTA Illustration" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </section><!-- /Call To Action Section -->
+    <!-- clients Section -->
+    <section id="clients" class="clients section light-background">
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+			<div class="cta-wrapper">
+				<div class="cta-content" data-aos="fade-right" data-aos-delay="200">
+					<h2>Хотите <span class="highlight">выбрать<br>автомобиль</span> самостоятельно?</h2>
+					<p>Посетите основные аукционы и присоединяйтесь к счастливым обладателям надежных автомобилей из Германии!</p>
+					<div class="cta-buttons">
+						<a href="https://mobile.de" class="btn-primary"  target="_blank" rel="noopener noreferrer" aria-label="Ссылка на веб-сайт mobile.de (откроется в новом окне)">www.mobile.de</a>
+						<a href="https://www.autoscout24.ru"  class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Ссылка на веб-сайт autoscout24.de (откроется в новом окне)">autoscout24.de</a>
+					</div>
+				</div>
+
+				<!--          <div class="cta-image" data-aos="fade-left" data-aos-delay="300">-->
+				<!--            <img src="assets/img/clients/illustration-13.webp" alt="CTA Illustration" class="img-fluid">-->
+				<!--          </div>-->
+				
+			</div>
+		</div>
+		<section id="clients-details" class="clients-details section">
+			<div class="container" data-aos="fade-up" data-aos-delay="100">
+				<div class="row gy-4">
+					<div class="col-lg-8 mx-auto">
+						<div class="clients-details-slider swiper init-swiper">
+							<script type="application/json" class="swiper-config">
+								{
+									"loop": true,
+									"speed": 1200,
+									"autoplay": {
+										"delay": 2000
+									},
+									"slidesPerView": "auto",
+									"pagination": {
+										"el": ".swiper-pagination",
+										"type": "bullets",
+										"clickable": true
+									}
+								}
+							</script>
+							
+							<div class="swiper-wrapper align-items-center">
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-1.webp" alt="client 1" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-2.webp" alt="client 2" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-3.webp" alt="client 3" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-4.webp" alt="Pclient 4" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-5.webp" alt="client 5" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-6.webp" alt="client 6" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-7.webp" alt="client 7" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-8.webp" alt="client 8" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-9.webp" alt="client 9" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-10.webp" alt="client 10" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-11.webp" alt="client 11" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-12.webp" alt="client 12" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-13.webp" alt="client 13" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-14.webp" alt="client 14" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-15.webp" alt="client 15" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-16.webp" alt="client 16" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-17.webp" alt="client 17" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-18.webp" alt="client 18" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-19.webp" alt="client 19" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-20.webp" alt="client 20" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-21.webp" alt="client 21" class="img-fluid" loading="lazy">
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/img/clients/client-22.webp" alt="client 22" class="img-fluid" loading="lazy">
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+
+		</section>
+<!--      </div>-->
+    </section><!-- /clients Section -->
 
     <!-- Team Section -->
     <section id="team" class="team section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Наша команда</h2>
+        <p>Увлеченные автомобилями сотрудники компании <span class="highlight">Germany Drive</span> обладают бесценным опытом, и готовы взяться за Ваш самый сложный заказ.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -984,8 +1333,8 @@
         <div class="row">
           <div class="col-lg-4 team-intro" data-aos="fade-right" data-aos-delay="200">
             <div class="team-intro-content">
-              <h2>Meet Our Experts</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum dui sed justo finibus, in gravida felis iaculis. Suspendisse potenti.</p>
+              <h2>Давайте знакомиться</h2>
+              <p>Мы находимся по адресу Пушкина, 2 в Гомеле. Вы можете обратиться к любому сотруднику с любым вопросом удобным для вас способом.</p>
               <div class="team-navigation">
                 <button class="team-nav-prev"><i class="bi bi-arrow-left"></i></button>
                 <button class="team-nav-next"><i class="bi bi-arrow-right"></i></button>
@@ -1025,18 +1374,18 @@
                 <div class="swiper-slide">
                   <div class="member-card">
                     <div class="member-image">
-                      <img src="assets/img/person/person-m-3.webp" class="img-fluid" alt="" loading="lazy">
+                      <img src="assets/img/office/person-1.webp" class="img-fluid" alt="" loading="lazy">
                     </div>
                     <div class="member-info">
-                      <h3>Marcus Wilson</h3>
-                      <span>Chief Technology Officer</span>
+                      <h3>Имя Фамилия</h3>
+                      <span>Должность</span>
                       <div class="member-social">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону 375 29 164 99 99"><i class="bi bi-phone-vibrate"></i></a>
                       </div>
                       <div class="member-bio">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+                        <p>Описание</p>
                       </div>
                     </div>
                   </div>
@@ -1045,18 +1394,18 @@
                 <div class="swiper-slide">
                   <div class="member-card">
                     <div class="member-image">
-                      <img src="assets/img/person/person-f-5.webp" class="img-fluid" alt="" loading="lazy">
+                      <img src="assets/img/office/person-2.webp" class="img-fluid" alt="" loading="lazy">
                     </div>
                     <div class="member-info">
-                      <h3>Sophia Reynolds</h3>
-                      <span>Product Designer</span>
+                      <h3>Имя Фамилия</h3>
+                      <span>Должность</span>
                       <div class="member-social">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+						  <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+						  <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+						  <a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону 375 29 164 99 99"><i class="bi bi-phone-vibrate"></i></a>
                       </div>
                       <div class="member-bio">
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Описание</p>
                       </div>
                     </div>
                   </div>
@@ -1065,18 +1414,18 @@
                 <div class="swiper-slide">
                   <div class="member-card">
                     <div class="member-image">
-                      <img src="assets/img/person/person-m-8.webp" class="img-fluid" alt="" loading="lazy">
+                      <img src="assets/img/office/person-3.webp" class="img-fluid" alt="" loading="lazy">
                     </div>
                     <div class="member-info">
-                      <h3>Daniel Chen</h3>
-                      <span>Marketing Specialist</span>
+                      <h3>Имя Фамилия</h3>
+                      <span>Должность</span>
                       <div class="member-social">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+						  <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+						  <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+						  <a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону 375 29 164 99 99"><i class="bi bi-phone-vibrate"></i></a>
                       </div>
                       <div class="member-bio">
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Описание</p>
                       </div>
                     </div>
                   </div>
@@ -1085,18 +1434,18 @@
                 <div class="swiper-slide">
                   <div class="member-card">
                     <div class="member-image">
-                      <img src="assets/img/person/person-f-9.webp" class="img-fluid" alt="" loading="lazy">
+                      <img src="assets/img/office/person-4.webp" class="img-fluid" alt="" loading="lazy">
                     </div>
                     <div class="member-info">
-                      <h3>Olivia Thompson</h3>
-                      <span>Lead Developer</span>
+                      <h3>Имя Фамилия</h3>
+                      <span>Должность</span>
                       <div class="member-social">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+						  <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+						  <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+						  <a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону 375 29 164 99 99"><i class="bi bi-phone-vibrate"></i></a>
                       </div>
                       <div class="member-bio">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                        <p>Описание</p>
                       </div>
                     </div>
                   </div>
@@ -1105,18 +1454,18 @@
                 <div class="swiper-slide">
                   <div class="member-card">
                     <div class="member-image">
-                      <img src="assets/img/person/person-m-12.webp" class="img-fluid" alt="" loading="lazy">
+                      <img src="assets/img/office/person-5.webp" class="img-fluid" alt="" loading="lazy">
                     </div>
                     <div class="member-info">
-                      <h3>Jason Parker</h3>
-                      <span>UI/UX Designer</span>
+                      <h3>Имя Фамилия</h3>
+                      <span>Должность</span>
                       <div class="member-social">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+						  <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+						  <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+						  <a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону 375 29 164 99 99"><i class="bi bi-phone-vibrate"></i></a>
                       </div>
                       <div class="member-bio">
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+                        <p>Описание</p>
                       </div>
                     </div>
                   </div>
@@ -1134,14 +1483,37 @@
     <section id="contact" class="contact section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Контакты</h2>
+        <p>Посетите наш гостеприимный офис в самом центре Гомеля - мы будем рады обсудить все вопросы при личной встрече!<br><br></p>
+		
+		<div class="col-lg-8 mx-auto">
+			<div class="contact-image-wrapper" data-aos="fade-up" data-aos-delay="300">
+				<img src="assets/img/office/office-light.webp" alt="office outside" class="img-fluid contact-image">
+					
+					
+					<div class="stat-card top-left">
+						
+						
+						<div class="stat-icon">
+							<img src="assets/img/logo-futer.webp" alt="Логотип компании Germany Drive" style="max-height: 100px; width: 100px;">
+								
+						</div>
+					</div>
+					
+					<div class="stat-card bottom-right">
+						<div class="stat-value">ПушкинЪ Плаза</div>
+						<div class="stat-label">Цокольный этаж</div>
+						
+					</div>
+			</div>
+		</div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="contact-main-wrapper">
           <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9730.07109893836!2d31.001478731632254!3d52.43353475600352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d469aabdaff0c9%3A0x1b048be540f04461!2sPu%C5%A1kin-Plaza!5e0!3m2!1sen!2sus!4v1776964055389!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
           <div class="contact-content">
@@ -1151,18 +1523,18 @@
                   <i class="bi bi-geo-alt"></i>
                 </div>
                 <div class="contact-text">
-                  <h4>Location</h4>
-                  <p>8721 Broadway Avenue, New York, NY 10023</p>
+                  <h4>Адрес</h4>
+                  <p>Пушкина, 2,<br> Гомель, Беларусь, 246050</p>
                 </div>
               </div>
 
               <div class="contact-card">
                 <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
+                  <i class="bi bi-envelope-at"></i>
                 </div>
                 <div class="contact-text">
-                  <h4>Email</h4>
-                  <p>info@examplecompany.com</p>
+                  <h4>Электронная почта</h4>
+                  <p>germanydrive.by@gmail.com</p>
                 </div>
               </div>
 
@@ -1171,8 +1543,8 @@
                   <i class="bi bi-telephone"></i>
                 </div>
                 <div class="contact-text">
-                  <h4>Call</h4>
-                  <p>+1 (212) 555-7890</p>
+                  <h4>Телефон</h4>
+                  <p>+375 (29) 164 99 99</p>
                 </div>
               </div>
 
@@ -1181,45 +1553,58 @@
                   <i class="bi bi-clock"></i>
                 </div>
                 <div class="contact-text">
-                  <h4>Open Hours</h4>
-                  <p>Monday-Friday: 9AM - 6PM</p>
+                  <h4>Время работы</h4>
+                  <p>Понедельник-Пятница:<br>9:00 - 18:00</p>
                 </div>
               </div>
             </div>
 
             <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
-              <h3>Get in Touch</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing.</p>
+              <h3>Хотите узнать стоимость конкретного авто с учетом доставки и растаможки?</h3>
+			  <p>
+			  Позвоните нам или пришлите ссылку — мы сделаем расчет за 15 минут, указав реальные расходы на покупку, доставку и таможенное оформление.</p>
 
               <form action="forms/contact.php" method="post" class="php-email-form">
                 <div class="row">
                   <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Имя" required="">
                   </div>
                   <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Электронная почта" required="">
                   </div>
                 </div>
                 <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Номер телефона" required="">
                 </div>
                 <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required=""></textarea>
                 </div>
 
                 <div class="my-3">
-                  <div class="loading">Loading</div>
+                  <div class="loading">Загрузка</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
                 </div>
-
+				<h9>
+					Сообщая свои данные вы соглашаетесь с <a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal-privacy">политикой приватности </a>сайта.</h9>
                 <div class="form-submit">
-                  <button type="submit">Send Message</button>
+                  <button type="submit">Отправить сообщение</button>
+				  
                   <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
+					  
+					  <a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону +375 29 164 99 99">
+						  <i class="bi bi-telephone"></i></a>
+					  <a href="https://www.instagram.com/germany.drive?igsh=MWN0ZWRldXdrYjVrdw==" target="_blank" rel="noopener noreferrer" aria-label="Мы в Instagram">
+						  <i class="bi bi-instagram"></i></a>
+					  <a href="https://www.tiktok.com/@germany.drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Tiktok"><i class="bi bi-tiktok"></i></a>
+					  <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+					  <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+<!--					  <a href="viber://add?number=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Viber"><i class="bi-chat-dots"></i></a>-->
+<!--					  <a href="https://vk.com/germany.drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в VKontakte"><i class="bi bi-vk"></i></a>-->
+					  <a href="https://av.by/company/autopodbor/germanydrive" target="_blank" rel="noopener noreferrer" aria-label="Мы в aw.by"><i class="bi bi-globe2"></i></a>
+<!--					<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Мы в Facebook"><i class="bi bi-facebook"></i></a>-->
+<!--					<a href="https://www.x.com" target="_blank" rel="noopener noreferrer" aria-label="Мы в X"><i class="bi bi-twitter-x"></i></a>-->
+<!--					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Мы в Linkedin"><i class="bi bi-linkedin"></i></a>-->
                   </div>
                 </div>
               </form>
@@ -1236,75 +1621,259 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Scout</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
+<!--          <a href="index.html" class="logo d-flex align-items-center">-->
+<!--            <span class="sitename">Germany Drive</span>-->
+<img src="assets/img/logo-futer.webp" alt="Логотип  Germany Drive"  style="max-height: 100px; width: 100px;">
+<!--          </a>-->
+          
+<div class="footer-contact pt-3">
+<p>Ул. Пушкина, 2</p>
+<p style="margin-top: -8px;">Гомель, Республика Беларусь</p>
+<p>УНП 491702612</p>
+            
+<p class="mt-3">
+<i class="bi bi-telephone"></i>
+<a href="tel:+375 (29) 164 99 99" aria-label="Позвонить по телефону +375 29 164 99 99" style="margin-left: 6px;">+375 (29) 164 99 99</a><br>
+<i class="bi bi-telephone"></i>
+<a href="tel:+375 (29) 207 59 99" aria-label="Позвонить по телефону +375 29 207 59 99" style="margin-left: 6px;">+375 (29) 207 59 99</a><br>
+<i class="bi bi-telephone"></i>
+<a href="tel:+49 1578 8574 3039" aria-label="Позвонить по телефону +49 157 88 574 30 39" style="margin-left: 6px;">+49 (1578) 8574 3039</a>
+</p>
+<p><i class="bi bi-envelope-at"></i> <!--<span>germanydrive.by@gmail.com</span>-->
+<a href="mailto:germanydrive.by@gmail.com" aria-label="Связаться через Email (откроется в новом окне)" style="margin-left: 6px;">germanydrive.by@gmail.com</a>
+</p>
+</div>
+		  
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+			  <a href="https://www.instagram.com/germany.drive?igsh=MWN0ZWRldXdrYjVrdw==" target="_blank" rel="noopener noreferrer" aria-label="Мы в Instagram">
+				  <i class="bi bi-instagram"></i></a>
+			  <a href="https://www.tiktok.com/@germany.drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Tiktok"><i class="bi bi-tiktok"></i></a>
+			  <a href="https://telegram.im/@germany_drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в Telegram"><i class="bi bi-telegram"></i></a>
+			  <a href="https://api.whatsapp.com/send?phone=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Whatsapp"><i class="bi bi-whatsapp"></i></a>
+<!--			  <a href="viber://add?number=375291649999" target="_blank" rel="noopener noreferrer" aria-label="Мы в Viber"><i class="bi-chat-dots"></i></a>-->
+			  <!--					  <a href="https://vk.com/germany.drive" target="_blank" rel="noopener noreferrer" aria-label="Мы в VKontakte"><i class="bi bi-vk"></i></a>-->
+			  <a href="https://av.by/company/autopodbor/germanydrive" target="_blank" rel="noopener noreferrer" aria-label="Мы в aw.by"><i class="bi bi-globe2"></i></a>
+			  <!--					<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Мы в Facebook"><i class="bi bi-facebook"></i></a>-->
+			  <!--					<a href="https://www.x.com" target="_blank" rel="noopener noreferrer" aria-label="Мы в X"><i class="bi bi-twitter-x"></i></a>-->
+			  <!--					<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Мы в Linkedin"><i class="bi bi-linkedin"></i></a>-->
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Ссылки</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+<!--        <li><a href="index.html">Главная</a></li>-->
+            <li><a href="index.html#about">О нас</a></li>
+            <li><a href="index.html#services">Услуги</a></li>
+			<li><a href="index.html#team">Наша команда</a></li>
+<!--			<li><a href="index.html#contact">Контакты</a></li>-->
+            <li><a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal-terms">Условия использования</a></li>
+            <li><a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal-privacy">Политика приватности</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Поиск авто</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+			  <li><a href="https://www.mobile.de/ru" target="_blank" rel="noopener noreferrer" data-info="external-link1" aria-label="Ссылка на веб-сайт mobile.de (откроется в новом окне)">mobile.de</a></li>
+			  <li><a href="https://www.autoscout24.ru" target="_blank" rel="noopener noreferrer" data-info="external-link2" aria-label="Ссылка на веб-сайт autoscout24.de (откроется в новом окне)">autoscout24.de</a></li>
+			  <li><a href="https://www.openlane.eu/ru/home" target="_blank" rel="noopener noreferrer" data-info="external-link3" aria-label="Ссылка на веб-сайт openlane.eu (откроется в новом окне)">openlane.eu</a></li>
+			  <li><a href="https://www.kleinanzeigen.de/s-autos/anbieter:gewerblich/anzeige:angebote/c216?utm_source=google&utm_medium=cpc&utm_campaign=de_ka_motors_google_c2c_perf_ps-used-cars-commercial-offers-brand&gad_source=1&gad_campaignid=22578842332&gbraid=0AAAAA_e4Y9q5Rk9-z6g3Zw0pfG6QKzD7N" target="_blank" rel="noopener noreferrer" data-info="external-link4" aria-label="Ссылка на веб-сайт kleinanzeigen.de (откроется в новом окне)">kleinanzeigen.de</a></li>
+			  <li><a href="https://ru.m.autoplius.lt" target="_blank" rel="noopener noreferrer" data-info="external-link5" aria-label="Ссылка на веб-сайт autoplius.lt (откроется в новом окне)">autoplius.lt</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Логистика</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
+			  <li><a href="https://www.dbschenker.com/global" target="_blank" rel="noopener noreferrer" data-info="logistic-link1" aria-label="Ссылка на веб-сайт Dbschenker (откроется в новом окне)">DB SCHENKER</a></li>
+			  <li><a href="https://www.kuehne-nagel.com/de" target="_blank" rel="noopener noreferrer" data-info="logistic-link2" aria-label="Ссылка на веб-сайт Kuehne-Nagel (откроется в новом окне)">Kuehne-Nagel</a></li>
+			  <li><a href="https://www.dachser.de/de/" target="_blank" rel="noopener noreferrer" data-info="logistic-link3" aria-label="Ссылка на веб-сайт Dachser (откроется в новом окне)">DACHSER</a></li>
+			  <li><a href="https://www.dsv.com/de-de/" target="_blank" rel="noopener noreferrer" data-info="logistic-link4" aria-label="Ссылка на веб-сайт Dsv.com (откроется в новом окне)">DSV</a></li>
+			  <li><a href="https://deutschland.raben-group.com" target="_blank" rel="noopener noreferrer" data-info="logistic-link5" aria-label="Ссылка на веб-сайт Raben-Group (откроется в новом окне)">Raben</a></li>
+			  <li><a href="https://www.dslv.org/de/die-branche/logistikmarkt" target="_blank" rel="noopener noreferrer" data-info="logistic-link6" aria-label="Ссылка на веб-сайт Dslv (откроется в новом окне)">DSLV</a></li>
+			  <li><a href="https://www.trans-o-flex.com" target="_blank" rel="noopener noreferrer" data-info="logistic-link7" aria-label="Ссылка на веб-сайт Trans-O-Flex (откроется в новом окне)">trans-o-flex</a></li>
+			  <li><a href="https://www.rhenus.group/de/de/" target="_blank" rel="noopener noreferrer" data-info="logistic-link8" aria-label="Ссылка на веб-сайт Rhenus.group (откроется в новом окне)">RHENUS LOGICTICS</a></li>
+			  <li><a href="https://de.freight-amazon.com/promoDE?utm_source=google&utm_medium=cpc&utm_campaign=%7BMidLowConverting_Google%7D&utm_content=176182423854&utm_term=warentransport%20deutschland" target="_blank" rel="noopener noreferrer" data-info="logistic-link9" aria-label="Ссылка на веб-сайт De.freight-Amazon (откроется в новом окне)">Amazon Freight</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
+<!--        <div class="col-lg-2 col-md-3 footer-links">-->
+<!--          <h4>Nobis illum</h4>-->
+<!--          <ul>-->
+<!--            <li><a href="#">Ipsam</a></li>-->
+<!--            <li><a href="#">Laudantium dolorum</a></li>-->
+<!--            <li><a href="#">Dinera</a></li>-->
+<!--            <li><a href="#">Trodelas</a></li>-->
+<!--            <li><a href="#">Flexo</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
       </div>
+
+	  <div id="modal-terms" class="modal-overlay">
+		  <div class="modal-content">
+			  <div class="modal-header">
+				  <h8>Условия использования</h8>
+				  <span class="close-icon">&times;</span>
+			  </div>
+			  <div class="modal-body">© Germany Drive 2020-2026<br><br>
+				  Все права защищены.<br>
+				  Торговые марки и логотипы принадлежат их владельцам.<br>
+				  Копирование информации, размещенной на сайте допускается только с согласия владельцев.
+				  <br><br>
+				  В связи с быстро меняющимися законодательством и политико-экономической обстановкой, актуальность приведенной на сайте информации не гарантируется.<br><br>
+				  На сайте не реализуются товары или услуги.<br>
+				  Сайт не является интернет-витриной, интернет-магазином, публичной офертой.<br>
+				  <br>
+				  Если вы обнаружили на сайте ошибку или неточность, пожалуйста сообщите <a href="mailto:solutions@elmardream.com" aria-label="Сообщить об ошибке через Email (откроется в новом окне)">solutions@elmardream.com</a><br><br>
+				  Желаем вам хорошего настроения!
+				  <br>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  <div id="modal-privacy" class="modal-overlay">
+		  <div class="modal-content">
+			  <div class="modal-header">
+				  <h8>Политика приватности</h8>
+				  <span class="close-icon">&times;</span>
+			  </div>
+			  <div class="modal-body">
+				  1. Общие положения<br>
+				  1.1. Настоящая Политика конфиденциальности - политика обработки персональных данных (далее – Политика) регламентирует деятельность Общества с ограниченной ответственностью "Германи драйв" (далее – Оператор) в области обработки персональных данных физических лиц и обеспечения мер по защите персональных данных.<br>
+				  Политика разработана с учетом требований Конституции Республики Беларусь, законодательных и иных нормативно-правовых актов Республики Беларусь в области персональных данных.<br>
+				  1.2. Политика применяется в отношении:<br>
+				  - физических лиц, обратившихся в колл-центр Оператора;<br>
+				  - посетителей и клиентов сайта germanydrive.by (далее Сайт);<br>
+				  - исполнителей услуг, разместивших свои объявления на Сайте (далее Исполнители);<br>
+				  - физических лиц, направивших свое резюме с целью трудоустройства;<br>
+				  - физических лиц, направивших обращения в адрес Оператора;<br>
+				  - физических лиц представителей организацией (далее Контрагентов), с которыми Оператор заключил договора гражданско-правового характера;<br>
+				  - физических лиц, работников Оператора.<br>
+				  1.3. Основные понятия, используемые в Политике:<br>
+				  - персональные данные - любая информация, относящаяся к идентифицированному физическому лицу или физическому лицу, которое может быть идентифицировано;<br>
+				  - субъект персональных данных - физическое лицо, в отношении которого осуществляется обработка персональных данных;<br>
+				  - оператор персональных данных – сайт; государственный орган, юридическое лицо Республики Беларусь, иная организация, физическое лицо, в том числе индивидуальный предприниматель, самостоятельно или совместно с иными указанными лицами организующие и (или) осуществляющие обработку персональных данных;<br>
+				  - обработка персональных данных - любое действие с персональными данными, совершаемых с использованием средств автоматизации или без их использования. Обработка персональных данных включает в себя в том числе: сбор; запись; систематизацию; накопление; хранение; уточнение (обновление, изменение); извлечение; использование; передачу (распространение, предоставление, доступ); обезличивание; блокирование; удаление; уничтожение;<br>
+				  - автоматизированная обработка персональных данных - обработка персональных данных с помощью средств вычислительной техники;<br>
+				  - распространение персональных данных - действия, направленные на раскрытие персональных данных неопределенному кругу лиц;<br>
+				  - предоставление персональных данных - действия, направленные на ознакомление с персональными данными определенных лиц или круга лиц;<br>
+				  - блокирование персональных данных - прекращение доступа к персональным данным без их удаления;<br>
+				  - удаление персональных данных - действия, в результате которых становится невозможным восстановить содержание персональных данных в информационной системе персональных данных и (или) в результате которых уничтожаются материальные носители персональных данных;<br>
+				  - обезличивание персональных данных - действия, в результате которых становится невозможным без использования дополнительной информации определить принадлежность персональных данных конкретному субъекту персональных данных;<br>
+				  - информационная система персональных данных - совокупность содержащихся в базах данных персональных данных и обеспечивающих их обработку информационных технологий и технических средств.<br>
+				  1.4. Политика в отношении обработки персональных данных опубликована в открытом доступе на Сайте.<br>
+				  2. Цели обработки, сроки хранения и правовые основания предоставления персональных данных.<br>
+				  2.1. Оператор обрабатывает персональные данные Субъектов персональных данных при условии их согласия*.<br>
+				  2.2. Обработка персональных данных производится оператором в объеме, содержании и сроках, необходимых для достижения конкретных целей взаимодействия с Субъектом персональных данных.<br>
+				  2.3. Оператор обрабатывает персональные данные для достижения следующих целей:<br>
+				  2.3.1. Общий анализ посетителей Сайта.<br>
+				  - Объем персональных данных – анонимная статистическая информация о типе браузера, компьютера и операционной системы, IP-адрес.<br>
+				  Основание – согласие Субъекта персональных данных с Политикой в отношении обработки Куки.<br>
+				  Политика Оператора в отношении обработки Куки здесь.<br>
+				  2.3.2. Создание личного кабинет на сайте для совершения заказов услуг, отслеживания заказов, просмотра истории заказов, участия в бонусной программе лояльности.<br>
+				  Обязательные персональные данные:<br>
+				  - имя;<br>
+				  - телефон;<br>
+				  - пароль для доступа к личному кабинету.<br>
+				  Дополнительная информация (предоставляется по желанию):<br>
+				  - фотографическое изображение;<br>
+				  - пол;<br>
+				  - дата рождения;<br>
+				  Основание – согласие Субъекта персональных данных.<br>
+				  Срок хранения – бессрочно, до решения Субъекта персональных данных об удалении аккаунта.<br>
+				  2.3.3. Заключение договора оказания информационных услуг.<br>
+				  Обязательные персональные данные:<br>
+				  - имя фамилия отчество;<br>
+				  - телефон;<br>
+				  - адрес места жительства;<br>
+				  - серия и номер документа, удостоверяющего личность;<br>
+				  - дата рождения.<br>
+				  Основание – согласие Субъекта персональных данных, которое является неотъемлемым Приложением к Договору оказания информационных услуг и Политикой обработки персональных данных.<br>
+				  Срок хранения – 3 года в случае проведения проверки Оператора персональных данных Инспекцией Министерства по налогам и сборам и 10 лет в случае отсутствия такой проверки.<br>
+				  2.3.4. Рассылка Оператором информации рекламного характера в адрес Субъекта персональных данных.<br>
+				  Обязательные персональные данные:<br>
+				  - имя;<br>
+				  - телефон;<br>
+				  - адрес электронной почты.<br>
+				  Дополнительная информация для улучшения качества рекламных материалов (предоставляется по желанию):<br>
+				  - пол;<br>
+				  - дата рождения;<br>
+				  Основание – согласие Субъекта персональных данных.<br>
+				  Срок хранения – бессрочно, до решения Субъекта персональных данных удалить или отредактировать свои предоставленные персональные данные.<br>
+				  Субъект персональных данных в любой момент может отменить согласие на рассылку информации рекламного содержания, направив в адрес Оператора заявление в письменной форме либо в виде электронного документа на электронную почту GermanyDrive.by@gmail.com, которое должно содержать:<br>
+				  - Фамилию, собственное имя, отчество (если таковое имеется) Субъекта персональных данных;<br>
+				  - Номер телефона, который указывался при оформлении заявки на оказание услуг;<br>
+				  - Изложение сути требований Субъекта персональных данных;<br>
+				  Организация идентифицирует Субъекта персональных данных и предоставит ответ на заявление в форме, соответствующей форме подачи заявления.<br>
+				  2.3.5. Рассмотрение обращений физических лиц, в том числе отзывов в Книге замечаний и предложений.<br>
+				  Обязательные персональные данные:<br>
+				  - фамилия, имя, отчество;<br>
+				  - адрес проживания;<br>
+				  - суть обращения.<br>
+				  Основание – согласие Субъекта персональных данных.<br>
+				  Срок хранения – 5 лет с даты последнего обращения; 5 лет после окончания ведения книги замечаний и предложений.<br>
+				  2.3.7. Рассмотрение Оператором резюме Субъекта персональных данных для целей трудоустройства.<br>
+				  Субъект персональных данных самостоятельно определяет характер и объем предоставляемых персональных данных.<br>
+				  Основание – согласие Субъекта персональных данных.<br>
+				  Срок – 1 год.<br>
+				  * Давая согласие на обработку персональных данных Оператору, субъект персональных данных соглашается на совершение Оператором следующих действий с данными: сбор, систематизацию, хранение, изменение, использование, обезличивание, блокирование, предоставление, удаление, как с использованием средств автоматизации, так и без них.<br>
+				  3. Порядок и условия обработки персональных данных<br>
+				  3.1. Оператор реализует мероприятия по защите личных (персональных) данных субъектов персональных данных в следующих направлениях:<br>
+				  - предотвращение утечки информации, содержащей личные (персональные) данные, по техническим каналам связи и иными способами;<br>
+				  - предотвращение несанкционированного доступа к информации, содержащей личные (персональные) данные, специальных воздействий на такую информацию (носителей информации) в целях ее добывания, уничтожения, искажения и блокирования доступа к ней;<br>
+				  - защита от вредоносных программ;<br>
+				  - обнаружение вторжений и компьютерных атак.<br>
+				  3.2. Оператор осуществляет как автоматизированную, так и неавтоматизированную обработку персональных данных.<br>
+				  3.3. К обработке персональных данных допускаются работники Оператора, в должностные обязанности которых входит обработка персональных данных.<br>
+				  4. Основания и порядок передачи персональных данных третьим лицам<br>
+				  4.1. Оператор не сообщает третьим лицам личную (персональную) информацию субъектов персональных данных, кроме случаев, предусмотренных законодательством и настоящей Политикой.<br>
+				  4.2. Субъект персональных данных, выразивший свое согласие с настоящей Политикой в отношении персональных данных одновременно соглашается с тем, что его персональные данные исключительно по его воле, в указанных ниже целях и в соответствии с указанным ниже перечнем персональных данных могут предоставляться третьим лицам, участвующим в процессе исполнения договора оказания информационных услуг.<br>
+				  4.3. Оператор, с указанными в пункте 4.2 третьими лицами, заключены договоры, в соответствии с которыми они обязаны соблюдать все требования законодательства и настоящей политики при обработке полученных от Оператора персональных данных.<br>
+				  4.4. Персональные данные субъекта персональных данных могут быть переданы уполномоченным органам государственной власти Республики Беларусь только по основаниям, в порядке, и в объеме установленным законодательством Республики Беларусь.<br>
+				  5. Безопасность банковских карт<br>
+				  При оплате стоимости услуг по договору оказания информационных услуг на сайте с помощью кредитных карт все операции с ними проходят на стороне банков в специальных защищенных режимах. Никакая конфиденциальная информация о банковских картах, кроме уведомления о произведенном платеже, в организацию Оператора не передается и передана быть не может.<br>
+				  
+				  6. Права субъектов персональных данных<br>
+				  6.1. Субъект персональных данных имеет право:<br>
+				  6.1.1. На получение информации, касающейся обработки персональных данных, а именно:<br>
+				  - наименование и место нахождения оператора;<br>
+				  - подтверждение факта обработки персональных данных;<br>
+				  - его персональные данные и источник их получения;<br>
+				  - правовые основания и цели обработки персональных данных;<br>
+				  - срок, на который дано его согласие;<br>
+				  - наименование и место нахождения уполномоченного лица, которое является государственным органом, юридическим лицом Республики Беларусь, иной организацией, если обработка персональных данных поручена Организацией такому лицу.<br>
+				  Организация в течение 10 рабочих дней после получения запроса предоставит Субъекту персональных данных указанную выше информацию либо уведомит о причинах отказа в ее предоставлении.<br>
+				  6.1.2. На внесение изменений в свои персональные данные.<br>
+				  Субъект персональных данных с помощью запроса на электронную почту оператора GermanyDrive.by@gmail.com может внести изменения в персональные данные:<br>
+				  - фамилия, имя;<br>
+				  - электронный адрес.<br>
+				  6.1.3. На обжалование действий (бездействия) и решений Оператора, нарушающие права Субъекта персональных данных при обработке его персональных данных, в Национальный центр защиты персональных данных Республики Беларусь в порядке, установленным законодательством.<br>
+				  6.2. Для реализации прав, указанных в пункте 6.1.2 Субъект персональных данных, в случае невозможности или нежелания получить доступ к личному кабинету на сайте, может направить в адрес Оператора заявление в письменной форме либо в виде электронного документа на электронную почту GermanyDrive.by@gmail.com, которое должно содержать:<br>
+				  - Фамилию, собственное имя, отчество (если таковое имеется) Субъекта персональных данных;<br>
+				  - Номер телефона, который указывался при оформлении заявки;<br>
+				  - Изложение сути требований Субъекта персональных данных;<br>
+				  Организация идентифицирует Субъекта персональных данных и предоставит ответ на заявление в форме, соответствующей форме подачи заявления.<br>
+				  7. Внесение изменений и дополнений<br>
+				  7.1. Оператор оставляет за собой право вносить изменения в Политике обработки персональных данных. С момента ее опубликования пользователи подчиняются новым условиям Политики обработки персональных данных.<br>
+				  7.2. Все предложения или вопросы по настоящей Политике обработки персональных данных следует направлять на электронный адрес:<br><a href="mailto:germanydrive.by@gmail.com" aria-label="Написать Email в Germany Drive (откроется в новом окне)">GermanyDrive.by@gmail.com</a>
+
+				  <br>
+			  </div>
+		  </div>
+	  </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
-      </div>
+      <p>© Germany Drive 2026</p>
+<!--      <div class="credits">-->
+<!--        Сайт создан: <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/" target="_blank" rel="noopener noreferrer">DevTools</a>-->
+<!--      </div>-->
+	  
+	  <div class="credits">
+		  Сайт создан: <a href="https://elmardream.com/" target="_blank" rel="noopener noreferrer">elmardream.com</a>
+	  </div>
     </div>
 
   </footer>
@@ -1313,14 +1882,14 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/script.js" defer></script>
 
 </body>
 

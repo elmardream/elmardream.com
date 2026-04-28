@@ -1,0 +1,42 @@
+
+<a class="btn-getstarted" href="javascript:void(0)" data-modal-target="modal-message">НАПИШИТЕ НАМ</a><
+
+<div id="modal-message" class="modal-overlay">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h8>НАПИШИТЕ НАМ</h8>
+			<span class="close-icon">&times;</span>
+		</div>
+		<div class="modal-body">
+			<div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
+				<form action="forms/contact.php" method="post" class="php-email-form">
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<input type="text" name="name" class="form-control" id="name" placeholder="Имя" required="">
+						</div>
+						<div class="col-md-6 form-group mt-3 mt-md-0">
+							<input type="email" class="form-control" name="email" id="email" placeholder="Электронная почта" required="">
+						</div>
+					</div>
+					<div class="form-group mt-3">
+						<input type="text" class="form-control" name="subject" id="subject" placeholder="Номер телефона" required="">
+					</div>
+					<div class="form-group mt-3">
+						<textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required=""></textarea>
+					</div>
+					
+					<div class="my-3">
+						<div class="loading">Загрузка</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
+					</div>
+					<h9>
+						Сообщая свои данные вы соглашаетесь с <a href="javascript:void(0)" class="read-more-btn" data-modal-target="modal-privacy">политикой приватности </a>сайта.</h9>
+					<div class="form-submit">
+						<button type="submit">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
