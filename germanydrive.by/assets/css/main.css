@@ -91,7 +91,7 @@ h7 {
 h9 {
 	font-size: 14px;
 	margin: 0;
-	font-weight: 100;
+	font-weight: 200;
 	color: var(--heading-color);
 }
 
@@ -1640,6 +1640,7 @@ border: none;
 }
 
 /*----------------------------------------------*/
+
 /* Фон (затемнение) */
 .modal-overlay {
 	display: none;
@@ -1662,7 +1663,7 @@ border: none;
 	margin: 10% auto;
 	padding: 0.5% 3% 3% 3%;
 	border-radius: 30px;
-	width: 80%;
+	width: 90%;
 	max-width: 800px;
 	/* Максимум 80% высоты экрана */
 	max-height: 80vh;
