@@ -1101,7 +1101,7 @@ bottom: 60px;
 
 .about .about-content-box a .highlight {
 	font-family: var(--logo-font);
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: 10;
 	white-space: nowrap;
 }
