@@ -36,6 +36,11 @@
 			path = css;
 			sourceTree = "<group>";
 		};
+		A7D2AD9B2FA1C85D00DC94CE /* yellowsubmarine.by */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yellowsubmarine.by;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXGroup section */
@@ -48,6 +53,7 @@
 				A70346D32F8EF1720013A2F7 /* infolift.by */,
 				A70346D22F8EF1150013A2F7 /* germanydrive.by */,
 				A7A684962F85461E00DCA5CA /* index.html */,
+				A7D2AD9B2FA1C85D00DC94CE /* yellowsubmarine.by */,
 			);
 			sourceTree = "<group>";
 		};
