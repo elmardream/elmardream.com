@@ -42,12 +42,12 @@ const legalData = {
 	link1: {
 		title: "Infolift-Gomel, LLC  |  Belarus",
 		text: "",
-		action: '<a href="infolift/index.html" target="_blank" class="active-link">www.infolift.by</a>'
+		action: '<a href="infolift.by/index.html" target="_blank" class="active-link">www.infolift.by</a>'
 	},
 	link2: {
-		title: "www.your-website-name.com",
+		title: "Germany Drive, LLC | Belarus",
 		text: "Free space for a website that I would like to make for you.",
-		action: ""
+		action: '<a href="germanydrive.by/index.html" target="_blank" class="active-link">www.germanydrive.by</a>'
 	},
 	link3: {
 		title: "www.your-website-name.com",
