@@ -36,7 +36,17 @@
 			path = css;
 			sourceTree = "<group>";
 		};
-		A7D2AD9B2FA1C85D00DC94CE /* yellowsubmarine.by */ = {
+		A7D2AD9B2FA1C85D00DC94CE /* noname */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = noname;
+			sourceTree = "<group>";
+		};
+		A7D2AE8E2FA34C1200DC94CE /* site */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = site;
+			sourceTree = "<group>";
+		};
+		A7D2AF122FA3C04D00DC94CE /* yellowsubmarine.by */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = yellowsubmarine.by;
 			sourceTree = "<group>";
@@ -47,13 +57,15 @@
 		A7A6847B2F8545F300DCA5CA = {
 			isa = PBXGroup;
 			children = (
+				A7D2AF122FA3C04D00DC94CE /* yellowsubmarine.by */,
+				A7D2AE8E2FA34C1200DC94CE /* site */,
 				A70347092F8EF36A0013A2F7 /* css */,
 				A70347082F8EF2FF0013A2F7 /* assets */,
 				A70347072F8EF2C20013A2F7 /* js */,
 				A70346D32F8EF1720013A2F7 /* infolift.by */,
 				A70346D22F8EF1150013A2F7 /* germanydrive.by */,
 				A7A684962F85461E00DCA5CA /* index.html */,
-				A7D2AD9B2FA1C85D00DC94CE /* yellowsubmarine.by */,
+				A7D2AD9B2FA1C85D00DC94CE /* noname */,
 			);
 			sourceTree = "<group>";
 		};

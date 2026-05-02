@@ -1161,7 +1161,7 @@ border: none;
 }
 
 .about .about-content-box .btn-discover:hover {
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);
+/*  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);*/
 }
 
 .about .about-content-box .btn-discover:hover:before {
@@ -2485,7 +2485,7 @@ padding: 0.8rem 2rem;
 }
 
 .faq .faq-cta .btn-primary:hover {
-	box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);
+/*	box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);*/
 /*  transform: translateY(-3px);*/
 /*  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);*/
 }
@@ -3189,7 +3189,7 @@ justify-content: center;
 }
 
 .contact .contact-form-container .php-email-form button:hover {
-	box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);
+/*	box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 80%);*/
 /*  background-color: color-mix(in srgb, var(--accent-color), white 15%);*/
 /*  transform: translateY(-2px);*/
 /*  box-shadow: 0 6px 15px color-mix(in srgb, var(--accent-color), transparent 75%);*/
